@@ -1,0 +1,22 @@
+operationNumber:
+  Operation
+dateCreationInvoice:
+  Invoice created on
+dateInvoiceDue:
+  Invoice to be paid before
+operationInformations:
+  Information about the operation
+creationDate:
+  Creation
+finishedDate:
+  Closing
+price:
+  Price
+priceHT:
+  Price excl. taxes
+TVA:
+  Amount of VAT
+total:
+  Total amount
+thankYouMessage:
+  The Clean This team would like to thank you for using our services!

@@ -1,0 +1,47 @@
+.nox{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 9999; 
+    animation: fadeIn 0.5s ease-out forwards;    
+}
+
+.modal-content{
+    top: 25%;
+    width: 30%;
+    display: flex;
+    margin: auto;
+    animation: slideInFromTop 0.5s ease-out forwards;
+}
+
+#user-select  {
+    padding: 6px 8px;
+    width: 100%;
+    border-radius: 8px;
+    outline: none;
+}
+
+#user-select option {
+    padding: 30px;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideInFromTop {
+    from {
+        transform: translateY(-100%);
+    }
+    to {
+        transform: translateY(0);
+    }
+}

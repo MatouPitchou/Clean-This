@@ -1,0 +1,29 @@
+navbar:
+  services: >
+    Services
+  advices:
+    Advices
+  jobs:
+    Jobs
+  orders:
+    Order now
+  hello: >
+    Hello
+  adminMenu: >
+    Admin Dashboard
+  collabMenu: >
+    Worker Dashboard
+  profile: >
+    Profile
+  history: >
+    My history
+  order: >
+    Order now
+  logout : >
+    Logout
+  login: >
+    Login
+  isVerified: >
+    Please confirm your e-mail
+  reSend: > 
+    Send activation link

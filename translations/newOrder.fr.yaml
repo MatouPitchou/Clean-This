@@ -1,0 +1,21 @@
+Title: >
+  Nouvelle demande d'intervention
+BillingAddress: >
+  Adresse de facturation
+ShippingAddressButton : >
+  L'adresse de livraison est différente
+Return: >
+  Retour à l'historique
+ShippingAddress: >
+  Adresse de livraison
+OperationDescription: >
+  Détails de l'opération
+Surface : >
+  Surface en m²
+Description: >
+  Description...
+sendButton: >
+  Envoyer la demande
+addInfos:
+  Ajouter mes informations
+  

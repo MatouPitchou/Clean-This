@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+	{{ 'resetEmailSent'|trans({}, 'resetPassword') }}
+{% endblock %}
+{% block stylesheets %}
+	<link rel="stylesheet" href="{{asset('assets/css/resetPassword.css')}}">
+{% endblock %}
+
+
+{% block body %}
+	<div class="resetPasswordWrapper background">
+		<div class="resetPasswordCard">
+			<p>
+				{{ 'resetPassMessage'|trans({}, 'resetPassword')|raw  }}
+				{{ resetToken.expirationMessageKey|trans(resetToken.expirationMessageData, 'ResetPasswordBundle') }}.
+			</p>
+			<p>{{ 'checkSpams'|trans({}, 'resetPassword')|raw  }}
+				  <a href="{{ path('app_forgot_password_request') }}">{{ 'tryAgainLink'|trans({}, 'resetPassword')|raw  }}</a>
+			</p>
+		</div>
+	</div>
+{% endblock %}

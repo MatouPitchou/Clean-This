@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+  <file source-language="fr" target-language="fr" datatype="plaintext" original="file.ext">
+    <header>
+      <tool tool-id="symfony" tool-name="Symfony"/>
+    </header>
+    <body>
+      <trans-unit id="p2pLYTn" resname="homepage.subtitle">
+        <source>homepage.subtitle</source>
+        <target>Nettoyage professionnel, résultats exceptionnels.</target>
+      </trans-unit>
+      <trans-unit id="aguSTen" resname="homepage.commandbutton">
+        <source>homepage.commandbutton</source>
+        <target>Commander</target>
+      </trans-unit>
+      <trans-unit id="VQJviSJ" resname="homepage.about_us">
+        <source>homepage.about_us</source>
+        <target><![CDATA[<div class="about-content">
+  <h3 class="about-title section-title">
+    À <span>propos</span>
+  </h3>
+  <p class="about-text">
+    Chez Clean This, nous révolutionnons le nettoyage professionnel avec une approche éco-responsable et sur mesure pour entreprises et particuliers. Notre expertise et notre passion pour la propreté font de nous le partenaire idéal pour des espaces toujours impeccables.
+  </p>
+  <p class="about-text">
+    Fondée sur l'excellence et l'expertise, Clean This est l'architecte de votre propreté. Nous offrons des services de nettoyage sur-mesure pour les espaces professionnels et résidentiels, en mettant l'accent sur des solutions écologiques et performantes. Notre mission ? Garantir un environnement sain et impeccable pour que vous puissiez vous épanouir dans vos activités.
+  </p>
+
+<ul>
+  <li class="about-list first-about-list">Satisfaction garantie</li>
+  <li class="about-list"><i class="fa-solid fa-star"></i> Expertise confirmée</li>
+  <li class="about-list"><i class="fa-solid fa-star"></i> Écoresponsabilité </li>
+  <li class="about-list"><i class="fa-solid fa-star"></i> Flexibilité et sur mesure</li>
+</ul> </div>
+]]></target>
+      </trans-unit>
+      <trans-unit id="7UwH0Ey" resname="homepage.ourvalues">
+        <source>homepage.ourvalues</source>
+        <target><![CDATA[ <section class="values" id="#values"> <h3 class="values-title section-title"> Our <span>values</span> </h3>
+<div class="values-container">
+<div class="value value-1"> <div class="value-icon value-icon-1"> <i class="fa-solid fa-leaf"></i>  </div> <p class="value-text">Ecoresponsability</p> </div>
+<div class="value value-2"> <div class="value-icon value-icon-2"> <i class="fa-solid fa-balance-scale"></i>  </div> <p class="value-text">Transparency</p> </div>
+<div class="value value-3"> <div class="value-icon value-icon-3"> <i class="fa-solid fa-thumbs-up" style="color: white;"></i>  </div> <p class="value-text">Customer Satisfaction</p> </div>
+</div> </section> ]]></target>
+      </trans-unit>
+      <trans-unit id="NJbRUyD" resname="homepage.whyCleanThis">
+        <source>homepage.whyCleanThis</source>
+        <target><![CDATA['
+  <section class="why" id="why">
+    <h3 class="why-title section-title">Pourquoi <span>CleanThis</span> ?</h3>
+
+  <div class="why-cards"> 
+    <div class="why-card">
+      <div class="why-icon why-icon-1">
+        <i class="fa-solid fa-medal" style="color: white;"></i> 
+      </div>
+      <div class="why-text-content">
+        <h4 class="why-title">Expertise Reconnue</h4>
+        <p class="why-text">
+          Choisir Clean This, c'est opeter pour une équipe de professionels primés pour leur excellence dnas le service de nettoyage
+        </p>
+      </div>
+    </div>
+    
+    <div class="why-card">
+      <div class="why-icon why-icon-2">
+        <i class="fa-solid fa-leaf"></i> 
+      </div>
+      <div class="why-text-content">
+        <h4 class="why-title">Engagement écologique</h4>
+        <p class="why-text">
+        Notre dévouement à l'écologie nous distingue. Nous utilisons exclusivement des produits de nettoyage verts pour protéger notre planète.
+        </p>
+      </div>
+    </div>
+      
+    <div class="why-card">
+      <div class="why-icon why-icon-3">
+        <i class="fa-solid fa-handshake"></i> 
+      </div>
+      <div class="why-text-content">
+        <h4 class="why-title">Engagement local</h4>
+        <p class="why-text">
+          En collaborant avec Clean This, soutenez une entreprise qui s'investit dans l'économie locale et contribue activement aud développement communautaire.
+        </p>
+      </div>
+    </div>
+      
+    <div class="why-card">
+      <div class="why-icon why-icon-4">
+        <i class="fa-solid fa-thumbs-up" style="color: white;"></i> 
+      </div>
+      <div class="why-text-content">
+        <h4 class="why-title">Satisfaction Garantie</h4>
+        <p class="why-text">
+          La satisfaction de nos clients est notre priorité absolue. Nous nous engageons à offrir une expérience exceptionnelle à chaque intervention.
+        </p>
+      </div>
+    </div>
+  </div> 
+</section> '
+]]></target>
+      </trans-unit>
+      <trans-unit id="ourServices.title" resname="ourServices.title">
+        <source>ourServices.title</source>
+        <target>Nos </target>
+      </trans-unit>
+
+      <trans-unit id="ourServices.service1.label" resname="ourServices.service1.label">
+        <source>ourServices.service1.label</source>
+        <target>Petit</target>
+      </trans-unit>
+      <trans-unit id="ourServices.service1.price" resname="ourServices.service1.price">
+        <source>ourServices.service1.price</source>
+        <target>1000€</target>
+      </trans-unit>
+      <trans-unit id="ourServices.service1.detail1" resname="ourServices.service1.detail1">
+        <source>ourServices.service1.detail1</source>
+        <target>jusqu'à 50m²</target>
+      </trans-unit>
+      <trans-unit id="ourServices.service1.detail2" resname="ourServices.service1.detail2">
+        <source>ourServices.service1.detail2</source>
+        <target>Mensuelle</target>
+      </trans-unit>
+      <trans-unit id="ourServices.service1.detail3" resname="ourServices.service1.detail3">
+        <source>ourServices.service1.detail3</source>
+        <target>Nettoyage Standard</target>
+      </trans-unit>
+      <trans-unit id="ourServices.service1.detail4" resname="ourServices.service1.detail4">
+        <source>ourServices.service1.detail4</source>
+        <target>Aspiration et lavage des sols, dépoussiérage des surfaces</target>
+      </trans-unit>
+      <trans-unit id="ourServices.service1.cta" resname="ourServices.service1.cta">
+        <source>ourServices.service1.cta</source>
+        <target>Commander</target>
+      </trans-unit>      
+
+      <trans-unit id="ourServices.service2.label" resname="ourServices.service2.label">
+        <source>ourServices.service2.label</source>
+        <target>Moyen</target>
+      </trans-unit>
+      <trans-unit id="ourServices.service2.price" resname="ourServices.service2.price">
+        <source>ourServices.service2.price</source>
+        <target>2500€</target>
+      </trans-unit>
+      <trans-unit id="ourServices.service2.cta" resname="ourServices.service2.cta">
+        <source>ourServices.service2.cta</source>
+        <target>Commander</target>
+      </trans-unit>
+      <trans-unit id="ourServices.service3.label" resname="ourServices.service3.label">
+        <source>ourServices.service3.label</source>
+        <target>Grand</target>
+      </trans-unit>
+      <trans-unit id="ourServices.service3.price" resname="ourServices.service3.price">
+        <source>ourServices.service3.price</source>
+        <target>5000€</target>
+      </trans-unit>
+      <trans-unit id="ourServices.service3.cta" resname="ourServices.service3.cta">
+        <source>ourServices.service3.cta</source>
+        <target>Commander</target>
+      </trans-unit>
+      <trans-unit id="ourServices.service4.label" resname="ourServices.service4.label">
+        <source>ourServices.service4.label</source>
+        <target>Sur Mesure</target>
+      </trans-unit>
+      <trans-unit id="ourServices.service4.description" resname="ourServices.service4.description">
+        <source>ourServices.service4.description</source>
+        <target>Lorsque les services standards ne suffisent pas, Clean This offre une alternative personnalisée pour s'adapter parfaitement à votre demande. Nos experts se déplacent pour évaluer vos besoins et concevoir un plan de nettoyage qui répond à toutes vos spécificités. Vous recevrez ensuite une estimation précise et sur mesure, avec la flexibilité de choisir des interventions qui s'intègrent harmonieusement à votre emploi du temps. Avec l'offre Sur Mesure, bénéficiez d'un service qui s'ajuste à votre rythme et à vos attentes.</target>
+      </trans-unit>
+      <trans-unit id="ourServices.service4.cta" resname="ourServices.service4.cta">
+        <source>ourServices.service4.cta</source>
+        <target>Commander</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

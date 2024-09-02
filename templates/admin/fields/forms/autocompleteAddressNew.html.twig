@@ -1,0 +1,51 @@
+{#
+*
+* @author: Dylan Rohart
+*
+#}
+{% extends '@EasyAdmin/crud/new.html.twig' %}
+
+{% block page_content %}
+    {{ parent() }}
+    
+    <div id="generated_password">Mot de passe généré : </div>
+    
+{% endblock %}
+
+{% block body_javascript %}
+    {{ parent() }}
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            function updateGeneratedPassword() {
+                const lastName = document.getElementById('Users_lastname').value.toUpperCase().substr(0, 2);
+                const firstName = document.getElementById('Users_firstname').value.toLowerCase().substr(0, 2);
+                const zipCode = document.getElementById('Users_zipcode').value.substr(0, 2);
+                const generatedPassword = lastName + firstName + '@' + zipCode;
+
+                document.getElementById('Users_generatedPassword').value = generatedPassword;
+            }
+
+
+
+            const fieldsToWatch = ['Users_lastname', 'Users_firstname', 'Users_zipcode'];
+            
+            fieldsToWatch.forEach(field => {
+                document.getElementById(field).addEventListener('input', updateGeneratedPassword);
+            });
+            
+            // Surveiller les modifications du champ 'zipcode' à intervalles réguliers
+            let lastZipCodeValue = document.getElementById('Users_zipcode').value;
+            setInterval(function() {
+                const currentZipCodeValue = document.getElementById('Users_zipcode').value;
+                if (currentZipCodeValue !== lastZipCodeValue) {
+                    updateGeneratedPassword();
+                    lastZipCodeValue = currentZipCodeValue;
+                }
+            }, 500); 
+        });
+    </script>
+    
+    <script src="{{ asset('assets/js/autocompleteAdresse.js') }}"></script>
+{% endblock %}
+

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+  <file source-language="fr" target-language="fr" datatype="plaintext" original="file.ext">
+    <header>
+      <tool tool-id="symfony" tool-name="Symfony"/>
+    </header>
+    <body>
+      <trans-unit id="ODzWwLh" resname="Subtitle">
+        <source>Subtitle</source>
+        <target>Partenaire de confiance pour des espaces propres et sains
+</target>
+      </trans-unit>
+      <trans-unit id="dILjdLW" resname="Legend">
+        <source>Legend</source>
+        <target>Chez Clean This, nous croyons en l'utilisation de produits respectueux de l'environnement, garantissant ainsi non seulement la propreté, mais aussi la préservation de notre planète. Faites l'expérience de notre engagement envers l'excellence et laissez Clean This s'occuper de tous vos besoins en matière de nettoyage.
+</target>
+      </trans-unit>
+      <trans-unit id="u3I07BJ" resname="Register">
+        <source>Register</source>
+        <target>Inscription
+</target>
+      </trans-unit>
+      <trans-unit id="nWMiwfT" resname="Login">
+        <source>Login</source>
+        <target>Connexion
+</target>
+      </trans-unit>
+      <trans-unit id="zncGZ_X" resname="Google">
+        <source>Google</source>
+        <target>Continuer avec Google
+</target>
+      </trans-unit>
+      <trans-unit id="Qte3Osc" resname="ForgottenPassword">
+        <source>ForgottenPassword</source>
+        <target>Mot de passe oublié ? 
+</target>
+      </trans-unit>
+      <trans-unit id="L65vsws" resname="E-Mail">
+        <source>E-Mail</source>
+        <target>E-mail
+</target>
+      </trans-unit>
+      <trans-unit id="588_9PF" resname="Password">
+        <source>Password</source>
+        <target>Mot de passe
+</target>
+      </trans-unit>
+      <trans-unit id="13CvIYE" resname="AdressSearch">
+        <source>AdressSearch</source>
+        <target>Enter your adress here...</target>
+      </trans-unit>
+      <trans-unit id="JVDZYuU" resname="E-mail">
+        <source>E-mail</source>
+        <target>E-mail</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

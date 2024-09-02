@@ -1,0 +1,19 @@
+flash:
+  orderSuccess:
+    Votre commande a bien été prise en compte
+  success:
+    modified_account:
+      Les informations de votre compte ont bien été modifiées
+    modified_password:
+      Le mot de passe a été modifié
+    deleted_account:
+      Votre compte a été supprimé
+  error:
+    login_required:
+      Vous devez vous connecter pour accéder à cette page
+    account_verification_required:
+      Vous devez vérifier votre compte pour commander
+    access_denied:
+      Vous n'avez pas accès à cette page
+    registration_required:
+      Nouveau sur CleanThis ? Inscrivez-vous pour passer une commande !

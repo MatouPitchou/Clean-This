@@ -1,0 +1,71 @@
+title: 
+  History
+pageTitle:
+  Client history
+operationsTable:
+  My operations
+orderTable:
+  My orders
+number:
+  Number
+status:
+  Status
+type:
+  Type
+price:
+  Price
+creationDate:
+  Creation date
+zipcode:
+  Zipcode
+address:
+  Address
+details:
+  Details
+actions:
+  Actions
+show:
+  More
+cancel:
+  Cancel
+accept:
+  Accepte
+refuse:
+  Refuse
+statusPending:
+  Pending
+statusFinished:
+  Finished
+statusValidation:
+  Quote to process
+statusEstimation:
+  Estimation
+statusRefused:
+  Quote refused
+operationDetails:
+  Operation 
+description:
+  Description
+employe:
+  Staff
+modificationDate:
+  Last modified
+finishedDate:
+  Finished on the
+historyLink:
+  Back to history
+small:
+  Small 
+medium:
+  Medium
+big:
+  Big
+custom:
+  Custom
+unknown:
+  Unknown
+showInvoice:
+  See invoice
+
+
+

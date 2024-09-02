@@ -1,0 +1,65 @@
+{{ form_start(form, {'attr': {'id': 'form'}}) }}
+
+<div id="delivery-address-fields" style="display: none;">
+    <h2>{{ 'ShippingAddress'|trans({}, 'newOrder') }}</h2>
+    
+    <div class="autoComplete_wrapper" style="position: relative;">
+        <div class="autoComplete_wrapper" role="combobox" aria-owns="autoComplete_list_1" aria-haspopup="true" aria-expanded="false">
+            {{ form_row(form.street, {
+                'label': false,
+                'attr': {
+                    'class': 'form-input',
+                    'id': 'Users_street',
+                    'type': 'search',
+                    'dir': 'ltr',
+                    'spellcheck': 'false',
+                    'autocorrect': 'off',
+                    'autocomplete': 'off',
+                    'autocapitalize': 'off',
+                    'aria-controls': 'autoComplete_list_1',
+                    'aria-autocomplete': 'both',
+                    'placeholder': 'AdressSearch'|trans({}, 'login')|raw,
+                    'aria-activedescendant': ''
+                }
+            }) }}
+        
+        </div>
+    </div>
+
+    {{ form_row(form.zipcode, {
+        'label': false,
+        'attr': {
+            'class': 'form-input',
+            'id': 'Users_zipcode',
+            'placeholder': 'zipCode'|trans({}, 'profil')
+        }
+    }) }}
+
+    {{ form_row(form.city, {
+        'label': false,
+        'attr': {
+            'class': 'form-input',
+            'id': 'Users_city',
+            'placeholder': 'city'|trans({}, 'profil')
+        }
+    }) }}
+</div>
+
+<h2>{{ 'Description'|trans({}, 'newOrder') }}</h2>
+{{ form_row(form.surface, {
+    'label': false,
+    'attr': {
+        'class': 'form-input',
+        'placeholder': 'Surface'|trans({}, 'newOrder')
+    }
+}) }}
+{{ form_row(form.description, {
+    'label': false,
+    'attr': {
+        'class': 'form-input',
+        'placeholder': 'Description'|trans({}, 'newOrder')
+    }
+}) }}
+
+<input type="submit" id="orderBtn" class="auth-button" value="{{ 'sendButton'|trans({}, 'newOrder') }}">
+{{ form_end(form) }}

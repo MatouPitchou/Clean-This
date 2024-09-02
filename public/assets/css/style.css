@@ -1,0 +1,40 @@
+:root {
+    --caribbean: #086972;
+    --moonstone: #01A9B4;
+    --tiffanyblue: #87DFD6;
+    --gamboge: #F39C11;
+    --maize: #FFE853;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+* {
+    font-family: Roboto, Arial, Helvetica, sans-serif;
+}
+
+.verify-message {
+    background-color: #2a2f34 !important;
+    color: white !important;
+    border-radius:  8px !important;
+    display: flex !important;
+    position: fixed !important;
+    width: 250px !important;
+    align-items: center !important;
+    padding:8px 16px !important;
+    justify-content: left !important;
+    left: 2% !important;
+    font-weight: 400 !important;
+    font-size: 0.8em !important;
+    gap: 8px !important;
+    top: 110px !important;
+}
+
+.verify-message a {
+    color: white !important; 
+    text-decoration: underline !important;
+}
+
+.verify-message i {
+    color: #f26464 !important;
+    font-size: 1.8em !important;
+}

@@ -1,0 +1,9 @@
+{#
+ * Structure:
+ * @author: Mathilde Breux
+#}
+<form method="post" action="{{ path('app_profil_delete', {'id': user.id}) }}" onsubmit="return confirm('Êtes-vous certain de vouloir supprimer votre compte?');">
+	<input type="hidden" name="_token" value="{{ csrf_token('delete' ~ user.id) }}">
+	<button class="buttonDelete">Supprimer mon compte</button>
+
+</form>

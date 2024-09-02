@@ -1,0 +1,7 @@
+{% if field.value %}
+    {% if field.value.type != "Custom" %}    
+       {{ ('badge_' ~ field.value.type ~ '_label')|lower|replace({' ': '', 'é': 'e', 'è': 'e', 'à': 'a', 'ù': 'u', 'â': 'a', 'ê': 'e', 'î': 'i', 'ô': 'o', 'û': 'u', 'ç': 'c'})|trans }}
+    {% else %}
+        {{ field.value.type }}
+    {% endif %}
+{% endif %}

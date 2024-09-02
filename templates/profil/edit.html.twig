@@ -1,0 +1,119 @@
+{#
+ * Structure:
+ * @author: Mathilde Breux
+ * CSS:
+ * @author: Amélie
+#}
+{% extends 'base.html.twig' %}
+
+{% block title %}
+	{{ 'edittitle'|trans({}, 'profil') }}
+{% endblock %}
+
+{% block stylesheets %}
+	<link rel="stylesheet" type="text/css" href="{{asset('assets/css/profil_client.css')}}">
+{% endblock %}
+
+{% block body %}
+	{% include "_partials/_flashMessages.html.twig" %}
+
+	<div class="pageWrapper">
+		{{ 'userProfile'|trans({ '{{ firstname }}': user.firstname}, 'profil' )|raw }}
+
+		<div class="actionsContainer">
+			<div class="actions">
+				{% if app.user.getGoogleId() is null %}
+					<a class="button" href="{{ path('app_profil_editPassword', {'id': user.id}) }}">{{ 'password'|trans({}, 'profil') }}</a>
+				{% endif %}
+				{% if user.roles[0] == 'ROLE_USER' %}
+					<div>{{ include('profil/_delete_form.html.twig') }}</div>
+				{% endif %}
+			</div>
+		</div>
+
+		{{ include('profil/_form.html.twig') }}
+
+	</div>
+	<script src="https://cdn.jsdelivr.net/npm/@tarekraafat/autocomplete.js@10.2.6/dist/autoComplete.min.js"></script>
+	<script>
+		var myobject = []
+const adress = document.querySelector('#user_street')
+const postcode = document.querySelector('#user_zipcode')
+const city = document.querySelector('#user_city')
+const autoCompleteJS = new autoComplete({
+selector: "#user_street",
+placeHolder: "Recherche adresse...",
+data: {
+src: async () => {
+const term = document.querySelector('#user_street').value;
+if (term) {
+const response = await fetch (`https://api-adresse.data.gouv.fr/search/?q=${term}`)
+const json = await response.json()
+myobject = json.features.map(function (el) {
+return {
+label: el.properties.label,
+value: el.properties.label,
+lat: el.geometry.coordinates[1],
+lon: el.geometry.coordinates[0],
+housenumber: el.properties.housenumber,
+name: el.properties.name,
+postcode: el.properties.postcode,
+city: el.properties.city,
+context: el.properties.context,
+type: el.properties.type,
+street: el.properties.street,
+boundingbox: null
+}
+})
+adresses = myobject.map(el => el.value)
+console.log(adresses);
+} else {
+adresses = []
+}
+// ... other code
+return adresses
+},
+// src: ["Sauce - Thousand Island", "Wild Boar - Tenderloin", "Goat - Whole Cut"],
+cache: false
+},
+resultsList: {
+element: (list, data) => {
+if (!data.results.length) { // Create "No Results" message element
+const message = document.createElement("div");
+// Add class to the created element
+message.setAttribute("class", "no_result");
+// Add message text content
+message.innerHTML = `<span>Found No Results for "${
+data.query
+}"</span>`;
+// Append message element to the results list
+list.prepend(message);
+}
+},
+noResults: true
+},
+resultItem: {
+highlight: true
+},
+events: {
+input: {
+selection: (event) => {
+const selection = event.detail.selection.value;
+autoCompleteJS.input.value = selection;
+var result = myobject.find(el => el.value == event.detail.selection.value)
+if (result) {
+adress.value = result.name
+postcode.value = result.postcode
+city.value = result.city
+} else {
+adress.value = ''
+postcode.value = ''
+city.value = ''
+
+}
+}
+}
+}
+});
+	</script>
+{% endblock %}

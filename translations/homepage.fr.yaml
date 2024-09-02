@@ -1,0 +1,151 @@
+homepage:
+  subtitle:
+    Nettoyage professionnel, résultats exceptionnels.
+  commandbutton:
+    Commander
+  about_us: >
+    <div  data-aos="fade-left" class="about-content">
+      <h3 class="about-title section-title">
+        À <span>propos</span>
+      </h3>
+      <p class="about-text">
+        Chez Clean This, nous révolutionnons le nettoyage professionnel avec une approche éco-responsable et sur mesure pour entreprises et particuliers. Notre expertise et notre passion pour la propreté font de nous le partenaire idéal pour des espaces toujours impeccables.
+      </p>
+      <p class="about-text">
+        Fondée sur l'excellence et l'expertise, Clean This est l'architecte de votre propreté. Nous offrons des services de nettoyage sur-mesure pour les espaces professionnels et résidentiels, en mettant l'accent sur des solutions écologiques et performantes. Notre mission ? Garantir un environnement sain et impeccable pour que vous puissiez vous épanouir dans vos activités.
+      </p>
+
+
+    <ul>
+      <li class="about-list first-about-list"><i class="fa-solid fa-star"></i> Satisfaction garantie</li>
+      <li class="about-list"><i class="fa-solid fa-star"></i> Expertise confirmée</li>
+      <li class="about-list"><i class="fa-solid fa-star"></i> Écoresponsabilité </li>
+      <li class="about-list"><i class="fa-solid fa-star"></i> Flexibilité et sur mesure</li>
+    </ul>
+    </div>
+  ourvalues:
+    '
+      <section class="values" id="#values">
+            <h3 data-aos="fade-up" class="values-title section-title">
+              Nos <span>valeurs</span>
+            </h3>
+
+            <div data-aos="fade-up" class="values-container">
+
+              <div class="value value-1">
+                <div class="value-icon value-icon-1">
+                  <i class="fa-solid fa-leaf"></i> 
+                </div>
+                <p class="value-text">Eco-résponsabilité</p>
+              </div>
+
+              <div class="value value-2">
+                <div class="value-icon value-icon-2">
+                  <i class="fa-solid fa-balance-scale"></i> 
+                </div>
+                <p class="value-text">Transparence</p>
+              </div>
+
+              <div class="value value-3">
+                <div class="value-icon value-icon-3">
+                  <i class="fa-solid fa-thumbs-up" style="color: white;"></i> 
+                </div>
+                <p class="value-text">Satisfaction Client</p>
+              </div>
+
+            </div>
+      </section>
+    '
+  whyCleanThis: >
+    '
+      <section class="why" id="why">
+        <h3 data-aos="fade-up" class="why-title section-title">Pourquoi <span>CleanThis</span> ?</h3>
+
+      <div class="why-cards"> 
+        <div data-aos="fade-up" class="why-card">
+          <div class="why-icon why-icon-1">
+            <i class="fa-solid fa-medal" style="color: white;"></i> 
+          </div>
+          <div class="why-text-content">
+            <h4 class="why-title">Expertise Reconnue</h4>
+            <p class="why-text">
+              Choisir Clean This, c'est opeter pour une équipe de professionels primés pour leur excellence dnas le service de nettoyage
+            </p>
+          </div>
+        </div>
+        
+        <div data-aos="fade-up" class="why-card">
+          <div class="why-icon why-icon-2">
+            <i class="fa-solid fa-leaf"></i> 
+          </div>
+          <div class="why-text-content">
+            <h4 class="why-title">Engagement écologique</h4>
+            <p class="why-text">
+            Notre dévouement à l'écologie nous distingue. Nous utilisons exclusivement des produits de nettoyage verts pour protéger notre planète.
+            </p>
+          </div>
+        </div>
+          
+        <div data-aos="fade-up" class="why-card">
+          <div class="why-icon why-icon-3">
+            <i class="fa-solid fa-handshake"></i> 
+          </div>
+          <div class="why-text-content">
+            <h4 class="why-title">Engagement local</h4>
+            <p class="why-text">
+              En collaborant avec Clean This, soutenez une entreprise qui s'investit dans l'économie locale et contribue activement aud développement communautaire.
+            </p>
+          </div>
+        </div>
+          
+        <div data-aos="fade-up" class="why-card">
+          <div class="why-icon why-icon-4">
+            <i class="fa-solid fa-thumbs-up" style="color: white;"></i> 
+          </div>
+          <div class="why-text-content">
+            <h4 class="why-title">Satisfaction Garantie</h4>
+            <p class="why-text">
+              La satisfaction de nos clients est notre priorité absolue. Nous nous engageons à offrir une expérience exceptionnelle à chaque intervention.
+            </p>
+          </div>
+        </div>
+      </div> 
+    </section>
+    '
+  ourServices:
+    title: "Nos "
+    service1:
+      label: "Petit"
+      price: "1000€"
+      details:
+        - "jusqu'à 50m²"
+        - "Mensuelle"
+        - "Nettoyage Standard"
+        - "Aspiration et lavage des sols, dépoussiérage des surfaces"
+      cta: "Commander"
+    service2:
+      label: "Moyen"
+      price: "2500€"
+      details:
+        - "de 50m² à 100m²"
+        - "Bi-Mensuelle"
+        - "Nettoyage Profond"
+        - "Inclut les tâches standard plus nettoyage des vitres et sanitaires"
+        - "Suivi Personnalisé"
+        - "Un interlocuteur dédié pour répondre à vos besoins spécifiques"
+      cta: "Commander"
+    service3:
+      label: "Grand"
+      price: "5000€"
+      details:
+        - "de 100m² à 200m²"
+        - "Hebdomadaire"
+        - "Nettoyage Complet"
+        - "Toutes les prestations des offres précédentes plus la désinfection"
+        - "Gestion des Déchets"
+        - "Tri et évacuation écoresponsable des déchets"
+      cta: "Commander"
+    service4:
+      label: "Sur Mesure"
+      description: "Lorsque les services standards ne suffisent pas, Clean This offre une alternative personnalisée pour s'adapter parfaitement à votre demande. Nos experts se déplacent pour évaluer vos besoins et concevoir un plan de nettoyage qui répond à toutes vos spécificités. Vous recevrez ensuite une estimation précise et sur mesure, avec la flexibilité de choisir des interventions qui s'intègrent harmonieusement à votre emploi du temps. Avec l'offre Sur Mesure, bénéficiez d'un service qui s'ajuste à votre rythme et à vos attentes."
+      cta: "Commander"

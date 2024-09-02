@@ -1,0 +1,158 @@
+homepage:
+  subtitle:
+    "Professional cleaning, exceptional results."
+  commandbutton:
+    Order
+  about_us: 
+    <div  data-aos="fade-left" class="about-content">
+      <h3 class="about-title section-title">
+         <span> About </span> us
+      </h3>
+      <p class="about-text">
+        At Clean This, we're transforming professional cleaning with an eco-friendly, personalized approach for both businesses and individuals. Our expertise and dedication to cleanliness make us the ideal partner for maintaining impeccably clean spaces.
+      </p>
+      <p class="about-text">
+        Built upon excellence and expertise, Clean This acts as the architect of your cleanliness. We specialize in bespoke cleaning services for both commercial and residential spaces, with a focus on eco-friendly and high-performing solutions. Our mission? To guarantee a healthy and immaculate environment, allowing you to thrive in your activities.
+      </p>
+
+    <ul>
+      <li class="about-list first-about-list">
+        <i class="fa-solid fa-star"></i> Satisfaction guaranteed
+      </li>
+      <li class="about-list">
+        <i class="fa-solid fa-star"></i> Confirmed Expertise
+      </li>
+      <li class="about-list">
+        <i class="fa-solid fa-star"></i> Ecoresponsability 
+      </li>
+      <li class="about-list">
+        <i class="fa-solid fa-star"></i> Flexibility and custom-made
+      </li>
+    </ul>
+    </div>
+  ourvalues:
+    '
+      <section class="values" id="#values">
+            <h3 data-aos="fade-up" class="values-title section-title">
+              Our <span>values</span>
+            </h3>
+
+            <div data-aos="fade-up" class="values-container">
+
+              <div class="value value-1">
+                <div class="value-icon value-icon-1">
+                  <i class="fa-solid fa-leaf"></i> 
+                </div>
+                <p class="value-text">Ecoresponsability</p>
+              </div>
+
+              <div class="value value-2">
+                <div class="value-icon value-icon-2">
+                  <i class="fa-solid fa-balance-scale"></i> 
+                </div>
+                <p class="value-text">Transparency</p>
+              </div>
+
+              <div class="value value-3">
+                <div class="value-icon value-icon-3">
+                  <i class="fa-solid fa-thumbs-up" style="color: white;"></i> 
+                </div>
+                <p class="value-text">Customer Satisfaction</p>
+              </div>
+
+            </div>
+      </section>
+    '
+  whyCleanThis:
+    '
+      <section class="why" id="why">
+        <h3 data-aos="fade-up" class="why-title section-title">Why <span>CleanThis</span> ?</h3>
+
+      <div class="why-cards"> 
+        <div data-aos="fade-up" class="why-card">
+          <div class="why-icon why-icon-1">
+            <i class="fa-solid fa-medal" style="color: white;"></i> 
+          </div>
+          <div class="why-text-content">
+            <h4 class="why-title">Recognised Expertise</h4>
+            <p class="why-text">
+              Choosing Clean This means opting for a team of professionals recognised for their excellence in cleaning services.
+            </p>
+          </div>
+        </div>
+        
+        <div data-aos="fade-up" class="why-card">
+          <div class="why-icon why-icon-2">
+            <i class="fa-solid fa-leaf"></i> 
+          </div>
+          <div class="why-text-content">
+            <h4 class="why-title">Ecological Commitment</h4>
+            <p class="why-text">
+              Our dedication to ecology sets us apart. We exclusively use green cleaning products to protect our planet.
+            </p>
+          </div>
+        </div>
+          
+        <div class="why-card">
+          <div class="why-icon why-icon-3">
+            <i class="fa-solid fa-handshake"></i> 
+          </div>
+          <div class="why-text-content">
+            <h4 class="why-title">Local Engagement</h4>
+            <p class="why-text">
+              By collaborating with Clean This, you support a company that invests in the local economy and actively contributes to community development.
+            </p>
+          </div>
+        </div>
+          
+        <div class="why-card">
+          <div class="why-icon why-icon-4">
+            <i class="fa-solid fa-thumbs-up" style="color: white;"></i> 
+          </div>
+          <div class="why-text-content">
+            <h4 class="why-title">Satisfaction Guaranteed</h4>
+            <p class="why-text">
+              Our customers&apos; satisfaction is our top priority. We are committed to delivering an exceptional experience with every service.
+            </p>
+          </div>
+        </div>
+      </div> 
+    </section>
+    '
+  ourServices:
+    title: "Our "
+    service1:
+      label: "Small"
+      price: "€1000"
+      details:
+        - "up to 50m²"
+        - "Monthly"
+        - "Standard Cleaning"
+        - "Vacuuming and mopping floors, dusting surfaces"
+      cta: "Order"
+    service2:
+      label: "Medium"
+      price: "€2500"
+      details:
+        - "from 50m² to 100m²"
+        - "Bi-monthly"
+        - "Deep Cleaning"
+        - "Includes standard tasks plus window and sanitary cleaning"
+        - "Personalized Follow-up"
+        - "A dedicated contact to meet your specific needs"
+      cta: "Order"
+    service3:
+      label: "Large"
+      price: "€5000"
+      details:
+        - "from 100m² to 200m²"
+        - "Weekly"
+        - "Complete Cleaning"
+        - "All the services from previous offers plus disinfection"
+        - "Waste Management"
+        - "Eco-friendly waste sorting and disposal"
+      cta: "Order"
+    service4:
+      label: "Custom"
+      description: "When standard services do not suffice, Clean This offers a personalized alternative to perfectly fit your request. Our experts will assess your needs and design a cleaning plan that meets all your specificities. You will then receive a precise and customized estimate, with the flexibility to choose interventions that harmoniously integrate into your schedule. With the Custom offer, enjoy a service that adjusts to your pace and expectations."
+      cta: "Order"

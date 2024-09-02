@@ -1,0 +1,36 @@
+{% extends '@EasyAdmin/crud/index.html.twig' %}
+{% block configured_stylesheets  %}
+     {{ parent() }}
+    <link rel="stylesheet" href="{{ asset('assets/css/indexCommand.css') }}">
+{% endblock %}
+
+{% block main %}
+    {{ parent() }}
+<section class="allpage-for-modal">
+        <div id="modal-attribute" class="modal nox" tabindex="1" aria-modal="true" role="dialog" style="display: none;">  
+            <div class="modal-content">
+                <div class="modal-header">
+                <h3>Attribuer une opération à un employé</h3>
+                </div>
+                <div class="modal-body">
+                    <span class="pop-upSubtitle"> Veuillez sélectionner un employé </span>
+                    
+                <div id="userChoicesContainer"></div>
+                 <p><i>*Employé (Opération en cours / Limite d'Opération)</i></p>
+                </div>
+                <div class="modal-footer">
+               
+                <a href=""> Annuler </a> 
+                <a id="attriBtn" href=""> Attribuer </a>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}
+
+{% block body_javascript %}
+    {{ parent() }}
+    
+{% endblock %}
+
+

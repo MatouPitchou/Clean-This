@@ -1,0 +1,5 @@
+<form id="deleteForm_{{ operation.id }}">
+	<input type="hidden" name="_csrf_token" value="{{ csrf_token('delete') }}" id="_csrf_token{{ operation.id }}">
+	<input type="hidden" name="operation_id" value="{{ operation.id }}" id="operation_id_{{ operation.id }}">
+	<button class="btn btn-danger" id="delete{{ operation.id }}" data-csrf-token="{{ csrf_token('delete' ~ operation.id) }}">{{ 'cancel'|trans({}, 'operationsClient') }}</button>
+</form>

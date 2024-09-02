@@ -1,0 +1,121 @@
+<div class="tableWrapper">
+	<h3 class="operations title">{{ 'operationsTable'|trans({}, 'operationsClient') }}</h3>
+	<table id="operations" class=" table hover row-border order-column" style="width:100%;">
+		<thead>
+			<tr>
+				<th>{{ 'number'|trans({}, 'operationsClient') }}</th>
+				<th>{{ 'status'|trans({}, 'operationsClient') }}</th>
+				<th>{{ 'type'|trans({}, 'operationsClient') }}</th>
+				<th>{{ 'price'|trans({}, 'operationsClient') }}</th>
+				<th>{{ 'creationDate'|trans({}, 'operationsClient') }}</th>
+				<th>{{ 'zipcode'|trans({}, 'operationsClient') }}</th>
+				<th>{{ 'address'|trans({}, 'operationsClient') }}</th>
+				<th>{{ 'details'|trans({}, 'operationsClient') }}</th>
+			</tr>
+		</thead>
+		<tbody>
+			{% for operation in operations %}
+				{% if operation.quote == "Validé" %}
+					<tr>
+						<td>{{ operation.id }}</td>
+						<td class="orderStatus_{{ operation.id }}">
+							{% if operation.status == "En cours" or operation.status == "Disponible" %}
+								<span class="status pending">{{ 'statusPending'|trans({}, 'operationsClient') }}</span>
+							{% elseif operation.status == "Terminée" %}
+								<span class="status finished">{{ 'statusFinished'|trans({}, 'operationsClient') }}</span>
+							{% else %}
+								<span class="status">{{ operation.status }}</span>
+							{% endif %}
+						</td>
+						{% if operation.services.getType() == "Petite" %}
+							<td>{{ 'small'|trans({}, 'operationsClient') }}</td>
+						{% elseif operation.services.getType() == "Moyenne" %}
+							<td>{{ 'medium'|trans({}, 'operationsClient') }}</td>
+						{% elseif operation.services.getType() == "Grande" %}
+							<td>{{ 'big'|trans({}, 'operationsClient') }}</td>
+						{% elseif operation.services.getType() == "Custom" %}
+							<td>{{ 'custom'|trans({}, 'operationsClient') }}</td>
+						{% else %}
+							<td>{{ 'unknown'|trans({}, 'operationsClient') }}</td>
+						{% endif %}
+						<td>{{ operation.price|default('0') }}
+							€</td>
+						<td>{{ operation.createdAt|date('d-m-Y H:i:s') }}</td>
+
+						<td>{{ operation.zipcode }}</td>
+						<td>{{ operation.zipcode }}
+							{{ operation.street }}
+							{{ operation.city }}</td>
+						<td>
+							<a class="show" href="{{ path('app_operations_show', {'id': operation.id}) }}">{{ 'show'|trans({}, 'operationsClient') }}</a>
+						</td>
+					</tr>
+
+				{% endif %}
+			{% endfor %}
+		</tbody>
+	</table>
+</div>
+
+<div class="tableWrapper orderWrapper">
+	<h3 class="orders title">{{ 'orderTable'|trans({}, 'operationsClient') }}</h3>
+	<table id="orders" class="table hover row-border order-column" style="width:100%">
+		<thead>
+			<tr>
+				<th>{{ 'number'|trans({}, 'operationsClient') }}</th>
+				<th>{{ 'status'|trans({}, 'operationsClient') }}</th>
+				<th>{{ 'price'|trans({}, 'operationsClient') }}</th>
+				<th>{{ 'creationDate'|trans({}, 'operationsClient') }}</th>
+				<th>{{ 'zipcode'|trans({}, 'operationsClient') }}</th>
+				<th>{{ 'street'|trans({}, 'operationsClient') }}</th>
+				<th>{{ 'details'|trans({}, 'operationsClient') }}</th>
+				<th>{{ 'actions'|trans({}, 'operationsClient') }}</th>
+			</tr>
+		</thead>
+		<tbody>
+			{% for operation in operations %}
+				{% if operation.quote != "Validé" %}
+					<tr>
+						<td>{{ operation.id }}</td>
+						<td class="orderQuote_{{ operation.id }}">
+							{% if operation.quote == "Validation" %}
+								<span class="status processQuote">{{ 'statusValidation'|trans({}, 'operationsClient') }}</span>
+							{% elseif operation.quote == "Estimation" %}
+								<span class="status pending">{{ 'statusEstimation'|trans({}, 'operationsClient') }}</span>
+							{% elseif operation.quote == "Refusé" %}
+								<span class="status refusedQuote">{{ 'statusRefused'|trans({}, 'operationsClient') }}</span>
+							{% else %}
+								<span class="status">{{operation.quote}}</span>
+							{% endif %}
+						</td>
+						<td>{{ operation.price|default('0') }}
+							€</td>
+						<td>{{ operation.createdAt|date('d-m-Y H:i:s') }}</td>
+						<td>{{ operation.zipcode }}</td>
+						<td>{{ operation.zipcode }}
+							{{ operation.street }}
+							{{ operation.city }}</td>
+						<td>
+							<a class="show" href="{{ path('app_operations_show', {'id': operation.id}) }}">{{ 'show'|trans({}, 'operationsClient') }}</a>
+						</td>
+						{% if operation.quote == "Validation" %}
+							<td>
+								<form id="actionsQuoteForm">
+									<button class="acceptQuoteBtn btn btn-success " data-operation-id="{{ operation.id }}" type="button">{{ 'accept'|trans({}, 'operationsClient') }}</button>
+									<button class="refuseQuoteBtn btn btn-danger" data-operation-id="{{ operation.id }}" type="button">{{ 'refuse'|trans({}, 'operationsClient') }}</button>
+								</form>
+							</td>
+						{% elseif operation.quote == "Estimation" %}
+							<td>
+								{{ include('operations/_delete_form.html.twig') }}
+							</td>
+						{% else %}
+							<td></td>
+						{% endif %}
+					</tr>
+				{% endif %}
+			{% endfor %}
+
+		</tbody>
+	</table>
+</div>

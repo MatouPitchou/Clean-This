@@ -1,0 +1,100 @@
+{#
+Structure:
+@author:Dylan Rohart, Mathilde Breux
+Design: Dylan Rohart
+#}
+
+<!DOCTYPE html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	{% block stylesheets %}
+		<link rel="stylesheet" href="{{asset('assets/css/style.css')}}">
+		<link rel="stylesheet" href="{{asset('assets/css/auth.css')}}">
+	{% endblock %}
+	{% block javascripts %}
+		<script src="https://kit.fontawesome.com/bfb56a61fd.js" crossorigin="anonymous"></script>
+	{% endblock %}
+
+</head>
+
+
+{% block body %}
+	{# TODO : gérer la redirection en cas d'utilisateur déjà connecté #}
+	{% if app.user %}
+		{# <div class="mb-3">
+				                    You are logged in as {{ app.user.userIdentifier }}, <a href="{{ path('app_logout') }}">Logout</a>
+				                </div> #}
+	{% endif %}
+    <div class="messageWrapperLogin">
+		{% include "_partials/_flashMessages.html.twig" %}
+    </div>
+
+	<section class="forms-template">
+		<div class="form-description">
+			<img src="{{asset('assets/black_logo.svg')}}" alt="logo cleanTHIS">
+			<div class="form-description-text">
+				<h1>CLEAN THIS</h1>
+				<h2>{{ 'Subtitle'|trans({}, 'login')|raw }}</h2>
+				<p class="form-legend">
+					{{ 'Legend'|trans({}, 'login')|raw }}
+				</p>
+			</div>
+		</div>
+		<div class="form-form">
+			<div class="form-auth-title">
+				<h1 class="used-auth-form">
+					{{ 'Login'|trans({}, 'login')|raw }}
+				</h1>
+				<a class="switch-auth-form" href="{{ path('app_register') }}">
+					<span>{{ 'Register'|trans({}, 'login')|raw }}</span>
+				</a>
+			</div>
+			<form class="auth-forms" method="post">
+				{% if error %}
+					<div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+				{% endif %}
+				<input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control form-input" autocomplete="email" placeholder="{{ 'E-mail'|trans({}, 'login')|raw }}" required autofocus>
+
+				<div class="password">
+					<input type="password" name="password" id="inputPassword" class="form-control form-input" autocomplete="current-password" placeholder="{{ 'Password'|trans({}, 'login')|raw }}" required>
+
+					<div class="toggle-password" id="togglePassword">
+						<i class="fas fa-eye"></i>
+					</div>
+				</div>
+
+				<input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
+
+				<a class="link" href="{{ path('app_forgot_password_request') }}">{{ 'ForgottenPassword'|trans({}, 'login')|raw }}</a>
+
+				<input type="submit" class="auth-button" value="{{ 'Login'|trans({}, 'login')|raw }}">
+			</input>
+			<a class="auth-button" href="{{ path('app_connect', {service: 'google'}) }}">
+				<img src="{{asset('assets/images/google-logo.png')}}" alt="google-logo">
+				<span>{{ 'Google'|trans({}, 'login')|raw }}</span>
+			</a>
+
+		</form>
+
+	</div>
+</section>
+
+<script src="{{ asset('assets/js/flashMessagesLogin.js') }}"></script>
+
+
+<script>
+	document.getElementById("togglePassword").addEventListener('click', function () {
+let input = document.getElementById('inputPassword');
+let icon = this.querySelector('i');
+if (input.type === "password") {
+input.type = "text";
+icon.classList.remove('fa-eye');
+icon.classList.add('fa-eye-slash');
+} else {
+input.type = "password";
+icon.classList.remove('fa-eye-slash');
+icon.classList.add('fa-eye');
+}
+});
+</script>{% endblock %}

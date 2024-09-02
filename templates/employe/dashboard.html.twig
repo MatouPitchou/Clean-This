@@ -1,0 +1,334 @@
+{% extends '@EasyAdmin/layout.html.twig' %}
+
+{% block content %}
+<link rel="stylesheet" href="{{asset('assets/css/admin_page_dashboard.css')}}">
+    <section class="content-header">
+        <div class="content-header-title">
+            <h1 class="title">Dashboard</h1>
+        </div>
+    </section>
+
+    {% include "_partials/_smallStatsCards.html.twig" %}
+    {% include "_partials/_GraphFirstSection.html.twig" %}
+    {% include "_partials/_GraphSecondSection.html.twig" %}
+
+
+
+
+{# SCRIPTS #}
+
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    document.querySelectorAll('.employee_badge_container').forEach(function(container) {
+        var employeeName = container.querySelector('.employee_name').textContent.trim();
+        if (employeeName === 'badge_aattribuer_label') {
+            container.querySelector('.employee_icon').style.display = 'none';
+            container.style.backgroundColor = '#99fff3';
+            container.querySelector('.employee_name').textContent = '-';
+        }
+    });
+});
+let operationsChart;
+// Perfomances donnut : Affiche les totals des commandes passées par type
+// ALL TIMEfetch('/admin/data?type=alltime') // Ou 'mensuel', selon le contexte
+// Effectuer une requête pour récupérer les données du graphique
+fetch('/employe/data?type=alltime')
+.then(response => response.json())
+.then(data => {
+    var ctx = document.getElementById('operationsChart').getContext('2d');
+    var labels = data.operationsLabels.map(label => data.translatedLabels[label] || label);
+
+    operationsChart = new Chart(ctx, {
+        type: 'doughnut',
+        data: {
+            labels: labels,
+            datasets: [{
+                label: '# of Operations',
+                data: data.operationsCounts,
+                backgroundColor: [
+                    'rgba(128, 128, 128, 0.7)',
+                    'rgba(243, 156, 17, 0.7)',
+                    'rgba(255, 232, 83, 0.7)',
+                    'rgba(135, 223, 214, 0.7)',
+                    'rgba(1, 169, 180, 0.7)',
+                ],
+                borderColor: [
+                    'rgba(97, 95, 95, 1)',
+                    'rgba(238, 147, 0, 1)',
+                    'rgba(246, 213, 0, 1)',
+                    'rgba(77, 201, 188, 1)',
+                    'rgba(1, 169, 180, 1)',
+                ],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            plugins: {
+                legend: {
+                    display: true,
+                    position: 'right',
+                    labels: {
+                        color: 'black'
+                    }
+                }
+            }
+        }
+    });
+});
+
+document.getElementById('timeframeSelect').addEventListener('change', function(e) {
+    fetch(`/employe/data?type=${e.target.value}`)
+    .then(response => response.json())
+    .then(data => {
+        // Mettez à jour les étiquettes avec les nouvelles traductions
+        var newLabels = data.operationsLabels.map(label => data.translatedLabels[label] || label);
+
+        // Mise à jour des données et des étiquettes du graphique
+        operationsChart.data.labels = newLabels;
+        operationsChart.data.datasets.forEach((dataset) => {
+            dataset.data = data.operationsCounts;
+        });
+        operationsChart.update(); // N'oubliez pas de mettre à jour le graphique pour refléter les changements
+    });
+});
+
+
+
+// Gestion du design des badges %age en fonction de si la valeur est positive ou négative
+document.addEventListener('DOMContentLoaded', function() {
+    var badges = document.querySelectorAll('.badge');
+
+    badges.forEach(function(badge) {
+        var percentage = parseFloat(badge.getAttribute('data-percentage'));
+        var icon = badge.querySelector('i');
+        var rate = badge.querySelector('.rate');
+
+        // Appliquer les changements de style
+        if (percentage >= 0) {
+            badge.style.backgroundColor = '#d8f2ee';
+            badge.style.borderColor = '#d8f2ee';
+            badge.style.color = '#267d70';
+            icon.classList.replace('fa-arrow-trend-down', 'fa-arrow-trend-up');
+        } else {
+            badge.style.backgroundColor = '#f5d9dd';
+            badge.style.borderColor = '#f5d9dd';
+            badge.style.color = '#c52e40';
+            icon.classList.replace('fa-arrow-trend-up', 'fa-arrow-trend-down');
+        }
+
+        // S'assurer que la classe d'animation est retirée pour réinitialiser l'état
+        icon.classList.remove('icon-animate');
+
+        // Ajouter un délai avant de réajouter la classe pour déclencher l'animation
+        setTimeout(() => {
+            icon.classList.add('icon-animate');
+        }, 100); // Un délai court de 10ms est généralement suffisant
+    });
+});
+
+
+// CHARTJS REVENUES CHIFFRE D'AFFAIRE PAR EMPLOYES PAR MOIS
+    var ctx = document.getElementById('employeeRevenues').getContext('2d');
+    var chartData = {{ chartData|json_encode|raw }}; // Convertir les données PHP en JSON pour JavaScript
+
+    var monthsMap = {
+        1: '{{'January_label'|trans}}',
+        2: '{{'February_label'|trans}}',
+        3: '{{'March_label'|trans}}',
+        4: '{{'April_label'|trans}}',
+        5: '{{'May_label'|trans}}',
+        6: '{{'June_label'|trans}}',
+        7: '{{'July_label'|trans}}',
+        8: '{{'August_label'|trans}}',
+        9: '{{'September_label'|trans}}',
+        10: '{{'October_label'|trans}}',
+        11: '{{'November_label'|trans}}',
+        12: '{{'December_label'|trans}}'
+    };
+
+    var labels = [];
+    var datasets = {};
+
+    // Définir les couleurs spécifiques pour les datasets
+    var colors = ["#01A9B4", "#87DFD6", "#F39C11", "#086972", "#FFE853"];
+
+    // Traiter les données pour les adapter au format utilisé par Chart.js
+    chartData.forEach(function(entry, index) {
+        var employeId = entry.id_employe;
+
+        var mois = entry.mois;
+        var argentRapporte = entry.argent_rapporte;
+
+        if (!datasets[employeId]) {
+            datasets[employeId] = {
+                label: entry.nom_employe.slice(0, 2) + '. ' + entry.prenom_employe,
+                data: [],
+                borderColor: colors[index % colors.length], // Utiliser une couleur spécifique pour chaque dataset
+                backgroundColor: colors[index % colors.length] + '80',// Couleur de remplissage de la légende avec transparence
+                pointStyle: 'circle', // Ajouter un style de point
+                pointRadius: 6, // Définir le rayon du point
+                pointBackgroundColor: colors[index % colors.length] + '80', // Couleur de remplissage du point avec transparence
+                fill: false
+            };
+        }
+
+        var monthLabel = monthsMap[mois];
+        if (!labels.includes(monthLabel)) {
+            labels.push(monthLabel);
+        }
+
+        datasets[employeId].data.push(argentRapporte); // Ajouter le chiffre d'affaire dans le dataset de l'employé correspondant
+    });
+
+    var data = {
+        labels: labels,
+        datasets: Object.values(datasets)
+    };
+
+    var monthlyEmployeesRevenues = new Chart(ctx, {
+        type: 'line',
+        data: data,
+        options: {
+            responsive: true,
+            plugins: {
+                 title: {
+                    display: false,
+            },
+                legend: {
+                onClick: function(e, legendItem, legend) {
+                    var index = legendItem.datasetIndex;
+                    var ci = this.chart;
+                    var alreadyHidden = (ci.getDatasetMeta(index).hidden === null) ? false : ci.getDatasetMeta(index).hidden;
+
+                    ci.data.datasets.forEach(function(e, i) {
+                    var meta = ci.getDatasetMeta(i);
+
+                    if (i !== index) {
+                        if (!alreadyHidden) {
+                        meta.hidden = meta.hidden === null ? !meta.hidden : null;
+                        } else if (meta.hidden === null) {
+                        meta.hidden = true;
+                        }
+                    } else if (i === index) {
+                        meta.hidden = null;
+                    }
+                    });
+
+                    ci.update();
+                },
+                    display: false,
+                    labels: {
+                        color: 'black',
+                    },
+            tooltip: {
+                mode: 'index',
+                intersect: true,
+
+            }
+        },
+        elements: {
+            line: {
+                tension: 0.4
+            }
+        }
+    }
+    }
+    });
+
+    /*
+    *
+    *
+    */
+    // Remplir la boîte de sélection avec les noms des employés
+    function fillEmployeeSelect() {
+        var select = document.getElementById('employeeSelect');
+        // Ajout de l'option "Tous les employés"
+        var allOption = document.createElement('option');
+        allOption.value = "all";
+        allOption.textContent = "{{'all_employee_label'|trans}}";
+        select.appendChild(allOption);
+
+        var employeeIds = Object.keys(datasets);
+        employeeIds.forEach(function(employeeId) {
+            var option = document.createElement('option');
+            option.value = employeeId;
+            option.textContent = datasets[employeeId].label;
+            select.appendChild(option);
+        });
+    }
+
+
+    // Fonction pour mettre à jour le graphique en fonction de l'employé sélectionné
+    function updateChartForEmployee(employeeId) {
+        var selectedData;
+        if (employeeId === "all") {
+            // Inclure tous les datasets si "Tous les employés" est sélectionné
+            selectedData = Object.values(datasets);
+        } else {
+            selectedData = datasets[employeeId] ? [datasets[employeeId]] : [];
+        }
+        monthlyEmployeesRevenues.data.datasets = selectedData;
+        monthlyEmployeesRevenues.update();
+    }
+
+
+        // Écouter les changements sur la boîte de sélection
+        document.getElementById('employeeSelect').addEventListener('change', function() {
+            updateChartForEmployee(this.value);
+        });
+
+        // Initialiser la boîte de sélection et le graphique au chargement de la page
+        fillEmployeeSelect();
+        updateChartForEmployee(document.getElementById('employeeSelect').value);
+
+
+//temps moyen d'ouverture d'une opération par type
+// Perfomances donnut : Affiche les totals des commandes passées par type
+// ALL TIME
+fetch('/employe/data?type=alltime')
+.then(response => response.json())
+.then(data => {
+    var ctx = document.getElementById('averageTimeTillClosed').getContext('2d');
+
+var averageData = {{ averageData|json_encode|raw }};
+
+    var averageLabels = Object.values(data.translatedAverageLabels);
+
+    var averageTimeTillClosed = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: averageLabels,
+            datasets: [{
+                label: data.averageOpenedTimeLabel,
+                data: averageData,
+                backgroundColor: [
+                    'rgba(243, 156, 17, 0.7)',
+                    'rgba(255, 232, 83, 0.7)',
+                    'rgba(135, 223, 214, 0.7)',
+                    'rgba(1, 169, 180, 0.7)',
+                ],
+                borderColor: [
+                    'rgba(238, 147, 0, 1)',
+                    'rgba(246, 213, 0, 1)',
+                    'rgba(77, 201, 188, 1)',
+                    'rgba(1, 169, 180, 1)',
+                ],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            plugins: {
+                legend: {
+                    display: false,
+                }
+            }
+        }
+    });
+});
+
+
+
+</script>
+{% endblock %}

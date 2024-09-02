@@ -1,0 +1,154 @@
+{# 
+  Structure:
+  @author: Mathilde Breux
+  Design:
+  @author: 
+ #}
+{% extends 'base.html.twig' %}
+  {% block title %}Clean This{% endblock %}
+  {% block stylesheets %}<link rel="stylesheet" href="{{asset('assets/css/landingpage.css')}}">	{% endblock %}
+
+
+{% block body %}
+	{% include "_partials/_flashMessages.html.twig" %}
+
+
+{# div de background avec le dégradé #}
+<div class="head-bg-container">
+  <div class="head-bg">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 50">
+      <defs>
+        <linearGradient id="gradient" x1="0%" y1="0%" x2="0%" y2="100%">
+          <stop offset="20%" style="stop-color:white; stop-opacity:1" />
+          <stop offset="100%" style="stop-color:#6ec1c8; stop-opacity:1" />
+        </linearGradient>
+      </defs>
+      <path d="M5,2 a50,20 0 1,0 90,0" fill="url(#gradient)" />
+    </svg>
+  </div>
+</div>
+
+{# contenu du head, spongy logo, commande cta #}
+<section class="head">
+
+  <div class="head-content">
+    <div data-aos="fade-right" class="titles">
+      
+      <h1>Clean This</h1>
+      
+      <p class="subtitle">
+      {{ 'homepage.subtitle'|trans({}, 'homepage')|raw }}
+      </p>
+
+      <a href="{{ path('app_operations_new') }}" class="order-cta">{{ 'homepage.commandbutton'|trans({}, 'homepage')|raw }}</a>
+    </div>
+  </div>
+
+    <div data-aos="fade-left" class="spongy-head">
+      <img src="{{asset('assets/images/spongy_fun.svg')}}" alt="mascotte clean">
+    </div>
+</section>
+
+{# section à propos #}
+<section class="about" id="#about">
+  <div data-aos="fade-right" class="about-images">
+    <div class="about-image1">
+      <img src="{{asset('assets/images/about-image1.png')}}" alt="" width="400px">
+    </div>
+    <div class="about-image2">
+      <img src="{{asset('assets/images/about-image2.png')}}" alt="" width="360px">
+    </div>
+  </div>
+
+    {{ 'homepage.about_us'|trans({}, 'homepage')|raw }}
+
+
+</section>
+
+{# section nos valeurs #}
+{{ 'homepage.ourvalues'|trans({}, 'homepage')|raw }}
+
+{# section Pourquoi Clean This #}
+{{ 'homepage.whyCleanThis'|trans({}, 'homepage')|raw }}
+
+<section class="services" id="services">
+  <h3 class="services-title section-title">
+    {{ 'ourServices.title'|trans({}, 'homepage') }}
+    <span>Services</span>
+  </h3>
+  <div class="all-services">
+    {# Service 1 #}
+    <div data-aos="fade-up" class="usual-services service-1">
+      <h4 class="service-label">{{ 'ourServices.service1.label'|trans({}, 'homepage') }}</h4>
+      <p class="service-price">{{ 'ourServices.service1.price'|trans({}, 'homepage') }}</p>
+      <hr>
+      <div class="service-details">
+        <p class="detail detail-title">{{ 'homepage.ourServices.service1.details.0'|trans({}, 'homepage') }}</p>
+        <p class="detail detail-title">{{ 'homepage.ourServices.service1.details.1'|trans({}, 'homepage') }}</p>
+        <p class="detail detail-title">{{ 'homepage.ourServices.service1.details.2'|trans({}, 'homepage') }}</p>
+        <p class="detail detail-subtitle">{{ 'homepage.ourServices.service1.details.3'|trans({}, 'homepage') }}</p>
+      </div>
+      <hr>
+      <div class="service-cta">
+        <a href="{{ path('app_operations_new') }}" class="order-cta">{{ 'ourServices.service1.cta'|trans({}, 'homepage') }}</a>
+      </div>
+    </div>
+    {# Service 2 #}
+    <div data-aos="fade-up" class="usual-services service-2">
+      <h4 class="service-label">{{ 'ourServices.service2.label'|trans({}, 'homepage') }}</h4>
+      <p class="service-price">{{ 'ourServices.service2.price'|trans({}, 'homepage') }}</p>
+      <hr>
+      <div class="service-details">
+        <p class="detail detail-title">{{ 'homepage.ourServices.service2.details.0'|trans({}, 'homepage') }}</p>
+        <p class="detail detail-title">{{ 'homepage.ourServices.service2.details.1'|trans({}, 'homepage') }}</p>
+        <p class="detail detail-title">{{ 'homepage.ourServices.service2.details.2'|trans({}, 'homepage') }}</p>
+        <p class="detail detail-subtitle">{{ 'homepage.ourServices.service2.details.3'|trans({}, 'homepage') }}</p>
+        <p class="detail detail-title">{{ 'homepage.ourServices.service2.details.4'|trans({}, 'homepage') }}</p>
+        <p class="detail detail-subtitle">{{ 'homepage.ourServices.service2.details.5'|trans({}, 'homepage') }}</p>
+      </div>
+      <hr>
+      <div class="service-cta">
+        <a href="{{ path('app_operations_new') }}" class="order-cta">{{ 'ourServices.service2.cta'|trans({}, 'homepage') }}</a>
+      </div>
+    </div>
+    {# Service 3 #}
+    <div data-aos="fade-up" class="usual-services service-3">
+      <h4 class="service-label">{{ 'ourServices.service3.label'|trans({}, 'homepage') }}</h4>
+      <p class="service-price">{{ 'ourServices.service3.price'|trans({}, 'homepage') }}</p>
+      <hr>
+      <div class="service-details">
+        <p class="detail detail-title">{{ 'homepage.ourServices.service3.details.0'|trans({}, 'homepage') }}</p>
+        <p class="detail detail-title">{{ 'homepage.ourServices.service3.details.1'|trans({}, 'homepage') }}</p>
+        <p class="detail detail-title">{{ 'homepage.ourServices.service3.details.2'|trans({}, 'homepage') }}</p>
+        <p class="detail detail-subtitle">{{ 'homepage.ourServices.service3.details.3'|trans({}, 'homepage') }}</p>
+        <p class="detail detail-title">{{ 'homepage.ourServices.service3.details.4'|trans({}, 'homepage') }}</p>
+        <p class="detail detail-subtitle">{{ 'homepage.ourServices.service3.details.5'|trans({}, 'homepage') }}</p>
+      </div>
+      <hr>
+      <div class="service-cta">
+        <a href="{{ path('app_operations_new') }}" class="order-cta">{{ 'ourServices.service3.cta'|trans({}, 'homepage') }}</a>
+      </div>
+    </div>
+    {# Service Sur Mesure #}
+    <div data-aos="fade-up" class="usual-services service-4 custom-services">
+      <div class="custom-service-text">
+        <h4 class="custom-service-title">{{ 'ourServices.service4.label'|trans({}, 'homepage') }}</h4>
+        <p class="custom-service-desc">{{ 'ourServices.service4.description'|trans({}, 'homepage') }}</p>
+      </div>
+
+      <div class="custom-right">
+        <div class="custom-spongy">
+          <img src="{{asset('assets/images/spongy_proud.svg')}}" alt="">
+        </div>
+        <div class="custom-cta">
+          <a href="{{ path('app_operations_new') }}" class="order-cta">{{ 'ourServices.service4.cta'|trans({}, 'homepage') }}</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+	<script>
+	AOS.init();
+	</script>
+{% endblock %}

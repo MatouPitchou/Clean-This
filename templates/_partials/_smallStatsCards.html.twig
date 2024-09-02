@@ -1,0 +1,84 @@
+
+
+    <section class="tags-stats">
+        {# first small card at the top of the page #}
+        <div class="card-stat topPage-card">
+            <div class="card-header">
+                <div class="card-top-top">
+                    <div>
+                        <span><i class="fa-solid fa-chart-area"></i></span>
+                        <h2 class="card-title">{{ 'ongoing_title_label'|trans }}</h2>
+                    </div>
+
+                    <div class="info">
+                        <i class="fa-solid fa-info"></i>
+                        <p class="info-hidden">{{'ongoing_info_label'|trans }}</p>
+                    </div>
+                </div>
+
+                <div class="card-bottom-top">
+                    <h3 class="card-subtitle">{{ ongoingOrder }}</h3>
+                    
+                   
+                </div>
+            </div>
+        </div>
+
+            {# second small card at the top of the page #}
+        <div class="card-stat topPage-card">
+            <div class="card-header">
+                <div class="card-top-top">
+                    <div>
+                        <span><i class="fa-solid fa-chart-area"></i></span>
+                        <h2 class="card-title">{{'operations_info_label'|trans }}</h2>
+                    </div>
+
+                    <div class="info">
+                        <i class="fa-solid fa-info"></i>
+                        <p class="info-hidden">{{ 'choose_operation_type_label'|trans }}</p>
+                    </div>
+                </div>
+
+                <div class="card-bottom-top">
+                    <h3 class="card-subtitle">{{ ('badge_' ~ mostOrdered|lower ~ '_label')|trans }}</h3>
+
+                    
+
+                </div>
+            </div>
+        </div>
+
+            {# third small card at the top of the page  #}
+        <div class="card-stat topPage-card">
+            <div class="card-header">
+                <div class="card-top-top">
+                    <div>
+                        <span><i class="fa-solid fa-chart-area"></i></span>
+                        <h2 class="card-title">{{ 'finished_operation_label'|trans }}</h2>
+                    </div>
+
+                    <div class="info">
+                        <i class="fa-solid fa-info"></i>
+                        <p class="info-hidden">{{ 'finished_operations_info_label'|trans }}</p>
+                    </div>
+                </div>
+
+                <div class="card-bottom-top">
+                    <h3 class="card-subtitle">{{ finishedOrder }}</h3>
+                    
+                    <div class="card-subtitle-more">
+                        <div class="badge" data-percentage="{{ finishedOrderDifference.PourcentageAugmentation }}">
+                            <i class="fa-solid fa-arrow-trend-up"></i>
+                            <span class="rate rate-finishedOrder">{{ finishedOrderDifference.PourcentageAugmentation }}%</span>
+                        </div>
+
+                        <p class="score score-finishedOrder"> {{ finishedOrderDifference.Difference }} {{ 'finished_operation_that_month_label'|trans }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+            
+
+
+        
+    </section>

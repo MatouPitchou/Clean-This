@@ -1,0 +1,139 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Operations
+{% endblock %}
+{% block stylesheets %}
+	<link rel="stylesheet" type="text/css" href="{{asset('assets/css/operations_client.css')}}">
+{% endblock %}
+
+{% block body %}
+	<div class="showWrapper background">
+		<div class="operationCard">
+			<h2 class="operationTitle">{{ 'operationDetails'|trans({}, 'operationsClient') }}
+				#{{ operation.id }}
+			</h2>
+
+			<div class="lign">
+				<p class="label">{{ 'description'|trans({}, 'operationsClient') }}</p>
+				<p>{{ operation.description }}</p>
+			</div>
+			{% for user in users %}
+				{% if user.roles[0] != "ROLE_USER" and user.roles is not null %}
+					<div class="lign">
+						<p class="label">{{ 'employe'|trans({}, 'operationsClient') }}</p>
+						<p>{{ user.firstname }}
+						</p>
+					</div>
+				{% endif %}
+			{% endfor %}
+			{% if operation.quote == "Validé" %}
+				<div class="lign">
+					<p class="label">{{ 'status'|trans({}, 'operationsClient') }}</p>
+					{% if operation.status == "En cours" or  operation.status == "Disponible" %}
+						<p class="orderStatus_{{ operation.id }}">
+							<span class="status pending">{{ 'statusPending'|trans({}, 'operationsClient') }}</span>
+						</p>
+					{% elseif operation.status == "Terminée" %}
+						<p class="orderStatus_{{ operation.id }}">
+							<span class="status finished">{{ 'statusFinished'|trans({}, 'operationsClient') }}</span>
+						</p>
+					{% else %}
+						<p class="orderStatus_{{ operation.id }}">
+							<span class="status">{{ operation.status }}</span>
+						</p>
+					{% endif %}
+				</div>
+			{% endif %}
+			{% if operation.quote != "Validé" %}
+				<div class="lign">
+					<p class="label">{{ 'status'|trans({}, 'operationsClient') }}</p>
+					<p class="orderStatus_{{ operation.id }}">
+						{% if operation.quote == "Estimation" %}
+							<span class="status pending">{{ 'statusEstimation'|trans({}, 'operationsClient') }}</span>
+							<div class="actionButton">{{ include('operations/_delete_form.html.twig') }}</div>
+
+						{% elseif operation.quote == "Validation" %}
+							<span class="status processQuote">{{ 'statusValidation'|trans({}, 'operationsClient') }}</span>
+							<form id="actionsQuoteForm">
+								<div class="actionButton">
+									<button class="acceptQuoteBtn btn btn-success" data-operation-id="{{ operation.id }}" type="button">{{ 'accept'|trans({}, 'operationsClient') }}</button>
+									<button class="refuseQuoteBtn btn btn-danger" data-operation-id="{{ operation.id }}" type="button">{{ 'cancel'|trans({}, 'operationsClient') }}</button>
+								</div>
+							</form>
+						{% elseif operation.quote == "Refusé" %}
+							<span class="status refusedQuote">{{ 'statusRefused'|trans({}, 'operationsClient') }}</span>
+						{% endif %}
+					</p>
+				</div>
+			{% endif %}
+			{% if operation.services %}
+				<div class="lign">
+					<p class="label">{{ 'type'|trans({}, 'operationsClient') }}</p>
+					{% if operation.services.getType() == "Petite" %}
+						<p>{{ 'small'|trans({}, 'operationsClient') }}</p>
+					{% elseif operation.services.getType() == "Moyenne" %}
+						<p>{{ 'medium'|trans({}, 'operationsClient') }}</p>
+					{% elseif operation.services.getType() == "Grande" %}
+						<p>{{ 'big'|trans({}, 'operationsClient') }}</p>
+					{% else %}
+						<p>{{ 'unknown'|trans({}, 'operationsClient') }}</p>
+					{% endif %}
+				</div>
+			{% endif %}
+			{% if operation.price %}
+				<div class="lign">
+					<p class="label">{{ 'price'|trans({}, 'operationsClient') }}</p>
+					<p>{{ operation.price }}
+						€</p>
+				</div>
+			{% endif %}
+			<div class="lign">
+				<p class="label">{{ 'address'|trans({}, 'operationsClient') }}</p>
+				<p>{{ operation.street }}
+					<br>
+					{{ operation.zipcode }}
+					{{ operation.city }}</p>
+			</div>
+			<div class="lign">
+				<p class="label">{{ 'creationDate'|trans({}, 'operationsClient') }}</p>
+				<p>{{ operation.createdAt ? operation.createdAt|date('Y-m-d H:i:s') : '' }}</p>
+			</div>
+			<div class="lign">
+				<p class="label">{{ 'modificationDate'|trans({}, 'operationsClient') }}</p>
+				<p>{{ operation.lastModifiedAt ? operation.lastModifiedAt|date('Y-m-d H:i:s') : '' }}</p>
+			</div>
+			{% if operation.finishedAt %}
+				<div class="lign">
+					<p class="label">{{ 'finishedDate'|trans({}, 'operationsClient') }}</p>
+					<p>{{ operation.finishedAt ? operation.finishedAt|date('Y-m-d H:i:s') }}</p>
+				</div>
+			{% endif %}
+
+			<div class="lign links">
+				<p>
+					<a class="redirect" href="{{ path('app_operations_index') }}">
+						<i class="fa-solid fa-arrow-left"></i>
+						{{ 'historyLink'|trans({}, 'operationsClient') }}</a>
+				</p>
+				{% if operation.invoices %}
+					<p>
+						<a class="invoice light" href="{{ path('showInvoice', {'operationId':operation.id }) }}">
+							<i class="fa-solid fa-file-pdf"></i>
+							{{ 'showInvoice'|trans({}, 'operationsClient') }}
+						</a>
+					</p>
+				{% endif %}
+			</div>
+
+
+		</div>
+	</div>
+{% endblock %}
+{% block javascripts %}
+	{# Include jQuery #}
+	<script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+	{# Include DataTables JavaScript file #}
+	<script src="{{ asset('assets/js/actionsQuote.js') }}"></script>
+	<script src="{{ asset('assets/js/deleteQuote.js') }}"></script>
+{% endblock %}

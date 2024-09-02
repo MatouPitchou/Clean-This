@@ -1,0 +1,361 @@
+:root {
+  --caribbean: #086972;
+  --moonstone: #01a9b4;
+  --tiffanyblue: #87dfd6;
+  --gamboge: #f39c11;
+  --maize: #ffe853;
+}
+
+.pageWrapper {
+  margin: 25px 25px 120px 50px;
+}
+
+h1 {
+  font-size: 2em;
+}
+
+h2 {
+  font-size: 1.5em;
+  margin-bottom: 20px;
+}
+
+.happyMessage {
+  font-size: 1.2em;
+  margin: 20px 0 20px 0;
+  font-style: italic;
+  font-weight: 400;
+}
+
+
+.button {
+  background-color: var(--caribbean);
+  color: white;
+  padding: 8px 1em;
+  border-radius: 8px;
+  font-size: 14px;
+  border: none;
+  pointer-events: auto;
+}
+
+.buttonDelete {
+  background-color: #4d4d4d;
+  color: white;
+  padding: 8px 1em;
+  border-radius: 8px;
+  font-size: 14px;
+  border: none;
+  margin-left: 20px;
+  pointer-events: auto;
+}
+
+.toggle-password {
+  position: relative;
+  top: 25%;
+  right: 5%;
+}
+
+.actions {
+  display: flex;
+  margin: 20px;
+}
+
+.actionsContainer {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.label {
+  background-color: var(--maize);
+  height: 20px;
+  width: 100px;
+}
+
+.pass {
+  width: 200px;
+}
+
+.repeat {
+  height: 40px;
+}
+
+.container p {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  margin: 5px;
+  padding: 8px 5px;
+  z-index: -11;
+}
+
+.input {
+  display: flex;
+  justify-content: center;
+  margin: 5px;
+  padding: 8px 5px;
+  position: relative;
+  outline: none;
+}
+
+.container {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 100px;
+  margin-bottom: 200px;
+}
+
+.containerLeft,
+.containerRight {
+  display: flex;
+  flex-direction: column;
+  border-radius: 5px;
+  padding: 4em;
+  box-shadow: 0px 0px 6px 0px rgba(5,69,75,0.3);
+}
+
+.containerLeft:hover,
+.containerRight:hover {
+  box-shadow: 0px 0px 5px 0px rgba(5, 69, 75, 0.6);
+  transition: 0.3s ease-in-out;
+}
+
+.lign {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+}
+
+
+.eye {
+  background: #fff;
+  color: #333;
+  margin-left: -20px;
+  border-radius: 0px 5px 5px 0px;
+  top: 5%;
+  position: relative;
+  cursor: pointer;
+}
+
+.eye2 {
+  top: -5%;
+}
+
+/* Smartphones (landscape) ----------- */
+@media only screen and (min-width: 321px) and (max-width: 767px) {
+  /* Styles pour les smartphones en mode paysage */
+  h1 {
+    font-size: 1.5em;
+  }
+
+  h2 {
+    font-size: 1.2em;
+    margin-bottom: 15px;
+  }
+
+  .happyMessage {
+    font-size: 1em;
+    margin: 20px 0 20px 0;
+  }
+
+  .pageWrapper {
+    margin: 10px;
+  }
+
+  .button,
+  .buttonDelete {
+    font-size: 16px;
+    padding: 6px 0.5em;
+    cursor:pointer;
+  }
+
+  .container {
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+  }
+
+  .containerLeft,
+  .containerRight {
+    width: 90%;
+    margin: 10px auto;
+  }
+
+  .containerRight {
+    margin-top: 1em;
+  }
+
+  .actionsContainer {
+    justify-content: center;
+    flex-direction: column;
+    margin: 8px;
+  }
+
+  .actions {
+    margin: 8px;
+  }
+}
+
+/* Smartphones (portrait) ----------- */
+@media only screen and (max-width: 320px) {
+  /* Styles pour les smartphones en mode portrait */
+  h1 {
+    font-size: 2.5em;
+    text-align: center;
+  }
+
+  h2 {
+    font-size: 1.2em;
+    margin-bottom: 15px;
+    text-align: center;
+  }
+
+  .pageWrapper {
+    margin: 10px auto;
+    max-width: 90%;
+  }
+
+  .button,
+  .buttonDelete {
+    font-size: 16px;
+    padding: 8px 1em;
+  }
+
+  .container {
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+    
+  }
+
+  .containerLeft,
+  .containerRight {
+    width: 90%;
+    margin: 10px auto;
+  }
+
+  .containerRight {
+    margin-top: 1em;
+  }
+
+  p {
+    text-align: left;
+  }
+
+  .actionsContainer {
+    justify-content: center;
+    flex-direction: column;
+    margin: 8px;
+  }
+
+  .actions {
+    margin: 8px;
+  }
+}
+
+/* Tablettes (landscape) ----------- */
+@media only screen and (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+  /* Styles pour les tablettes en mode paysage */
+  h1 {
+    font-size: 2em;
+  }
+
+  h2 {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+  }
+
+  .happyMessage {
+    font-size: 1em;
+    margin-top: 20px;
+  }
+
+  .pageWrapper {
+    margin: 20px;
+  }
+
+  .button,
+  .buttonDelete {
+    font-size: 16px;
+    padding: 8px 1em;
+  }
+}
+
+/* Tablettes (portrait) ----------- */
+@media only screen and (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
+  /* Styles pour les tablettes en mode portrait */
+  h1 {
+    font-size: 1.8em;
+  }
+
+  h2 {
+    font-size: 1.3em;
+    margin-bottom: 15px;
+  }
+
+  .happyMessage {
+    font-size: 1em;
+    margin-top: 20px;
+  }
+
+  .pageWrapper {
+    margin: 15px;
+  }
+
+  .button,
+  .buttonDelete {
+    font-size: 16px;
+    padding: 6px 0.8em;
+  }
+}
+
+/* Grandes tablettes et ordinateurs portables ----------- */
+@media only screen and (min-width: 1025px) and (max-width: 1823px) {
+  /* Styles pour les grandes tablettes et les ordinateurs portables */
+  h1 {
+    font-size: 2.5em;
+  }
+
+  h2 {
+    font-size: 1.7em;
+    margin-bottom: 25px;
+  }
+
+  .pageWrapper {
+    margin: 25px 40px 240px 50px;
+  }
+
+  .button,
+  .buttonDelete {
+    font-size: 16px;
+    padding: 10px 1.2em;
+  }
+}
+
+/* Grands écrans ----------- */
+@media only screen and (min-width: 1824px) {
+  /* Styles pour les grands écrans */
+  h1 {
+    font-size: 3em;
+  }
+
+  h2 {
+    font-size: 2em;
+    margin-bottom: 30px;
+  }
+
+  .pageWrapper {
+    margin: 25px 40px 240px 50px;
+  }
+
+  .happyMessage {
+    font-size: 1.5em;
+    margin: 30px 0 30px 0;
+    font-style: italic;
+    font-weight: 400;
+  }
+
+  .button,
+  .buttonDelete {
+    font-size: 18px;
+    padding: 12px 2em;
+  }
+}

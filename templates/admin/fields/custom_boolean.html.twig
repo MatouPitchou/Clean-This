@@ -1,0 +1,13 @@
+{# templates/admin/fields/custom_boolean.html.twig #}
+
+{% block custom_boolean_widget %}
+    {% if operations.invoices is not null %}
+        {% if invoices.paid %}
+            <span class="">Oui</span>
+        {% else %}
+            <span class="">Non</span>
+        {% endif %}
+    {% else %}
+        <span class="">Indéfini</span>
+    {% endif %}
+{% endblock %}

@@ -1,0 +1,197 @@
+{% extends '@!EasyAdmin/layout.html.twig' %}
+
+{% block head_stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" href="{{ asset('assets/css/adminpanel.css') }}">
+{% endblock %}
+
+       {% set user_menu_dropdown %}
+       <ul class="dropdown-menu dropdown-menu-end">
+                <li class="dropdown-user-details">
+                    <div>
+                        <span class="user-label">{{ 'user.logged_in_as'|trans(domain = 'EasyAdminBundle') }}</span>
+                        <span class="user-name">{{ ea.user is null ? 'user.anonymous'|trans(domain = 'EasyAdminBundle') : ea.userMenu.name }}</span>
+                    </div>
+                </li>
+
+                {% block user_menu %}
+                    {% if ea.userMenu.items|length > 0 %}
+                        <li><hr class="dropdown-divider"></li>
+                        <li>
+                            <a href="/" class="dropdown-item">
+                                <i class="fa-solid fa-home"></i>
+                                {{'back_to_lp_label'|trans}}
+                            </a>
+                        </li>
+                        {% for item in ea.userMenu.items %}
+                            <li>
+                                {% if item.isMenuSection and not loop.first %}
+                                    <hr class="dropdown-divider">
+                                {% elseif not item.isMenuSection %}
+                                    <a href="{{ item.linkUrl }}" class="dropdown-item user-action {{ item.cssClass }}"
+                                       target="{{ item.linkTarget }}" rel="{{ item.linkRel }}"
+                                       referrerpolicy="origin-when-cross-origin">
+                                        {% if item.icon is not empty %}<i class="fa fa-fw {{ item.icon }}"></i>{% endif %}
+                                        {{ item.label|trans }}
+                                    </a>
+                                {% endif %}
+                            </li>
+                        {% endfor %}
+                    {% endif %}
+                {% endblock user_menu %}
+            </ul>
+        {% endset %}
+
+
+
+{% block sidebar %}
+    {{ parent() }}
+    <div class="admin-footer">
+        <img src="{{ asset('assets/images/spongy_proud.svg') }}" alt="proud spongy" id="sidebar-footer-image" style="width: 60%; height: auto; margin: auto;">
+        <div class="role-button" id="role-button">
+            <div class="role-image" style="margin: auto 0;">
+                <img src="{{ asset('assets/white_logo.svg') }}" style="width:30px; height: auto;">
+            </div>
+            <div class="role-text" id="role-text">
+                <p class="team">Team</p>
+                <p class="role-libelle">
+                    {% if get_user_role_label() == "Apprenti" %}
+                        {{'apprenti_label'|trans}}
+                    {% elseif get_user_role_label() == "Sénior" %}
+                        {{'senior_label'|trans}}
+                    {% else %}
+                        {{ get_user_role_label() }}
+                    {% endif %}
+                </p>
+            </div>
+        </div>
+        <hr id="hr-to-hide" class="admin-hr-footer">
+        <p  id="admin-footer-credits-hide" class="admin-footer-credits">2024 CleanThis inc. Made by Groupe 4</p>
+    </div>
+{% endblock %}
+
+{% block header_custom_menu_wrapper %}
+    <div id="language-selector" class="custom-select-wrapper" style="margin-right: 8px;">
+        <div class="custom-select" data-selected="fr">
+            <div class="custom-select-selected">
+                <img src="{{ asset('assets/images/fr_flag.png') }}" alt="Sélectionné">
+            </div>
+            <div class="custom-select-options" style="z-index: 10000;">
+                <div class="custom-select-option" data-value="fr">
+                    <img src="{{ asset('assets/images/fr_flag.png') }}" alt="Français">
+                </div>
+                <div class="custom-select-option" data-value="en">
+                    <img src="{{ asset('assets/images/en_flag.png') }}" alt="English">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="dropdown user-menu-wrapper {{ is_granted(impersonator_permission) ? 'user-is-impersonated' }}">
+        <a class="user-details" type="button" data-bs-toggle="dropdown" data-bs-offset="0,5" aria-expanded="false">
+            {{ user_menu_avatar }}
+            {% if ea.userMenu.isNameDisplayed %}
+                <span class="user-name"> {{'greetings_label'|trans}}, {{ ea.userMenu.name }}</span>
+            {% endif %}
+        </a>
+
+        {{ user_menu_dropdown }}
+    </div>
+{% endblock %}
+
+
+
+
+{% block body_javascript %}
+    {{ parent() }}
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const asideElement = document.querySelector('aside.sidebar');
+            const sidebarResizerHandler = document.getElementById('sidebar-resizer-handler');
+            const elementsToHide = [
+                document.getElementById('role-button'),
+                document.getElementById('sidebar-footer-image'),
+                document.getElementById('hr-to-hide'),
+                document.getElementById('admin-footer-credits-hide')
+            ];
+
+            function checkAsideWidth() {
+                const isAsideReduced = asideElement.offsetWidth < 100; // Ajustez cette valeur en fonction de vos besoins
+                elementsToHide.forEach(function(element) {
+                    if (element) {
+                        if (isAsideReduced) {
+                            element.classList.remove('visible-element');
+                            element.classList.add('hidden-element');
+                        } else {
+                            element.classList.remove('hidden-element');
+                            element.classList.add('visible-element');
+                        }
+                    }
+                });
+            }
+            checkAsideWidth();
+
+            window.addEventListener('resize', checkAsideWidth);
+
+            if (sidebarResizerHandler) {
+                sidebarResizerHandler.addEventListener('click', function() {
+                    checkAsideWidth();
+                });
+            }
+        });
+
+        document.addEventListener('DOMContentLoaded', function() {
+            var customSelect = document.querySelector('.custom-select');
+            var customOptions = document.querySelector('.custom-select-options');
+            var allOptions = document.querySelectorAll('.custom-select-option');
+            var displaySelected = document.querySelector('.custom-select-selected');
+            var currentLang = '{{ app.request.locale }}'; // Utiliser la langue actuelle de l'application
+
+            // Met à jour le sélecteur personnalisé avec la langue actuelle
+            function updateLanguageDisplay(lang) {
+                var selectedOption = document.querySelector('.custom-select-option[data-value="' + lang + '"]');
+                if (selectedOption) {
+                    displaySelected.innerHTML = selectedOption.innerHTML;
+                }
+            }
+
+            customSelect.addEventListener('click', function() {
+                customOptions.style.display = customOptions.style.display === 'block' ? 'none' : 'block';
+            });
+
+            allOptions.forEach(function(option) {
+                option.addEventListener('click', function() {
+                    var lang = this.getAttribute('data-value');
+                    updateLanguageDisplay(lang); // Met à jour l'affichage avec le choix sélectionné
+                    customOptions.style.display = 'none';
+                    changeLanguage(lang);
+                });
+            });
+
+            function changeLanguage(lang) {
+                console.log('Changing language to:', lang); // Pour débugger
+                fetch('{{ path('change_language') }}', {
+                    method: 'POST',
+                    headers: {
+                        'X-Requested-With': 'XMLHttpRequest',
+                        'Content-Type': 'application/x-www-form-urlencoded',
+                    },
+                    body: 'language=' + lang + '&_t=' + new Date().getTime()
+                })
+                .then(response => response.text())
+                .then(text => {
+                    location.reload(); // Recharge la page pour appliquer le changement de langue
+                });
+            }
+
+            // Initialise l'affichage avec la langue actuelle au chargement de la page
+            updateLanguageDisplay(currentLang);
+        });
+
+
+    </script>
+
+{% endblock %}
+
+

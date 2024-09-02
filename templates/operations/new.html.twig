@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>
+		{% block title %}
+			{{ 'Title'|trans({}, 'newOrder') }}
+		{% endblock %}
+	</title>
+	{% block stylesheets %}
+		<link rel="stylesheet" href="{{asset('assets/css/auth.css')}}">
+
+	{% endblock %}
+	<script src="https://kit.fontawesome.com/bfb56a61fd.js" crossorigin="anonymous"></script>
+
+</head>
+
+{% block body %}
+
+	<section class="forms-template">
+		<div class="form-description register-description">
+			<img src="{{asset('assets/black_logo.svg')}}" alt="logo cleanTHIS">
+			<div class="form-description-text">
+				<h1 class="h3 mb-3 font-weight-normal">Clean This</h1>
+				<h2>{{ 'Subtitle'|trans({}, 'login') }}</h2>
+				<p class="form-legend">
+					{{ 'Legend'|trans({}, 'login') }}
+				</p>
+			</div>
+		</div>
+		<div class="form-form new-order-form">
+			<div class="form-auth-title">
+				<h1 class="used-auth-form new-order-title">
+					{{ 'Title'|trans({}, 'newOrder') }}
+				</h1>
+			</div>
+
+			<div class="auth-forms register-page">
+				<div>
+					<h2 class="new-order">{{ 'BillingAddress'|trans({}, 'newOrder') }}
+						<div class="order-address">
+							{% if user.zipcode is null %}
+								<a class="link" href="{{ path('app_profil_edit', {'id': user.id}) }}" target="_blank">
+									<i class="fa-solid fa-triangle-exclamation"></i>
+									{{ 'addInfos'|trans({}, 'newOrder') }}
+								</a>
+							{% else %}
+								<p>{{user.firstname }} {{user.lastname}}</br>
+									{{user.street}}</br>
+									{{user.zipcode}}
+									{{user.city}}
+								</p>
+				{% endif %}
+			</div>
+		</h2>
+	</div>
+	<div>
+		<input type="checkbox" id="checkboxDelivery" name="checkboxDelivery"/>
+		<label for="checkboxDelivery" class="checkbox-button" name="checkboxDelivery">{{ 'ShippingAddressButton'|trans({}, 'newOrder') }}</label>
+	</div>
+	<div>
+		{{ include('operations/_form.html.twig') }}
+	</div>
+	<a class="link" href="{{ path('app_operations_index') }}">
+		<i class="fa-solid fa-arrow-left"></i>
+		{{ 'Return'|trans({}, 'newOrder') }}
+	</a>
+	<div class="flashWrapper">
+		{% for message in app.flashes('orderSuccess') %}
+			<div class="flash flash-success-order">
+				{{ message }}
+			</div>
+		{% endfor %}
+		<div class="flashWrapper">
+		{% for message in app.flashes('orderError') %}
+			<div class="flash flash-error-order">
+				{{ message }}
+			</div>
+		{% endfor %}
+	</div>
+</div></div></section>{% endblock %}{% block javascripts %}{# Include jQuery #}
+<script src="https://code.jquery.com/jquery-3.7.1.js"></script>{# Include JavaScript file #}
+<script src="{{ asset('assets/js/newOrder.js') }}"></script>
+<script src="{{ asset('assets/js/flashMessages.js') }}"></script>
+<script>
+	
+	
+
+	document.addEventListener('DOMContentLoaded', function () {
+	var streetInput = document.querySelector('input[name="operations[street]"]');
+	var zipcodeInput = document.querySelector('input[name="operations[zipcode]"]');
+	var cityInput = document.querySelector('input[name="operations[city]"]');
+
+	var suggestionsList = document.createElement('ul');
+	suggestionsList.style.listStyle = 'none';
+	suggestionsList.style.marginTop = '5px';
+	suggestionsList.style.padding = '0';
+	suggestionsList.style.position = 'absolute';
+	suggestionsList.style.backgroundColor = '#fff';
+	suggestionsList.style.width = streetInput.offsetWidth + '300px';
+	streetInput.parentNode.appendChild(suggestionsList);
+
+	function fillAddressFields(address) {
+	if (zipcodeInput) 
+	zipcodeInput.value = address.postcode;
+
+
+
+	if (cityInput) 
+	cityInput.value = address.city;
+
+
+
+	}
+
+	function clearSuggestions() {
+	suggestionsList.innerHTML = '';
+	}
+
+	function addSuggestion(address) {
+	var li = document.createElement('li');
+	li.textContent = address.properties.label;
+	li.style.padding = '5px';
+	li.style.cursor = 'pointer';
+	li.onmouseover = function () {
+	li.style.backgroundColor = '#eee';
+	};
+	li.onmouseout = function () {
+	li.style.backgroundColor = '#fff';
+	};
+	li.onclick = function () {
+	streetInput.value = address.properties.name;
+	fillAddressFields(address.properties);
+	clearSuggestions();
+	};
+	suggestionsList.appendChild(li);
+	}
+
+	streetInput.addEventListener('input', function () {
+	var query = streetInput.value;
+
+	if (query.length < 3) {
+	clearSuggestions();
+	return;
+	}
+
+	fetch (`https://api-adresse.data.gouv.fr/search/?q=${
+	encodeURIComponent(query)
+	}&limit=5`).then(response => response.json()).then(data => {
+	clearSuggestions();
+	data.features.forEach(addSuggestion);
+	}).catch(error => {
+	console.error('Error fetching address data:', error);
+	});
+	});
+
+	document.addEventListener('click', function (event) {
+	if (event.target !== streetInput) {
+	clearSuggestions();
+	}
+	});
+	});
+</script>
+{% endblock %}

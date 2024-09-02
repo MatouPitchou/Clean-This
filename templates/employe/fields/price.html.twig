@@ -1,0 +1,7 @@
+{% block field_contents %}
+    {% if field.value is null %}
+        {{ '' }}
+    {% else %}
+        {{ field.value }} €
+    {% endif %}
+{% endblock %}

@@ -1,0 +1,221 @@
+{#
+Structure:
+@author: Mathilde Breux
+Design:
+@author: Mathilde Breux
+#}
+<head>
+	<link rel="stylesheet" href="{{asset('assets/css/nav.css')}}">
+</head>
+
+
+<nav class="navbar">
+	<div class="titre">
+		<h1>
+			<a class="navbar-brand" href="{{path('home')}}">
+				<img src="{{asset('assets/black_logo.svg')}}" alt="" height="70rem">
+			</a>
+		</h1>
+	</div>
+	<div class="navElements">
+		<a class="nav-link nav-link-offmenu" href="/#services">{{ 'navbar.services'|trans({}, 'navbar')|raw }}</a>
+		<a class="nav-link nav-link-offmenu disabled" href="#">{{ 'navbar.advices'|trans({}, 'navbar')|raw }}</a>
+		<a class="nav-link nav-link-offmenu disabled" href="#">{{ 'navbar.jobs'|trans({}, 'navbar')|raw }}</a>
+		<a class="navbutton navOrder" href="{{ path('app_operations_new') }}">{{ 'navbar.orders'|trans({}, 'navbar')|raw }}</a>
+		
+
+	</div>
+	<div class="collapse " id="navbarSupportedContent">
+	    <div id="language-selector" class="custom-select-wrapper" style="margin-right: 8px;">
+        <div class="custom-select" data-selected="fr"> 
+            <div class="custom-select-selected">
+                <img src="{{ asset('assets/images/fr_flag.png') }}" alt="Sélectionné">
+            </div>
+            <div class="custom-select-options">
+                <div class="custom-select-option" data-value="fr">
+                    <img src="{{ asset('assets/images/fr_flag.png') }}" alt="Français">
+                </div>
+                <div class="custom-select-option" data-value="en">
+                    <img src="{{ asset('assets/images/en_flag.png') }}" alt="English">
+                </div>
+            </div>
+        </div>
+    </div>    
+
+		<ul>
+			<li class="menu-deroulant">
+				{% if app.user %}
+					<div class="mb-3">
+						{{ 'navbar.hello'|trans({}, 'navbar')|raw }}
+						{{ app.user.UserIdentifier }}
+					</div>
+					<ul class="sous-menu">
+						{% if is_granted('ROLE_ADMIN') %}
+							<li class="nav-item">
+								<a class="nav-link" href="{{path('admin')}}">{{ 'navbar.adminMenu'|trans({}, 'navbar')|raw }}</a>
+							</li>
+						{% endif %}
+						{% if is_granted('ROLE_APPRENTI') and not is_granted('ROLE_ADMIN') %}
+							<li class="nav-item">
+								<a class="nav-link" href="{{path('employe')}}">{{ 'navbar.collabMenu'|trans({}, 'navbar')|raw }}</a>
+							</li>
+						{% endif %}
+
+						{% if is_granted('ROLE_USER') and not is_granted('ROLE_APPRENTI') %}
+							<li class="nav-item">
+								<a class="nav-link" href="{{path('app_profil')}}">{{ 'navbar.profile'|trans({}, 'navbar')|raw }}</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="{{ path('app_operations_index') }}">{{ 'navbar.history'|trans({}, 'navbar')|raw }}</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="{{ path('app_operations_new') }}">{{ 'navbar.order'|trans({}, 'navbar')|raw }}</a>
+							</li>
+							{% endif %}
+							{% if is_granted('ROLE_USER') %}
+
+							<li class="nav-item">
+								<a class="nav-link" href="{{path('app_logout')}}">{{ 'navbar.logout'|trans({}, 'navbar')|raw }}</a>
+							</li>
+						{% endif %}
+					{% else %}
+						<li class="nav-item">
+							<a class="nav-link" href="{{path('app_login')}}">{{ 'navbar.login'|trans({}, 'navbar')|raw }}</a>
+						</li>
+					{% endif %}
+				</ul>
+			</li>
+		</ul>
+	</div>
+</nav>
+
+
+{# PHONE PART #}
+
+<nav class="navbar-phone">
+	<div class="displayed-nav">
+		<div>
+			<h1>
+				<a class="navbar-brand" href="{{path('home')}}">
+					<img src="{{asset('assets/black_logo.svg')}}" alt="" height="70rem">
+				</a>
+			</h1>
+		</div>
+		<input type="checkbox" id="menuToggle" class="menu-toggle"/>
+		<label for="menuToggle" class="title-phone">
+			<i class="fa-solid fa-bars"></i>
+			<i class="fa-solid fa-times" style="display:none;"></i>
+		</label>
+
+
+		<div class="overlay"></div>
+		<div class="sliding-menu">
+			<div class="navElements-phone">
+				<a class="nav-link" href="#">Services</a>
+				<a class="nav-link" href="#">Conseils</a>
+				<a class="nav-link" href="#">Jobs</a>
+			</div>
+
+			<div class="other-links">
+				{% if app.user %}
+					<div class="user-identifier">
+						Bonjour
+						{{ app.user.UserIdentifier }}
+					</div>
+					<hr>
+
+					{% if is_granted('ROLE_ADMIN') %}
+						<a class="nav-link" href="{{path('admin')}}">Espace Admin</a>
+					{% endif %}
+					{% if is_granted('ROLE_APPRENTI') and not is_granted('ROLE_ADMIN') %}
+						<a class="nav-link" href="{{path('employe')}}">Espace employé</a>
+					{% endif %}
+
+					{% if is_granted('ROLE_USER') %}
+						<a class="nav-link" href="{{path('app_profil')}}">Profil</a>
+						<a class="nav-link" href="{{ path('app_operations_index') }}">Voir mon historique</a>
+						<a class="nav-link" href="{{ path('app_operations_new') }}">Nouvelle Demande</a>
+						<a class="nav-link" href="{{path('app_logout')}}">Déconnexion</a>
+					{% endif %}
+				{% else %}
+					<li class="nav-item">
+						<a class="nav-link" href="{{path('app_register')}}">Inscription</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="{{path('app_login')}}">Connexion</a>
+					</li>
+				{% endif %}
+			</div>
+		</div>
+	</div>
+
+	<script>
+		document.addEventListener('DOMContentLoaded', () => {
+const menuToggle = document.getElementById('menuToggle');
+const iconHamburger = document.querySelector('.fa-bars');
+const iconTimes = document.querySelector('.fa-times');
+
+menuToggle.addEventListener('change', () => {
+if (menuToggle.checked) {
+iconHamburger.style.display = 'none';
+iconTimes.style.display = 'inline-block';
+iconTimes.style.color = 'white';
+} else {
+iconHamburger.style.display = 'inline-block';
+iconTimes.style.display = 'none';
+}
+});
+});
+
+      document.addEventListener('DOMContentLoaded', function() {
+            var customSelect = document.querySelector('.custom-select');
+            var customOptions = document.querySelector('.custom-select-options');
+            var allOptions = document.querySelectorAll('.custom-select-option');
+            var displaySelected = document.querySelector('.custom-select-selected');
+            var currentLang = '{{ app.request.locale }}'; // Utiliser la langue actuelle de l'application
+
+            // Met à jour le sélecteur personnalisé avec la langue actuelle
+            function updateLanguageDisplay(lang) {
+                var selectedOption = document.querySelector('.custom-select-option[data-value="' + lang + '"]');
+                if (selectedOption) {
+                    displaySelected.innerHTML = selectedOption.innerHTML;
+                }
+            }
+
+            customSelect.addEventListener('click', function() {
+                customOptions.style.display = customOptions.style.display === 'block' ? 'none' : 'block';
+            });
+
+            allOptions.forEach(function(option) {
+                option.addEventListener('click', function() {
+                    var lang = this.getAttribute('data-value');
+                    updateLanguageDisplay(lang); // Met à jour l'affichage avec le choix sélectionné
+                    customOptions.style.display = 'none';
+                    changeLanguage(lang);
+                });
+            });
+
+            function changeLanguage(lang) {
+                console.log('Changing language to:', lang); // Pour débugger
+                fetch('{{ path('change_language') }}', {
+                    method: 'POST',
+                    headers: {
+                        'X-Requested-With': 'XMLHttpRequest',
+                        'Content-Type': 'application/x-www-form-urlencoded',
+                    },
+                    body: 'language=' + lang + '&_t=' + new Date().getTime()
+                })
+                .then(response => response.text())
+                .then(text => {
+                    location.reload(); // Recharge la page pour appliquer le changement de langue
+                });
+            }
+
+            // Initialise l'affichage avec la langue actuelle au chargement de la page
+            updateLanguageDisplay(currentLang);
+        });
+
+
+	</script>
+
+</nav>

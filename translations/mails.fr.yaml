@@ -1,0 +1,18 @@
+Hello:
+  Bonjour
+thankYouMessage:
+  Merci d'avoir fait appel à 
+findInvoice:
+  Vous trouverez ci-joint votre facture
+verifyAccount:
+  Vérifiez votre compte
+clickOnVerifyLink:
+  Pour valider votre inscription sur le site de CleanThis, vous pouvez cliquer sur le lien suivant
+thankYou:
+  Merci
+from:
+  De la part de
+linkExpiresIn:
+ Ce lien expire dans
+linkResetPassRequest:
+  Pour votre demande de réinitialisation de mot de passe, veuillez cliquer sur le lien suivant

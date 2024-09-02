@@ -1,0 +1,247 @@
+:root {
+    --caribbean: #086972;
+    --moonstone: #01A9B4;
+    --tiffanyblue: #87DFD6;
+    --gamboge: #F39C11;
+    --maize: #FFE853;
+    --button-primary-bg: var(--caribbean);
+    --sidebar-menu-active-item-color: var(--caribbean);
+    --table-thead-color: var(--caribbean);
+    --form-fieldset-header-color: var(--caribbean);
+    --bs-heading-color: var(--caribbean);
+    --sidebar-logo-color: var(--caribbean);
+    --link-color: var(--caribbean);
+    --link-hover-color: var(--moonstone);
+}
+
+
+/* BLoc bas de sidebar - vue EasyAdmin  */
+.admin-footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: -10px;
+    
+}
+
+.admin-hr-footer {
+    width: 105%;
+    transform: translateX(-6px) !important;
+    margin: 0.6rem 0;
+    border-color: #e2e8f0;
+}
+
+.admin-footer-credits {
+    font-size: 0.8em;
+    text-align: center;
+    margin-bottom: 6px;
+
+}
+
+
+.role-button {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    padding: 5px 16px;
+    background-color: #086972;
+    border-radius: 5px;
+    width: 210px;
+}
+
+.role-button:hover {
+    transition: .3s ease-in-out;
+    box-shadow: inset 0 0 180px rgba(0, 0, 0, 0.187),
+                5px 5px 5px rgba(0, 0, 0, 0.509);
+    transform: translate(-5px, -5px);
+}
+
+
+.role-text p.team,
+.role-text p.role-libelle {
+    width: 10px;
+    margin-bottom: 0 !important;
+    line-height: 18px;
+    color: white;
+    margin-left: 6px;
+}
+
+.role-text p.team {
+    font-weight: 200;
+}
+
+.role-text p.role-libelle {
+    font-weight: bold;
+}
+
+.user-details {
+    border-left: 1px solid #e2e8f0;
+    padding-left: 10px;
+}
+
+.ea-new-form, .ea-edit-form {
+    display: flex;
+    gap: 5%;
+}
+
+@media (max-width: 768px) {
+    .ea-new-form, .ea-edit-form {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+
+.profil-subtitle {
+    margin-bottom: 64px;
+}
+
+.profil-info {
+    max-width: 200px;
+}
+
+.profil-line {
+    height: 30px;
+}
+
+.profil-value,
+.profil-value-no-input {
+    font-weight: bold;
+    padding-right: 16px;
+}
+
+.badge-ongoing {
+    background-color: var(--gamboge);
+    padding: 4px 13px;
+    font-size: 0.7em;
+    color: #945b00;
+}
+
+.badge-over {
+    background-color: #C2FFC0;
+    padding: 4px 13px;
+    font-size: 0.7em;
+    color: #007419;
+}
+
+.badge-ongoing:hover,
+.badge-over:hover {
+    transition: .3s ease-in-out;
+    color: black;
+    box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.208);
+    cursor: default;
+}
+
+#content-resizer-handler {
+    display: none;
+}
+/* Dans adminpanel.css */
+.hidden-element {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(-100%); /* Déplace l'élément vers la gauche */
+    transition:  opacity 0.5s ease, visibility 0.5s;
+  }
+  
+  .visible-element {
+    display: flex; /* Assurez-vous que cela correspond à ce que vous voulez (peut-être 'block' ou autre) */
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0);
+    transition: transform 0.5s ease, opacity 0.5s ease;
+  }
+  
+
+.employee_badge_container {
+    background-color: var(--tiffanyblue);
+}
+
+.employee_badge_container,
+.info-badge {
+    border-radius: 6px;
+    padding: 3px 6px;
+    width: 120px;
+    display: block;
+}
+
+.employee_badge_container:hover,
+.info-badge:hover {
+    box-shadow: 1px 1px  5px rgba(92, 92, 92, 0.467);
+    transform: translate(-1px, -1px);
+    transition: .3s ease-in-out;
+}
+
+.custom-select-wrapper {
+    position: relative;
+    user-select: none;
+    }
+    
+.custom-select {
+    position: relative;
+    cursor: pointer;
+}
+    
+.custom-select-selected {
+    display: flex;
+    align-items: center;
+    padding: 5px;
+}
+
+.custom-select-options {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    z-index: 10;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+}
+
+.custom-select-option {
+    padding: 5px;
+    margin-right: 20px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.custom-select-option:hover {
+    background-color: #f2f2f2;
+}
+
+.custom-select img {
+    width: 30px;
+}
+      
+
+  @media (max-height: 740px) {
+    #sidebar-footer-image {
+        width: 40% !important;
+    }
+  }
+
+  @media (max-height: 670px) and (min-width: 991px ) {
+    #sidebar-footer-image {
+        display: none !important;
+    }
+  }
+
+  @media (max-height: 645px) and (max-width: 991px ) {
+    #sidebar-footer-image {
+        width: 20% !important;
+    }
+  }
+
+  @media (max-height: 585px) and (max-width: 991px ) {
+    #sidebar-footer-image {
+        display: none !important;
+    }
+  }
+
+
+

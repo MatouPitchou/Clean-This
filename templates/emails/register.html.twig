@@ -1,0 +1,26 @@
+{# 
+  Structure:
+  @author: Mathilde Breux
+  Design:
+  @author: Amélie
+ #}
+{% apply inline_css %}
+<style>
+	span {
+		color: #01A9B4;
+	}
+	img {
+		width: 50px;
+	}
+	* {
+    font-family: Arial, Helvetica, sans-serif;
+}
+</style>
+<h1>{{ 'Hello'|trans({}, 'mails')}} {{ firstname }},</h1>
+<p>{{ 'clickOnVerifyLink'|trans({}, 'mails')}}: </p>
+<p><a href="{{ absolute_url( path( 'verify_user', {token:token} )) }}">{{ absolute_url( path( 'verify_user', {token:token} )) }}</a></p>
+
+<p>{{ 'thankYou'|trans({}, 'mails')}}</p>
+<h3>{{ 'from'|trans({}, 'mails')}} <span>Clean This</span></h3>
+<img src="{{ email.image('@images/black_logo2.png') }}" alt="Logo">
+{% endapply %}

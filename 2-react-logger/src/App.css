@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+
+
+body {
+    background: #1d1d1d;
+    font-weight: 400;
+    font-family: Lato;
+    display: flex;
+    flex-direction: column;
+  }
+
+  h2 {
+    font-size: 2em;
+    margin: 100px 0 20px 100px;
+    font-weight: 400;
+    color: white;
+  }
+
+  h3 {
+    font-size: 1em;
+    margin: 0 0 20px 100px;
+    font-weight: 300;
+    font-style: italic;
+    color: white;
+  }
+
+  .pageWrapper {
+      margin: auto;
+  }

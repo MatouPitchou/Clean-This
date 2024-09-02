@@ -1,0 +1,198 @@
+.content-wrapper {
+    display: flex !important;
+    flex-direction: column;
+}
+
+.cards-stats {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.card-stat {
+    border: 1px solid #086972;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 12px;
+    box-shadow: 2px 5px 10px rgba(165, 165, 165, 0.472);
+    flex-grow: 1;
+}
+
+.card-top-top,
+.card-top-top div, 
+.card-top-bottom {
+    display: flex;
+}
+
+.card-top-top {    
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.card-bottom-top {
+    flex-direction: column;
+}
+
+.card-title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-top-top h2 {
+    font-size: 1em;
+}
+
+.card-top-top div span {
+    padding: 7px;
+    margin-right: 3px;
+    background-color: #086972;
+    color: white;
+    border-radius: 5px;
+    width: 20px;
+    height: 20px;
+    font-size: 0.8em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+select {
+    border-radius: 5px;
+    background-color: #87dfd6;
+}
+
+.card-subtitle-more {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 5px;
+}
+
+.card-subtitle-more p {
+    margin: 0;
+}
+
+.badge {
+    border: 1px solid gray;
+    border-radius: 5px;
+    background-color: gray;
+    padding: 0 6px;
+    color: rgb(52, 50, 50);
+}
+
+.score {
+    font-size: 0.7em;
+    margin-left: 10px;
+}
+
+.tags-stats {
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+
+}
+
+
+.topPage-card {
+    width: 30% ;
+    min-width: 200px;
+    flex-grow: 1;
+}
+
+.performances-doughnut {
+    width: 30%;
+}
+
+.info {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative
+}
+
+.info i {
+    font-size: 0.6em;
+    border: 1px solid gray;
+    border-radius: 100%;
+    padding: 3px 6px;
+}
+
+.info-hidden {
+    opacity: 0;
+    visibility: hidden;
+    background-color: gray;
+    padding: 2px 3px;
+    border-radius: 8px;
+    font-size: 0.8em;
+    position: absolute;
+    top: 0;
+    right: 18px;
+    width: 200px;
+    color: white;
+    transition: opacity 0.3s ease-in-out, visibility 0s linear 0.9s; /* Ajout de transition pour l'opacité */
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.446);
+}
+
+.info:hover .info-hidden {
+    opacity: 1;
+    visibility: visible;
+    transition-delay: 0s; /* Annule le délai de transition lors du survol */
+}
+
+/* Animation pour la transition de couleur du badge */
+.badge {
+    transition: background-color 0.5s ease, border-color 0.5s ease, color 0.5s ease;
+}
+
+@keyframes iconFadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.1);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.icon-animate {
+    animation: iconFadeIn 0.5s ease forwards;
+}
+
+
+.chart-average {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.chart-average canvas {
+    flex-grow: 1;
+}
+
+.average-bar {
+    width: 25%;
+    min-width: none;
+    flex-grow: 1;
+}
+
+.general-history {
+    width: 35%;
+    min-width: 300px;
+    flex-grow: 1;
+}
+
+.general-history {
+    justify-content: flex-start ;
+}

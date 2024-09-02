@@ -1,0 +1,17 @@
+{% apply inline_css %}
+<style>
+	span {
+		color: #01A9B4;
+	}
+	img {
+		width: 50px;
+	}
+	* {
+		font-family: Roboto, Arial, Helvetica, sans-serif;
+	}
+</style>
+
+{# '@images/' refers to the Twig namespace defined earlier #}
+<h1>{{ 'Hello'|trans({}, 'mails')}}
+	{{ firstname }}</span></h1><p>{{ 'thankYouMessage'|trans({}, 'mails') }}
+<span>CleanThis!</span></p><p>{{ 'findInvoice'|trans({}, 'mails') }}</p><img src="{{ email.image('@images/black_logo2.png') }}" alt="Logo">{% endapply %}

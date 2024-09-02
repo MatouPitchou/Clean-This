@@ -1,0 +1,217 @@
+'Nom' : 'Last Name'
+'Prénom' : "First Name"
+'Téléphone' : "Phone Number"
+'Adresse' : Address
+'Ville' : 'City'
+'Code postal' : 'ZipCode'
+'Mot de passe' : 'Password'
+'Répéter le mot de passe' : 'Confirm Password'
+"Accepter les conditions d'utilisations" : 'Accept terms of use'
+"Vous devez accepter les conditions d'utilisations." : "You must accept terms of use"
+"Inscription" : "Register"
+"Enregistrer" : "Save"
+# dashboard stats
+ingoing_operation_label: 'Ongoing Operations'
+most_requested_label: 'Most Requested'
+finished_operation_label: 'Finished Operations'
+finished_operation_that_month_label: 'operations finished this month'
+revenues_label: "Revenue"
+all_employee_label: 'All Employees'
+performance_label: 'Performance'
+since_always_label: 'Since the Beginning'
+monthly_label: 'Monthly'
+ordered_operations_monthly_label: 'operations ordered this month'
+average_opened_time: "Average opening time per operation type"
+general_hystory_label: 'General History'
+personal_hystory_label: 'Personal History'
+ongoing_info_label: "Total Number of Ongoing Operations"
+operations_info_label: "Most Requested Operation Type"
+finished_operations_info_label: 'Total Finished Operations'
+
+  # SATS LEGENDS
+January_label: 'January'
+February_label: 'February'
+March_label: 'March'
+April_label: 'April'
+May_label: 'May'
+June_label: 'June'
+July_label: 'July'
+August_label: 'August'
+September_label: 'September'
+October_label: 'October'
+November_label: 'November'
+December_label: 'December'
+
+a_estimer_label: 'To Estimate'
+grande_label: 'Large'
+moyenne_label: 'Medium'
+petite_label: 'Small'
+
+
+# page title
+employes_label: 'Employees'
+employe_label: 'Employe'
+customer_label: 'Customer'
+customers_label: 'Customers'
+apprenti_label: 'Apprentice'
+senior_label: 'Senior'
+order_label: 'Orders'
+
+
+# columns title
+fullname_label: 'Full Name'
+mail_label: 'E-mail'
+phone_label: 'Phone'
+role_label: 'Role'
+zipcode_label: 'Zip Code'
+fulladdress_label: 'Full Address'
+created_at_label: 'Created On'
+active_at_label: 'Active On'
+modified_at_label: 'Modified On'
+finished_at_label: 'Finished On'
+devis_status_label: 'Quote'
+price_label: 'Price'
+quote_status_label: 'Quote Status'
+quote_status_shortened_label: 'Status'
+operation_status_label: "Operation Status"
+operations_size_label: "Operation Size"
+operation_id: "Operation ID"
+
+# forms
+operation_detail_label: "Operation Details"
+information_title_label: 'General Information'
+description_label: "Operation Description"
+description_demand_label: "Request's description"
+firstname_label: 'First Name'
+lastname_label: 'Last Name'
+street_label: 'Street'
+city_label: 'City'
+temporary_password_label: 'Temporary Password'
+personal_info_label: 'Personal Information'
+edit_employe_label: 'Edit an Employee'
+edit_customer_label: 'Edit a Customer'
+create_employe_label: 'Add an Employee'
+personal_history_label: "Personal History"
+change_status_label: "Indicate if the Operation Status has Changed"
+
+# profile
+max_operations_label: "Max Simultaneous Operations"
+password_label: 'Password'
+change_password_label: 'Change My Password'
+address_label: 'Address'
+registered_label: 'Registered On'
+ongoing_title_label: 'Ongoing Operations'
+finished_title_label: 'Finished Operations'
+
+
+# buttons
+add_label: 'Add'
+edit_label: 'Edit'
+delete_label: 'Delete'
+attributing_label: 'Assign'
+save_label: 'Save'
+take_label: 'Take'
+estimate_label: 'Estimate'
+back_label: 'Back to List'
+create_label: 'Create'
+add_more_label: 'Add More'
+order_info_label: 'Estimate an operation by clicking "Estimate" or assign operations with the status "Valid" by clicking "Take" or Assign"'
+please_estimate_label: 'Please enter your estimate amount'
+choose_operation_type_label: "Please select the type of operation corresponding to the customer description"
+
+# NAV
+logged_as_label: 'Logged in as'
+disconect_label: 'Logout'
+search_label: 'Search'
+
+
+# tables
+results_label: 'results'
+previous_label: 'Previous'
+next_label: 'Next'
+
+
+
+# temp page temporary, work in progress
+wip_label: "Work in Progress"
+available_at_label: "Available at v3"
+
+
+
+# added later
+profil_title_label: 'Profile'
+inscrit_label: 'Registered on'
+last_care_label: 'Last Care'
+settings_label: 'Settings'
+help_label: 'Help'
+title_menu_users_label: 'USERS'
+title_menu_tools_label: 'TOOLS'
+greetings_label: 'Hello'
+back_to_lp_label: 'Home'
+client_detail_label: 'Customer Details'
+
+
+
+
+# badge oui
+badge_estime_label: 'To Estimate'
+badge_petite_label: 'Small'
+badge_moyenne_label: 'Medium'
+badge_grande_label: 'Large'
+badge_validation_label: 'Validation'
+badge_estimation_label: 'Estimation'
+badge_valide_label: 'Validated'
+badge_refuse_label: 'Refused'
+badge_annulee_label: 'Canceled'
+badge_enattente_label: 'Pending'
+badge_encours_label: 'In Progress'
+badge_terminee_label: 'Completed'
+badge_aattribuer_label: '- To assign -'
+badge_disponible_label: 'Available'
+
+# emails subjects
+your_invoice: 'Your invoice'
+email_resetPass_request: 'Reset your password'
+account_activation: 'Activate your account on Clean This'
+
+# flash Messages
+acessDenied: "You do not have access to this page"
+loginRequired: "You need to log in to access this page"
+profilInformationsModified: 'Your account information has been modified'
+passwordModified: 'Your password has been changed'
+wrongPassword: 'The password you entered is incorrect'
+accountDeleted: 'Your account has been deleted'
+registerToOrder: 'New to CleanThis? Register now to place an order!'
+verifyToOrder: 'You need to verify your account to order'
+fillProfileToOrder: "Please complete your profile before placing an order"
+orderSuccess: "Your order has been placed"
+invoiceAlreadyPaid: 'The invoice has already been paid!'
+invoicePaid: 'The invoice has been paid'
+userDeleted: 'The user has been deleted'
+adminNotDeleted: 'You can not delete a user with Expert Role'
+operationValidatedNoEstimation: "Operation already validated !"
+quoteRefusedNoEstimation: "Quote Refused! (No new estimate possible)"
+yourTurn: "Now it's your turn!"
+toManyOperations: "You currently have too many operations in progress"
+quoteRefused: "The quote for this operation has been refused"
+noAssign: "This operation cannot be assigned yet, please be patient!"
+
+
+
+
+# happy messages
+hp1_label: 'Make them shine!'
+hp2_label: "Ready to make every nook and cranny sparkle?"
+hp3_label: "Dust off your worries!"
+hp4_label: "Together, let's make each operation a sparkling victory!"
+hp5_label: "Let's leave our mark... clean and sparkling!"
+hp6_label: "A sparkling smile and spotless surfaces, that's our promise!"
+hp7_label: "For some, it's just cleaning. For us, it's a sacred mission!"
+hp8_label: "Get ready to get your hands (and gloves) dirty!"
+hp9_label: "We're going to play it dirtily clean."
+hp10_label: "Dust trembles at the sound of your name!"
+hp11_label: "You're a champion of the rag!"
+hp12_label: "It's dangerous to go alone, take this 🧹!"
+hp13_label: "May the Cleanth be with you"
+hp14_label: "The Cleanteastwood of the *pshit*-*pshit*"
+

@@ -1,0 +1,132 @@
+@keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+    
+  .table-row {
+    animation: fadeIn 0.5s ease-out;
+    box-shadow: 0 0 1px #d3d3d3;
+    border-radius: 9px;
+    background-color: #252525;
+    color: #efefef;
+    vertical-align: text-top;
+    display: flex;
+  }
+  
+  .table-row td {
+    flex-grow: 1;
+  }
+  
+  .duration {
+    width: 80px;
+  }
+  
+  .table-body {
+    transition: transform 0.5s ease-out;
+  }
+  
+  .log-table {
+    width: 80%;
+    border-collapse: collapse;
+    margin: auto;
+  }
+  
+  .sign-in-icon,
+  .sign-out-icon,
+  .register-icon,
+  .null-icon{
+    font-size: 1.5em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .sign-in-icon {
+    color: rgb(39, 138, 39);
+  }
+  .sign-out-icon {
+    color: rgb(224, 53, 53);
+  }
+  .register-icon {
+    color: rgb(62, 144, 252);
+  }
+  
+  .table-body td {
+    padding: 25px 12px;
+  }
+  
+  
+  .table-body tr:hover {
+    transition: 0.3s ease-in-out;
+    background-color: #3b3b3b;
+    cursor: pointer;
+    transform: scale(1.1);
+  }
+  
+  .hour,
+  .duration-time {
+    font-weight: bolder;
+    font-size: 1.5em;
+  }
+  
+  .date,
+  .duration-libele {
+    font-size: 0.8em;
+    font-weight: bold;
+    color: rgb(160, 160, 170);
+  }
+  
+  @media (max-width: 1500px) {
+    .auth_log-component {
+      width: 70%;
+    }
+  }
+  
+  @media (max-width: 1000px) {
+    .auth_log-component {
+      width: 80%;
+    }
+  }
+  
+  @media (max-width: 851px) {
+    .auth_log-component {
+      width: 95%;
+    }
+  }
+  
+  @media (max-width: 735px) {
+    .table-body td {
+      font-size: 0.8em;
+    }
+  }
+  
+  @media (max-width: 615px) {
+    .table-body td {
+      font-size: 0.6em;
+    }
+  }
+  
+  @media (max-width: 517px) {
+    .log-message {
+      display: none;
+    }
+  }
+  
+  @media (max-width: 374px) {
+    .table-body td {
+      font-size: 0.5em;
+    }
+  }
+  
+  @media (max-width: 345px) {
+    .table-body td {
+      font-size: 0.4em;
+    }
+  }

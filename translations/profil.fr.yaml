@@ -1,0 +1,50 @@
+title: 
+  Profil
+edittitle: >
+  Modifier mes informations
+userProfile:
+  <h1> Profil de {{ firstname }} </h1>
+nullProfile:
+  <h1> Votre Profil </h1>
+edit: >
+  Éditer mon profil
+password: >
+  Modifier mon mot de passe
+informations : >
+  Mes informations personnelles
+name : >
+  Nom
+fname : >
+  Prénom
+date : >
+  Inscrit le
+contact: >
+  Mes coordonnées 
+mail: >
+  E-Mail
+phone: >
+  Téléphone
+address: >
+  Adresse
+street: >
+  Rue
+city: >
+  Ville
+zipCode: >
+  Code Postal
+confirmDelete: >
+  Ëtes vous sûr de vouloir supprimer votre profil ?
+deleteButton: >
+  Supprimer mon compte
+save: >
+  Enregistrer
+editPassword: >
+  Modifier votre mot de passe
+oldPassword: >
+  Ancien mot de passe
+newPassword : >
+  Nouveau mot de passe
+confirmNewPassword: >
+  Confirmer votre nouveau mot de passe
+NoOperationMessage: >
+  Vous n'avez pas encore d'opérations. Cliquez sur "Commander" pour vivre l'aventure <span>Clean This</span> !

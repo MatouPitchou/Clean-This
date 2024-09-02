@@ -1,0 +1,8 @@
+<div class="info-badge">
+    <i class="fa-solid fa-question-mark status-icon"></i>
+    {% if field.value != null %}    
+        <span class="status">{{ ('badge_' ~ field.value ~ '_label')|lower|replace({' ': '', 'é': 'e', 'è': 'e', 'à': 'a', 'ù': 'u', 'â': 'a', 'ê': 'e', 'î': 'i', 'ô': 'o', 'û': 'u', 'ç': 'c'})|trans }}</span>
+    {% endif %}
+</div>
+<script src="{{ asset('assets/js/field_status_quote.js') }}"></script>
+

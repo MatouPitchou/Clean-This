@@ -1,0 +1,250 @@
+{#
+*
+* @author: Dylan Rohart
+*
+#}
+{% extends '@EasyAdmin/layout.html.twig' %}
+{% block head_stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" href="{{ asset('assets/css/adminpanel.css') }}">
+{% endblock %}
+
+{% block content_header %}
+<div class="content-header-title">
+    <h1 class="title">{{'profil_title_label'|trans}}</h1>
+</div>
+<div class="page-actions">
+    <button class="edit-button action-new btn btn-primary">
+        <span class="action-label">{{'edit_label'|trans}}</span>
+    </button>
+    <button class="save-button action-new btn btn-primary" style="display:none;">
+        <span class="action-label">{{'save_label'|trans}}</span>
+    </button>
+</div>
+{% endblock %}
+
+{% block main %}
+    <h5 class="profil-subtitle">{{message}}</h5>
+
+    {# USER INFORMATION #}
+    <h2 class="profil-name">{{ user.firstname }}</h2>
+    <h5 class="profil-role">
+        {% if user.roles[0] == "ROLE_ADMIN" %}
+            Expert
+        {% elseif user.roles[0] == "ROLE_SENIOR" %}
+            Sénior
+        {% elseif user.roles[0] == "ROLE_APPRENTI" %}
+            {{'apprenti_label'|trans}}
+        {% endif %}
+    </h5>
+
+    <table class="profil-table" style="width: 100%;">
+        <tr class="profil-line line-1">
+            <td class="profil-info">{{'firstname_label'|trans}}</td>
+            <td class="profil-value" data-field="firstname">{{ user.firstname }}</td>
+            <td class="profil-info">{{'mail_label'|trans}}</td>
+            <td class="profil-value" data-field="email">{{ user.email }}</td>
+            <td class="profil-info">{{'address_label'|trans}}</td>
+            <td class="profil-value-no-input">{{ user.fullAddress }} {{ user.zipcode }}</td>
+        </tr>
+        <tr class="profil-line line-2">
+            <td class="profil-info">{{'lastname_label'|trans}}</td>
+            <td class="profil-value" data-field="lastname">{{ user.lastname }}</td>
+            <td class="profil-info">{{'phone_label'|trans}}</td>
+            <td class="profil-value" data-field="phone">{{ user.phone }}</td>
+            <td class="profil-info">{{'inscrit_label'|trans}}</td>
+            <td class="profil-value-no-input">{{ user.createdAt|date('d/m/Y') }}</td>
+        </tr>
+        <tr class="profil-line line-3">
+            <td class="profil-info">{{'max_operations_label'|trans}}</td>
+            <td class="profil-value-no-input">
+                        {% if user.roles[0] == "ROLE_ADMIN" %}
+                            5
+                        {% elseif user.roles[0] == "ROLE_SENIOR" %}
+                            3
+                        {% elseif user.roles[0] == "ROLE_APPRENTI" %}
+                            1
+                        {% endif %}
+            </td>
+            <td class="profil-info">{{'password_label'|trans}}</td>
+            <td class="profil-value-no-input">
+                    <a href="{{ path('app_profil_editPassword', {'id': user.id}) }}">{{'change_password_label'|trans}}</a>
+            </td>
+        </tr>
+    </table>
+    <hr>
+
+
+    {# USERS TABLE OPERATIONS #}
+    {# Affichage des dernières opérations de l'utilisateur #}
+    <div class="user-operations">
+
+
+    {% if operations|length > 0 %}
+    <h2 class="operations-title">{{'ongoing_title_label'|trans}}</h2>
+        <table class="table data-grid">
+            <thead>
+                <tr>
+                    <th class=" header-for-field-text text-">
+                        Type
+                    </th>
+                    <th class=" header-for-field-text text-">
+                        {{'quote_status_shortened_label'|trans}}
+                    </th>
+                    <th class=" header-for-field-text text-">
+                        {{'created_at_label'|trans}}
+                    </th>
+                    <th class=" header-for-field-text text-">
+                        {{'last_care_label'|trans}}
+                    </th>
+                    <th class=" header-for-field-text text-">
+                        {{'price'|trans}}
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for operation in operations|filter(operation => operation.status is same as('En cours'))|slice(0, 5) %}
+                        <tr>
+                            <td class="text- field-text">
+                            {% if operation.services.type != "Custom" %}
+                                {{ ('badge_' ~ operation.services.type ~ '_label')|lower|replace({' ': '', 'é': 'e', 'è': 'e', 'à': 'a', 'ù': 'u', 'â': 'a', 'ê': 'e', 'î': 'i', 'ô': 'o', 'û': 'u', 'ç': 'c'})|trans }}
+                            {% else %}
+                                {{operation.services.type}}
+                            {% endif %}
+                            </td>
+                            <td class="text- field-text">
+                                <span class="badge badge-ongoing">
+                                    <i class="fa-solid fa-circle-check"></i>
+                                    {{ ('badge_' ~ operation.status ~ '_label')|lower|replace({' ': '', 'é': 'e', 'è': 'e', 'à': 'a', 'ù': 'u', 'â': 'a', 'ê': 'e', 'î': 'i', 'ô': 'o', 'û': 'u', 'ç': 'c'})|trans }}
+                                </span>
+                            </td>
+                            <td class="text- field-text">
+                                {{ operation.createdAt|date('d/m/Y H:i') }}
+                            </td>
+                            <td class="text- field-text">
+                                {{ operation.lastModifiedAt|date('d/m/Y H:i') }}
+                            </td>
+                            <td class="text- field-text">
+                                {{ operation.services.price }}
+                            </td>
+                        </tr>
+                {% endfor %}
+
+            </tbody>
+        </table>
+
+    <h2 class="operations-title">{{'finished_title_label'|trans}}</h2>
+        <table class="table data-grid">
+            <thead>
+                <tr>
+                    <th class=" header-for-field-text text-">
+                        Type
+                    </th>
+                    <th class=" header-for-field-text text-">
+                        {{'quote_status_shortened_label'|trans}}
+                    </th>
+                    <th class=" header-for-field-text text-">
+                        {{'created_at_label'|trans}}
+                    </th>
+                    <th class=" header-for-field-text text-">
+                        {{'last_care_label'|trans}}
+                    </th>
+                    <th class=" header-for-field-text text-">
+                        {{'price'|trans}}
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for operation in operations|filter(operation => operation.status is same as('Terminée'))|slice(0, 5) %}
+                    <tr>
+                        <td class="text- field-text">
+                            {% if operation.services.type != "Custom" %}
+                                {{ ('badge_' ~ operation.services.type ~ '_label')|lower|replace({' ': '', 'é': 'e', 'è': 'e', 'à': 'a', 'ù': 'u', 'â': 'a', 'ê': 'e', 'î': 'i', 'ô': 'o', 'û': 'u', 'ç': 'c'})|trans }}
+                            {% else %}
+                                {{operation.services.type}}
+                            {% endif %}
+                        </td>
+                        <td class="text- field-text">
+                            <span class="badge badge-over">
+                                <i class="fa-solid fa-circle-check"></i>
+                                {{ ('badge_' ~ operation.status ~ '_label')|lower|replace({' ': '', 'é': 'e', 'è': 'e', 'à': 'a', 'ù': 'u', 'â': 'a', 'ê': 'e', 'î': 'i', 'ô': 'o', 'û': 'u', 'ç': 'c'})|trans }}
+                            </span>
+                        </td>
+                        <td class="text- field-text">
+                            {{ operation.createdAt|date('d/m/Y H:i') }}
+                        </td>
+                        <td class="text- field-text">
+                            {{ operation.lastModifiedAt|date('d/m/Y H:i') }}
+                        </td>
+                        <td class="text- field-text">
+                            {{ operation.services.price }}
+                        </td>
+                    </tr>
+                {% endfor %}
+
+            </tbody>
+        </table>
+        {% else %}
+            <p>Aucune opération trouvée.</p>
+        {% endif %}
+    </div>
+    <script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const editButton = document.querySelector('.edit-button');
+        editButton.addEventListener('click', function() {
+            document.querySelectorAll('.profil-value').forEach(function(td) {
+                const field = td.getAttribute('data-field');
+                const value = td.textContent.trim();
+                const input = document.createElement('input');
+                input.type = 'text';
+                input.className = 'form-control';
+                input.value = value;
+                input.setAttribute('data-field', field);
+                td.innerHTML = '';
+                td.appendChild(input);
+            });
+            this.style.display = 'none'; // Cachez le bouton d'édition
+            document.querySelector('.save-button').style.display = 'inline-block'; // Affichez le bouton de sauvegarde
+        });
+    });
+document.querySelector('.save-button').addEventListener('click', function() {
+    const updatedData = {};
+    document.querySelectorAll('.profil-value input').forEach(function(input) {
+        const field = input.getAttribute('data-field');
+        updatedData[field] = input.value;
+    });
+
+    fetch('/admin/profil/save', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'X-Requested-With': 'XMLHttpRequest',
+        },
+        body: JSON.stringify(updatedData),
+    })
+    .then(response => response.json())
+    .then(data => {
+        if(data.status === 'success') {
+            // Transformation des inputs en textes dans les <td>
+            document.querySelectorAll('.profil-value').forEach(function(td) {
+                const input = td.querySelector('input');
+                if (input) {
+                    const value = input.value;
+                    td.innerHTML = value; // Remplace l'input par le texte
+                }
+            });
+
+            // Affichage du bouton d'édition et masquage du bouton de sauvegarde
+            document.querySelector('.edit-button').style.display = 'inline-block';
+            document.querySelector('.save-button').style.display = 'none';
+        } else {
+            console.error('Erreur lors de la sauvegarde : ', data.message);
+        }
+    })
+    .catch(error => {
+        console.error('Erreur fetch : ', error);
+    });
+});
+
+    </script>
+{% endblock %}

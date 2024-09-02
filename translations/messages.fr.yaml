@@ -1,0 +1,201 @@
+# dashboard stats
+ingoing_operation_label: 'Opérations en cours'
+most_requested_label: 'Le plus demandé'
+finished_operation_label: 'Opérations terminées'
+finished_operation_that_month_label: 'opérations terminées ce mois-ci'
+revenues_label: "Chiffre d'affaires"
+all_employee_label: 'Tous les employés'
+performance_label: 'Performances'
+since_always_label: 'Depuis toujours'
+monthly_label: 'Mensuel'
+ordered_operations_monthly_label: 'opérations commandées ce mois-ci'
+average_opened_time: "Durée moyenne d'une opération par type"
+general_hystory_label: 'Historique Général'
+personal_hystory_label: 'Historique Personnel'
+ongoing_info_label: "Nombre total d'opérations en cours"
+operations_info_label: "Type d'opérations le plus demandé"
+finished_operations_info_label: 'Total des opérations terminées'
+
+  # SATS LEGENDES
+January_label: 'Janvier'
+February_label: 'Février'
+March_label: 'Mars'
+April_label: 'Avril'
+May_label: 'Mai'
+June_label: 'Juin'
+July_label: 'Juillet'
+August_label: 'Août'
+September_label: 'Séptembre'
+October_label: 'Octobre'
+November_label: 'Novembre'
+December_label: 'Décembre'
+
+a_estimer_label: 'À estimer'
+grande_label: 'Grande'
+moyenne_label: 'Moyenne'
+petite_label: 'Petite'
+
+
+# page title
+employes_label: 'Employés'
+employe_label: 'Employé'
+customer_label: 'Client'
+customers_label: 'Clients'
+apprenti_label: Apprenti
+senior_label: 'Sénior'
+order_label: 'Commandes'
+
+
+# columns title
+fullname_label: 'Nom Prénom'
+mail_label: 'E-mail'
+phone_label: 'Téléphone'
+role_label: 'Role'
+zipcode_label: 'Code Postal'
+fulladdress_label: 'Adresse complète'
+created_at_label: 'Créé le'
+active_at_label: 'Actif le'
+modified_at_label: 'Modifié le'
+finished_at_label: 'Terminé le'
+devis_status_label: 'Devis'
+price_label: 'Prix'
+quote_status_label: 'Statut du devis'
+quote_status_shortened_label: 'Statut'
+operation_status_label: "Statut de l'opération"
+operations_size_label: "Taille de l'opération"
+operation_id: "ID de l'opération"
+
+# forms
+operation_detail_label: "Détails de l'Opération"
+information_title_label: 'Informations générales'
+description_label: "Description de l'opération"
+description_demand_label: "Description de la demande"
+firstname_label: 'Prénom'
+lastname_label: 'Nom de famille'
+street_label: 'Rue'
+city_label: 'Ville'
+temporary_password_label: 'Mot de passe temporaire'
+personal_info_label: 'Informations personnelles'
+edit_employe_label: 'Éditer un employé'
+edit_customer_label: 'Éditer un client'
+create_employe_label: 'Ajouter un employé'
+personal_history_label: "Historique Personnel"
+change_status_label: "Indiquer si le statut de l'opération a changé"
+
+# profil
+max_operations_label: "Nombre d'opérations simultanés max."
+password_label: 'Mot de passe'
+change_password_label: 'Modifier mon mot de passe'
+address_label: 'Adresse'
+registered_label: 'Inscrit le'
+ongoing_title_label: 'Opérations en cours'
+finished_title_label: 'Opérations terminées'
+
+
+# buttons
+add_label: 'Ajouter'
+edit_label: 'Éditer'
+delete_label: 'Supprimer'
+attributing_label: 'Attribuer'
+save_label: 'Sauvegarder'
+take_label: 'Prendre'
+estimate_label: 'Estimer'
+back_label: 'Retour à la liste'
+create_label: 'Créer'
+add_more_label: 'Ajouter plusieurs'
+order_info_label: 'Estimer une operation en cliquant sur "Estimer" ou attribuer des operations avec le status "Valide" en cliquant sur "Prendre" ou Attribuer"'
+please_estimate_label: 'Veuillez entrer le montant de votre estimation'
+choose_operation_type_label: "Veuillez choisir le type d'opération correspondant à la description du client"
+
+
+# NAV
+logged_as_label: 'Connecté en tant que'
+disconect_label: 'Déconnexion'
+search_label: 'Rechercher'
+
+
+# tables
+results_label: 'résultats'
+previous_label: 'Précédent'
+next_label: 'Suivant'
+
+# temp page temporary, work in progress
+wip_label: "Travail en cours"
+available_at_label: "Disponible à la v3"
+
+
+# added later
+profil_title_label: 'Profil'
+inscrit_label: 'Inscrit le'
+last_care_label: 'Dernière prise en charge'
+settings_label: 'Paramètres'
+help_label: 'Aide'
+title_menu_users_label: 'UTILISATEURS'
+title_menu_tools_label: 'OUTILS'
+greetings_label: 'Bonjour'
+back_to_lp_label: 'Accueil'
+client_detail_label: 'Détails du Client'
+
+
+# badge oui
+badge_estime_label: 'À Estimer'
+badge_petite_label: 'Petite'
+badge_moyenne_label: 'Moyenne'
+badge_grande_label: 'Grande'
+badge_validation_label: 'Validation'
+badge_estimation_label: 'Estimation'
+badge_valide_label: 'Validé'
+badge_refuse_label: 'Refusé'
+badge_annulee_label: 'Annulée'
+badge_enattente_label: 'En attente'
+badge_encours_label: 'En cours'
+badge_terminee_label: 'Terminée'
+badge_aattribuer_label: '- A attribuer -'
+badge_disponible_label: 'Disponible'
+
+# emails subjects
+your_invoice: "Votre facture"
+email_resetPass_request: 'Réinitialisation de votre mot de passe'
+account_activation: 'Activation de votre compte sur le site Clean This'
+
+# flash Messages
+acessDenied: "Vous n'avez pas accès à cette page"
+loginRequired: "Vous devez vous connecter pour accéder à cette page"
+profilInformationsModified: 'Les informations de votre compte ont bien été modifiées'
+passwordModified: 'Le mot de passe a été modifié'
+wrongPassword: 'Le mot de passe renseigné est incorrect'
+accountDeleted: 'Votre compte a été supprimé'
+registerToOrder: "Nouveau sur CleanThis ? Inscrivez-vous pour passer une commande !"
+verifyToOrder: "Vous devez vérifier votre compte pour commander"
+fillProfileToOrder: "Veuillez compléter votre profil avant de passer une commande"
+orderSuccess: "Votre commande a bien été prise en compte"
+invoiceAlreadyPaid: 'La facture a déjà été payée !'
+invoicePaid: 'La facture a bien été payée'
+userDeleted: "L'utilisateur a été supprimé"
+adminNotDeleted: 'Vous ne pouvez pas supprimer un utilisateur ayant le rôle Expert'
+operationValidatedNoEstimation: "Opération déjà validée ! (Pas de nouvelles estimation possible)"
+quoteRefusedNoEstimation: "Devis Refusé ! (Pas de nouvelles estimation possible)"
+yourTurn: "À vous de jouer !"
+toManyOperations: "Vous avez trop d'opération en cours actuellement"
+quoteRefused: "Le devis de cette opération a été refusé"
+noAssign: "Cette opération ne peut pas encore être attribuée, un peu de patience !"
+
+
+# happy messages
+hp1_label: 'Faites-les briller !'
+hp2_label: 'Prêt à faire étinceler chaque coin et recoin ?'
+hp3_label: 'Dépoussiérez vos soucis !'
+hp4_label: 'Ensemble, faisons de chaque opération une victoire étincelante !'
+hp5_label: "Laissons notre empreinte... propre et étincelante !"
+hp6_label: "Un sourire étincelant et des surfaces impeccables, c'est notre promesse !"
+hp7_label: "Pour certains, c'est juste du nettoyage. Pour nous, c'est une mission sacrée !"
+hp8_label: "Préparez-vous à vous salir les mains (et les gants) !"
+hp9_label: "On va la jouer salement propre."
+hp10_label: "La poussière tremble en entendant ton nom !"
+hp11_label: "T'es un champion du chiffon toi !"
+hp12_label: "C'est dangereux d'y aller seul, prend ça 🧹 !"
+hp13_label: "Que la Propreté soit avec toi"
+hp14_label: "Le Clint Eastplouf du *pshit*-*pshit*"
+
+
+

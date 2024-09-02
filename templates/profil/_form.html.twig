@@ -1,0 +1,82 @@
+{#
+ * Structure:
+ * @author: Mathilde Breux
+#}
+{{ form_start(form) }}
+
+<div class="actionsContainer">
+	<div class="actions">
+		<button class="button">{{ button_label|default('Enregistrer') }}</button>
+	</div>
+</div>
+<div class="container">
+	<div class="containerLeft">
+		<h2>Mes informations personnelles</h2>
+		<div class="lign">
+			<p class="label">Nom</p>
+			{{ form_row(form.lastname, {
+		'label': false,
+		'attr': {
+			'id': 'lastname',
+			'class': 'input',
+			'placeholder': 'Nom',
+		}}) }}
+		</div>
+
+		<div class="lign">
+			<p class="label">Prénom</p>
+			{{ form_row(form.firstname, {
+		'label': false,
+		'attr': {
+			'id': 'lastname',
+			'class': 'input',
+			'placeholder': 'Prénom',
+		}})	}}
+		</div>
+	</div>
+	<div class="containerRight">
+		<h2>Mes coordonnées</h2>
+		<div class="lign">
+			<p class="label">Téléphone</p>
+			{{ form_row(form.phone, {
+		'label': false,
+		'attr': {
+			'id': 'lastname',
+			'class': 'input',
+			'placeholder': 'Téléphone',
+		}}) }}
+		</div>
+		<div class="lign">
+			<p class="label">Rue</p>
+			{{ form_row(form.street, {
+		'label': false,
+		'attr': {
+			'id': 'lastname',
+			'class': 'input',
+			'placeholder': 'Rue',
+		}}) }}
+		</div>
+		<div class="lign">
+			<p class="label">Ville</p>
+			{{ form_row(form.city, {
+		'label': false,
+		'attr': {
+			'id': 'lastname',
+			'class': 'input',
+			'placeholder': 'Ville',
+		}}) }}
+		</div>
+		<div class="lign">
+			<p class="label">Code postal</p>
+			{{ form_row(form.zipcode, {
+		'label': false,
+		'attr': {
+			'id': 'lastname',
+			'class': 'input',
+			'placeholder': 'Code Postal',
+		}}) }}
+		</div>
+	</div>
+</div>
+
+{{ form_end(form) }}

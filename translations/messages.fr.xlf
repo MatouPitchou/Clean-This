@@ -1,0 +1,602 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+  <file source-language="fr" target-language="fr" datatype="plaintext" original="file.ext">
+    <header>
+      <tool tool-id="symfony" tool-name="Symfony"/>
+    </header>
+    <body>
+      <trans-unit id="xYmYydl" resname="ingoing_operation_label">
+        <source>ingoing_operation_label</source>
+        <target>Opérations en cours</target>
+      </trans-unit>
+      <trans-unit id="YzplOZs" resname="most_requested_label">
+        <source>most_requested_label</source>
+        <target>Le plus demandé</target>
+      </trans-unit>
+      <trans-unit id="XmOOba7" resname="finished_operation_label">
+        <source>finished_operation_label</source>
+        <target>Opérations terminées</target>
+      </trans-unit>
+      <trans-unit id="FhiggB5" resname="finished_operation_that_month_label">
+        <source>finished_operation_that_month_label</source>
+        <target>opérations terminées ce mois-ci</target>
+      </trans-unit>
+      <trans-unit id="1ehegbJ" resname="revenues_label">
+        <source>revenues_label</source>
+        <target>Chiffres d'affaires</target>
+      </trans-unit>
+      <trans-unit id="lZqj.3d" resname="all_employee_label">
+        <source>all_employee_label</source>
+        <target>Tout les employés</target>
+      </trans-unit>
+      <trans-unit id="JNqGFji" resname="performance_label">
+        <source>performance_label</source>
+        <target>Performances</target>
+      </trans-unit>
+      <trans-unit id="fRCYQxO" resname="since_always_label">
+        <source>since_always_label</source>
+        <target>Depuis toujours</target>
+      </trans-unit>
+      <trans-unit id="fwuttRf" resname="monthly_label">
+        <source>monthly_label</source>
+        <target>Mensuel</target>
+      </trans-unit>
+      <trans-unit id="jOXGfX4" resname="ordered_operations_monthly_label">
+        <source>ordered_operations_monthly_label</source>
+        <target>opérations commandées ce mois-ci</target>
+      </trans-unit>
+      <trans-unit id="829dfNc" resname="average_opened_time">
+        <source>average_opened_time</source>
+        <target>Temps moyen d'ouverture d'une opération par type</target>
+      </trans-unit>
+      <trans-unit id="9XHGeT8" resname="general_hystory_label">
+        <source>general_hystory_label</source>
+        <target>Historique général</target>
+      </trans-unit>
+      <trans-unit id="e3OrsTH" resname="personal_hystory_label">
+        <source>personal_hystory_label</source>
+        <target>Historique Personnel</target>
+      </trans-unit>
+      <trans-unit id="zV6Fq6Z" resname="ongoing_info_label">
+        <source>ongoing_info_label</source>
+        <target>Nombre total d'opérations en cours</target>
+      </trans-unit>
+      <trans-unit id="QwTQ5oG" resname="operations_info_label">
+        <source>operations_info_label</source>
+        <target>Type d'opérations le plus demandé</target>
+      </trans-unit>
+      <trans-unit id="qQp8_k5" resname="finished_operations_info_label">
+        <source>finished_operations_info_label</source>
+        <target>Total des opérations terminées</target>
+      </trans-unit>
+      <trans-unit id="0NpJD_U" resname="January_label">
+        <source>January_label</source>
+        <target>Janvier</target>
+      </trans-unit>
+      <trans-unit id="MftsW6c" resname="February_label">
+        <source>February_label</source>
+        <target>Février</target>
+      </trans-unit>
+      <trans-unit id="xavWfwY" resname="March_label">
+        <source>March_label</source>
+        <target>Mars</target>
+      </trans-unit>
+      <trans-unit id="YkPhm78" resname="April_label">
+        <source>April_label</source>
+        <target>Avril</target>
+      </trans-unit>
+      <trans-unit id="IhXjeBf" resname="May_label">
+        <source>May_label</source>
+        <target>Mai</target>
+      </trans-unit>
+      <trans-unit id="q8ae07W" resname="June_label">
+        <source>June_label</source>
+        <target>Juin</target>
+      </trans-unit>
+      <trans-unit id="VQUBrh0" resname="July_label">
+        <source>July_label</source>
+        <target>Juillet</target>
+      </trans-unit>
+      <trans-unit id="UqHAiH1" resname="August_label">
+        <source>August_label</source>
+        <target>Août</target>
+      </trans-unit>
+      <trans-unit id="0lwcCAR" resname="September_label">
+        <source>September_label</source>
+        <target>Séptembre</target>
+      </trans-unit>
+      <trans-unit id="wCS6q7w" resname="October_label">
+        <source>October_label</source>
+        <target>Octobre</target>
+      </trans-unit>
+      <trans-unit id="XEUW4da" resname="November_label">
+        <source>November_label</source>
+        <target>Novembre</target>
+      </trans-unit>
+      <trans-unit id="3XCXFyX" resname="December_label">
+        <source>December_label</source>
+        <target>Décembre</target>
+      </trans-unit>
+      <trans-unit id="wec_y0v" resname="a_estimer_label">
+        <source>a_estimer_label</source>
+        <target>À estimer</target>
+      </trans-unit>
+      <trans-unit id="wvSTbph" resname="grande_label">
+        <source>grande_label</source>
+        <target>Grande</target>
+      </trans-unit>
+      <trans-unit id="OCqDnJo" resname="moyenne_label">
+        <source>moyenne_label</source>
+        <target>Moyenne</target>
+      </trans-unit>
+      <trans-unit id="7tG0UXZ" resname="petite_label">
+        <source>petite_label</source>
+        <target>Petite</target>
+      </trans-unit>
+      <trans-unit id="6WeyxB3" resname="employes_label">
+        <source>employes_label</source>
+        <target>Employés</target>
+      </trans-unit>
+      <trans-unit id="g_4PskY" resname="employe_label">
+        <source>employe_label</source>
+        <target>Employé</target>
+      </trans-unit>
+      <trans-unit id="AX2voZH" resname="customer_label">
+        <source>customer_label</source>
+        <target>Client</target>
+      </trans-unit>
+      <trans-unit id="O87COgs" resname="customers_label">
+        <source>customers_label</source>
+        <target>Clients</target>
+      </trans-unit>
+      <trans-unit id="GpoQwoa" resname="apprenti_label">
+        <source>apprenti_label</source>
+        <target>Apprenti</target>
+      </trans-unit>
+      <trans-unit id="GpoQwaaaoa" resname="senior_label">
+        <source>senior_label</source>
+        <target>Sénior</target>
+      </trans-unit>
+      <trans-unit id="iAWLQdt" resname="order_label">
+        <source>order_label</source>
+        <target>Commandes</target>
+      </trans-unit>
+      <trans-unit id="5saLaB7" resname="fullname_label">
+        <source>fullname_label</source>
+        <target>Nom Prénom</target>
+      </trans-unit>
+      <trans-unit id="4Bo6u7m" resname="mail_label">
+        <source>mail_label</source>
+        <target>E-mail</target>
+      </trans-unit>
+      <trans-unit id="0nVvshE" resname="phone_label">
+        <source>phone_label</source>
+        <target>Téléphone</target>
+      </trans-unit>
+      <trans-unit id="b_T8Sle" resname="role_label">
+        <source>role_label</source>
+        <target>Role</target>
+      </trans-unit>
+      <trans-unit id="AgoRPsl" resname="zipcode_label">
+        <source>zipcode_label</source>
+        <target>Code Postal</target>
+      </trans-unit>
+      <trans-unit id="mUCZkAu" resname="fulladdress_label">
+        <source>fulladdress_label</source>
+        <target>Adresse complète</target>
+      </trans-unit>
+      <trans-unit id="6bhWgJL" resname="created_at_label">
+        <source>created_at_label</source>
+        <target>Créé le</target>
+      </trans-unit>
+      <trans-unit id="wUmiSL9" resname="active_at_label">
+        <source>active_at_label</source>
+        <target>Actif le</target>
+      </trans-unit>
+      <trans-unit id="i4E44t4" resname="modified_at_label">
+        <source>modified_at_label</source>
+        <target>Modifié le</target>
+      </trans-unit>
+      <trans-unit id="NxkYC0O" resname="finished_at_label">
+        <source>finished_at_label</source>
+        <target>Terminé le</target>
+      </trans-unit>
+      <trans-unit id="bp0IRKV" resname="devis_status_label">
+        <source>devis_status_label</source>
+        <target>Devis</target>
+      </trans-unit>
+      <trans-unit id="hP5kIJZ" resname="price_label">
+        <source>price_label</source>
+        <target>Prix</target>
+      </trans-unit>
+      <trans-unit id="hHXW8T." resname="quote_status_label">
+        <source>quote_status_label</source>
+        <target>Statut</target>
+      </trans-unit>
+      <trans-unit id="_SeApZ_" resname="quote_status_shortened_label">
+        <source>quote_status_shortened_label</source>
+        <target>Statut</target>
+      </trans-unit>
+      <trans-unit id="pagQORS" resname="operation_status_label">
+        <source>operation_status_label</source>
+        <target>Statut de l'opération</target>
+      </trans-unit>
+      <trans-unit id="OXXfdP3" resname="operations_size_label">
+        <source>operations_size_label</source>
+        <target>Taille de l'opération</target>
+      </trans-unit>
+      <trans-unit id="mphWslP" resname="operation_id">
+        <source>operation_id</source>
+        <target>ID de l'opération</target>
+      </trans-unit>
+      <trans-unit id="jcCmxE4" resname="operation_detail_label">
+        <source>operation_detail_label</source>
+        <target>Détail de l'opération</target>
+      </trans-unit>
+      <trans-unit id="BYRp86U" resname="information_title_label">
+        <source>information_title_label</source>
+        <target>Informations générales</target>
+      </trans-unit>
+      <trans-unit id="EZaLLVx" resname="description_label">
+        <source>description_label</source>
+        <target>Description de l'opération</target>
+      </trans-unit>
+      <trans-unit id="UEUZcEI" resname="description_demand_label">
+        <source>description_demand_label</source>
+        <target>Description de la demande</target>
+      </trans-unit>
+      <trans-unit id="HGTOf.Y" resname="firstname_label">
+        <source>firstname_label</source>
+        <target>Prénom</target>
+      </trans-unit>
+      <trans-unit id="UuebFxl" resname="lastname_label">
+        <source>lastname_label</source>
+        <target>Nom de famille</target>
+      </trans-unit>
+      <trans-unit id="i6nlwRY" resname="street_label">
+        <source>street_label</source>
+        <target>Rue</target>
+      </trans-unit>
+      <trans-unit id="cZDj6Fo" resname="city_label">
+        <source>city_label</source>
+        <target>Ville</target>
+      </trans-unit>
+      <trans-unit id="Z4eACXl" resname="temporary_password_label">
+        <source>temporary_password_label</source>
+        <target>Mot de passe temporaire</target>
+      </trans-unit>
+      <trans-unit id="O8dHOFk" resname="personal_info_label">
+        <source>personal_info_label</source>
+        <target>Informations personnelles</target>
+      </trans-unit>
+      <trans-unit id="A4dxk0." resname="edit_employe_label">
+        <source>edit_employe_label</source>
+        <target>Editer un employé</target>
+      </trans-unit>
+      <trans-unit id="yPDT9v8" resname="edit_customer_label">
+        <source>edit_customer_label</source>
+        <target>Editer un client</target>
+      </trans-unit>
+      <trans-unit id="8a42WNi" resname="create_employe_label">
+        <source>create_employe_label</source>
+        <target>Ajouter un employé</target>
+      </trans-unit>
+      <trans-unit id=".rudCTT" resname="personal_history_label">
+        <source>personal_history_label</source>
+        <target>Historique Personnel</target>
+      </trans-unit>
+      <trans-unit id="8as3jDX" resname="change_status_label">
+        <source>change_status_label</source>
+        <target>Indiquer si le statut de l'opération a changé</target>
+      </trans-unit>
+      <trans-unit id="nMBykAW" resname="max_operations_label">
+        <source>max_operations_label</source>
+        <target>Nombre d'opérations simultanés max.</target>
+      </trans-unit>
+      <trans-unit id="HDBrE_m" resname="password_label">
+        <source>password_label</source>
+        <target>Mot de passe</target>
+      </trans-unit>
+      <trans-unit id="VdIuzo_" resname="change_password_label">
+        <source>change_password_label</source>
+        <target>Modifier mon mot de passe</target>
+      </trans-unit>
+      <trans-unit id="pPJYkUO" resname="address_label">
+        <source>address_label</source>
+        <target>Adresse</target>
+      </trans-unit>
+      <trans-unit id="eeBIW21" resname="registered_label">
+        <source>registered_label</source>
+        <target>Inscrit le</target>
+      </trans-unit>
+      <trans-unit id="vEU.H0M" resname="ongoing_title_label">
+        <source>ongoing_title_label</source>
+        <target>Opérations en cours</target>
+      </trans-unit>
+      <trans-unit id="glbb0WJ" resname="finished_title_label">
+        <source>finished_title_label</source>
+        <target>Opérations terminées</target>
+      </trans-unit>
+      <trans-unit id="B6parks" resname="add_label">
+        <source>add_label</source>
+        <target>Ajouter</target>
+      </trans-unit>
+      <trans-unit id="Bf8WKcO" resname="edit_label">
+        <source>edit_label</source>
+        <target>Éditer</target>
+      </trans-unit>
+      <trans-unit id="tpk8S3W" resname="delete_label">
+        <source>delete_label</source>
+        <target>Supprimer</target>
+      </trans-unit>
+      <trans-unit id="Ldq8LjC" resname="attributing_label">
+        <source>attributing_label</source>
+        <target>Attribuer</target>
+      </trans-unit>
+      <trans-unit id="JzkYQnh" resname="save_label">
+        <source>save_label</source>
+        <target>Sauvegarder</target>
+      </trans-unit>
+      <trans-unit id="DvaHSTS" resname="take_label">
+        <source>take_label</source>
+        <target>Prendre</target>
+      </trans-unit>
+      <trans-unit id="DzLYMw." resname="estimate_label">
+        <source>estimate_label</source>
+        <target>Estimer</target>
+      </trans-unit>
+      <trans-unit id="uzElc7N" resname="back_label">
+        <source>back_label</source>
+        <target>Retour à la liste</target>
+      </trans-unit>
+      <trans-unit id="HDExtIm" resname="create_label">
+        <source>create_label</source>
+        <target>Créer</target>
+      </trans-unit>
+      <trans-unit id="skVwrfI" resname="add_more_label">
+        <source>add_more_label</source>
+        <target>Ajouter plusieurs</target>
+      </trans-unit>
+      <trans-unit id="ZqbtP1K" resname="order_info_label">
+        <source>order_info_label</source>
+        <target>Estimer une operation en cliquant sur "Estimer" ou attribuer des operations avec le status "Valide" en cliquant sur "Prendre" ou Attribuer"</target>
+      </trans-unit>
+      <trans-unit id="yzkhwcT" resname="please_estimate_label">
+        <source>please_estimate_label</source>
+        <target>Veuillez entrer le montant de votre estimation</target>
+      </trans-unit>
+      <trans-unit id="amjH_8r" resname="choose_operation_type_label">
+        <source>choose_operation_type_label</source>
+        <target>Veuillez choisir le type d'opération correspondant à la description du client</target>
+      </trans-unit>
+      <trans-unit id="fBahK85" resname="logged_as_label">
+        <source>logged_as_label</source>
+        <target>Connecté en tant que</target>
+      </trans-unit>
+      <trans-unit id="C3Sv3nm" resname="disconect_label">
+        <source>disconect_label</source>
+        <target>Déconnexion</target>
+      </trans-unit>
+      <trans-unit id="a4EMPGd" resname="search_label">
+        <source>search_label</source>
+        <target>Rechercher</target>
+      </trans-unit>
+      <trans-unit id="9REZQJw" resname="results_label">
+        <source>results_label</source>
+        <target>résultats</target>
+      </trans-unit>
+      <trans-unit id="pCHPouA" resname="previous_label">
+        <source>previous_label</source>
+        <target>Précédent</target>
+      </trans-unit>
+      <trans-unit id="lE25Yt9" resname="next_label">
+        <source>next_label</source>
+        <target>Suivant</target>
+      </trans-unit>
+      <trans-unit id="DdRfXiq" resname="wip_label">
+        <source>wip_label</source>
+        <target>Travail en cours</target>
+      </trans-unit>
+      <trans-unit id="mrSnXlo" resname="available_at_label">
+        <source>available_at_label</source>
+        <target>Historique Personnel</target>
+      </trans-unit>
+      <trans-unit id="cHh6g.O" resname="profil_title_label">
+        <source>profil_title_label</source>
+        <target>Profil</target>
+      </trans-unit>
+      <trans-unit id="Wg9zpLD" resname="inscrit_label">
+        <source>inscrit_label</source>
+        <target>Inscrit le</target>
+      </trans-unit>
+      <trans-unit id="M9vC85E" resname="last_care_label">
+        <source>last_care_label</source>
+        <target>Dernière prise en charge</target>
+      </trans-unit>
+      <trans-unit id="W8N4j0n" resname="settings_label">
+        <source>settings_label</source>
+        <target>Paramètres</target>
+      </trans-unit>
+      <trans-unit id="A409LgV" resname="help_label">
+        <source>help_label</source>
+        <target>Aide</target>
+      </trans-unit>
+      <trans-unit id="9ZswiQx" resname="title_menu_users_label">
+        <source>title_menu_users_label</source>
+        <target>UTILISATEURS</target>
+      </trans-unit>
+      <trans-unit id="IQrC92C" resname="title_menu_tools_label">
+        <source>title_menu_tools_label</source>
+        <target>OUTILS</target>
+      </trans-unit>
+      <trans-unit id="VC_vPmu" resname="greetings_label">
+        <source>greetings_label</source>
+        <target>Bonjour</target>
+      </trans-unit>
+      <trans-unit id="9ROu687" resname="back_to_lp_label">
+        <source>back_to_lp_label</source>
+        <target>Accueil</target>
+      </trans-unit>
+      <trans-unit id="dMYg5HW" resname="badge_estime_label">
+        <source>badge_estime_label</source>
+        <target>À Estimer</target>
+      </trans-unit>
+      <trans-unit id="5Y2JrWa" resname="badge_petite_label">
+        <source>badge_petite_label</source>
+        <target>Petite</target>
+      </trans-unit>
+      <trans-unit id="ZmnatRm" resname="badge_moyenne_label">
+        <source>badge_moyenne_label</source>
+        <target>Moyenne</target>
+      </trans-unit>
+      <trans-unit id="PnM4UsJ" resname="badge_grande_label">
+        <source>badge_grande_label</source>
+        <target>Grande</target>
+      </trans-unit>
+      <trans-unit id="kC1QE2t" resname="badge_validation_label">
+        <source>badge_validation_label</source>
+        <target>Validation</target>
+      </trans-unit>
+      <trans-unit id="q6pGtzw" resname="badge_estimation_label">
+        <source>badge_estimation_label</source>
+        <target>Estimation</target>
+      </trans-unit>
+      <trans-unit id="T9ozyzo" resname="badge_valide_label">
+        <source>badge_valide_label</source>
+        <target>Validé</target>
+      </trans-unit>
+      <trans-unit id="ynL.lSw" resname="badge_refuse_label">
+        <source>badge_refuse_label</source>
+        <target>Refusé</target>
+      </trans-unit>
+      <trans-unit id="e5sxHTW" resname="badge_annulee_label">
+        <source>badge_annulee_label</source>
+        <target>Annulée</target>
+      </trans-unit>
+      <trans-unit id="5UaJbrD" resname="badge_enattente_label">
+        <source>badge_enattente_label</source>
+        <target>En attente</target>
+      </trans-unit>
+      <trans-unit id="tNFOpii" resname="badge_encours_label">
+        <source>badge_encours_label</source>
+        <target>En cours</target>
+      </trans-unit>
+      <trans-unit id="yvQmnUK" resname="badge_terminee_label">
+        <source>badge_terminee_label</source>
+        <target>Terminé</target>
+      </trans-unit>
+      <trans-unit id="dtgJfwk" resname="badge_aattribuer_label">
+        <source>badge_aattribuer_label</source>
+        <target>A attribuer</target>
+      </trans-unit>
+      <trans-unit id="OYdSRHp" resname="badge_disponible_label">
+        <source>badge_disponible_label</source>
+        <target>Disponible</target>
+      </trans-unit>
+      <trans-unit id="xcp988Q" resname="your_invoice">
+        <source>your_invoice</source>
+        <target>Votre facture</target>
+      </trans-unit>
+      <trans-unit id="V3QZFry" resname="email_resetPass_request">
+        <source>email_resetPass_request</source>
+        <target>Réinitialisation de votre mot de passe</target>
+      </trans-unit>
+      <trans-unit id="ck18ZUD" resname="account_activation">
+        <source>account_activation</source>
+        <target>Activation de votre compte sur le site Clean This</target>
+      </trans-unit>
+      <trans-unit id="z1.nY_P" resname="acessDenied">
+        <source>acessDenied</source>
+        <target>Vous n'avez pas accès à cette page</target>
+      </trans-unit>
+      <trans-unit id="Q2hjI3g" resname="loginRequired">
+        <source>loginRequired</source>
+        <target>Vous devez vous connecter pour accéder à cette page</target>
+      </trans-unit>
+      <trans-unit id="GiWpre." resname="profilInformationsModified">
+        <source>profilInformationsModified</source>
+        <target>Les informations de votre compte ont bien été modifiées</target>
+      </trans-unit>
+      <trans-unit id="aNwIVf7" resname="passwordModified">
+        <source>passwordModified</source>
+        <target>Le mot de passe a été modifié</target>
+      </trans-unit>
+      <trans-unit id="Suy391C" resname="wrongPassword">
+        <source>wrongPassword</source>
+        <target>Le mot de passe renseigné est incorrect</target>
+      </trans-unit>
+      <trans-unit id="p_85Sfw" resname="accountDeleted">
+        <source>accountDeleted</source>
+        <target>Votre compte a été supprimé</target>
+      </trans-unit>
+      <trans-unit id="az5FkUQ" resname="hp1_label">
+        <source>hp1_label</source>
+        <target>Faites-les briller !</target>
+      </trans-unit>
+      <trans-unit id="dJ3XcgY" resname="hp2_label">
+        <source>hp2_label</source>
+        <target>Prêt à faire étinceler chaque coin et recoin ?</target>
+      </trans-unit>
+      <trans-unit id="koQiDQG" resname="hp3_label">
+        <source>hp3_label</source>
+        <target>Dépoussiérez vos soucis !</target>
+      </trans-unit>
+      <trans-unit id="jlTBEX1" resname="hp4_label">
+        <source>hp4_label</source>
+        <target>Ensemble, faisons de chaque opération une victoire étincelante !</target>
+      </trans-unit>
+      <trans-unit id="sCGm.3x" resname="hp5_label">
+        <source>hp5_label</source>
+        <target>Laissons notre empreinte... propre et étincelante !</target>
+      </trans-unit>
+      <trans-unit id="Rvh6MBO" resname="hp6_label">
+        <source>hp6_label</source>
+        <target>Un sourire étincelant et des surfaces impeccables, c'est notre promesse !</target>
+      </trans-unit>
+      <trans-unit id="ykiZ8os" resname="hp7_label">
+        <source>hp7_label</source>
+        <target>Pour certains, c'est juste du nettoyage. Pour nous, c'est une mission sacrée !</target>
+      </trans-unit>
+      <trans-unit id="buywhvr" resname="hp8_label">
+        <source>hp8_label</source>
+        <target>Préparez-vous à vous salir les mains (et les gants) !</target>
+      </trans-unit>
+      <trans-unit id="seHzWj8" resname="hp9_label">
+        <source>hp9_label</source>
+        <target>On va la jouer salement propre.</target>
+      </trans-unit>
+      <trans-unit id="Zwltndg" resname="hp10_label">
+        <source>hp10_label</source>
+        <target>La poussière tremble en entendant ton nom !</target>
+      </trans-unit>
+      <trans-unit id="rQyh.iw" resname="hp11_label">
+        <source>hp11_label</source>
+        <target>T'es un champion du chiffon toi !</target>
+      </trans-unit>
+      <trans-unit id="jIeBqx0" resname="hp12_label">
+        <source>hp12_label</source>
+        <target>C'est dangereux d'y aller seul, prend ça 🧹 !</target>
+      </trans-unit>
+      <trans-unit id="jIeBaqx0" resname="hp13_label">
+        <source>hp13_label</source>
+        <target>Que la Propreté soit avec toi</target>
+      </trans-unit>
+      <trans-unit id="jIeBgqx0" resname="hp14_label">
+        <source>hp14_label</source>
+        <target>Le Clint Eastplouf du *pshit*-*pshit*</target>
+      </trans-unit>
+      <trans-unit id="xsQjAAi" resname="badge_petit_label">
+        <source>badge_petit_label</source>
+        <target>Petite</target>
+      </trans-unit>
+      <trans-unit id="i0EuWBq" resname="badge_moyen_label">
+        <source>badge_moyen_label</source>
+        <target>Moyenne</target>
+      </trans-unit>
+      <trans-unit id="HY8N4wo" resname="badge_grand_label">
+        <source>badge_grand_label</source>
+        <target>Grande</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

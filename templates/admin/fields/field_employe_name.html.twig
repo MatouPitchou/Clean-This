@@ -1,0 +1,16 @@
+<div class="employee_badge_container">
+    <i class="fa-solid fa-user employee_icon"></i>
+    <span class="employee_name">{{ field.value | trans }}</span>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    document.querySelectorAll('.employee_badge_container').forEach(function(container) {
+        var employeeName = container.querySelector('.employee_name').textContent.trim();
+        if (employeeName === '{{ "badge_aattribuer_label"|trans }}') {
+            container.querySelector('.employee_icon').style.display = 'none';
+            container.style.backgroundColor = '#99fff3';
+        }
+    });
+});
+</script>

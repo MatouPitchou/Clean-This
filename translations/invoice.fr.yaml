@@ -1,0 +1,22 @@
+operationNumber:
+  Opération
+dateCreationInvoice:
+  Facture créée le
+dateInvoiceDue:
+  Facture à payer avant le
+operationInformations:
+  Informations concernant l'opération
+creationDate:
+  Création
+finishedDate:
+  Clôture
+price:
+  Prix
+priceHT:
+  Prix HT
+TVA:
+  Montant de la TVA
+total:
+  Montant total
+thankYouMessage:
+  L'équipe de Clean This vous remercie d'avoir fait appel à nos services !

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+  <file source-language="fr" target-language="fr" datatype="plaintext" original="file.ext">
+    <header>
+      <tool tool-id="symfony" tool-name="Symfony"/>
+    </header>
+    <body>
+      <trans-unit id="yMSusRL" resname="navbar.services">
+        <source>navbar.services</source>
+        <target>Services
+</target>
+      </trans-unit>
+      <trans-unit id="yZqn9Kx" resname="navbar.advices">
+        <source>navbar.advices</source>
+        <target>Conseils</target>
+      </trans-unit>
+      <trans-unit id="cirzniH" resname="navbar.jobs">
+        <source>navbar.jobs</source>
+        <target>Jobs</target>
+      </trans-unit>
+      <trans-unit id="cHvHEDM" resname="navbar.orders">
+        <source>navbar.orders</source>
+        <target>Commander</target>
+      </trans-unit>
+      <trans-unit id="wIbXOWy" resname="navbar.hello">
+        <source>navbar.hello</source>
+        <target>Bonjour
+</target>
+      </trans-unit>
+      <trans-unit id="Bs7Pw5B" resname="navbar.adminMenu">
+        <source>navbar.adminMenu</source>
+        <target>Espace Admin
+</target>
+      </trans-unit>
+      <trans-unit id="qjpMvHc" resname="navbar.collabMenu">
+        <source>navbar.collabMenu</source>
+        <target>Espace Employé
+</target>
+      </trans-unit>
+      <trans-unit id="lgxeOlm" resname="navbar.profile">
+        <source>navbar.profile</source>
+        <target>Profil
+</target>
+      </trans-unit>
+      <trans-unit id="dre.v59" resname="navbar.history">
+        <source>navbar.history</source>
+        <target>Mon Historique
+</target>
+      </trans-unit>
+      <trans-unit id="4lZ8XdL" resname="navbar.order">
+        <source>navbar.order</source>
+        <target>Nouvelle Commande
+</target>
+      </trans-unit>
+      <trans-unit id="t8oQeWx" resname="navbar.logout">
+        <source>navbar.logout</source>
+        <target>Deconnexion
+</target>
+      </trans-unit>
+      <trans-unit id="I5qdD7E" resname="navbar.login">
+        <source>navbar.login</source>
+        <target>Connexion
+</target>
+      </trans-unit>
+      <trans-unit id="D_cMuBO" resname="navbar.isVerified">
+        <source>navbar.isVerified</source>
+        <target>Merci de vérifier votre mail
+</target>
+      </trans-unit>
+      <trans-unit id="YgT8l0x" resname="navbar.reSend">
+        <source>navbar.reSend</source>
+        <target>Renvoyer le lien d'activation</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

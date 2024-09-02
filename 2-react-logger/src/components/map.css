@@ -1,0 +1,54 @@
+#map{
+    height: 93vh;
+    z-index: 0;
+    width: 100%;
+    top: 1px
+}
+/* J'enlève la scrollbar */
+body::-webkit-scrollbar {
+    width: 0em;
+  }
+h1{
+    color: aliceblue;
+    margin-bottom: 0px;
+}
+.sidebar {
+    color: #a0a0aa;
+    z-index: 1;
+    background-color: #282828;
+    width: 25rem;
+    height: 95vh;
+    left: 0px;
+    position: absolute;
+    border-top: 1px solid rgba(0, 0, 0, 0.158);
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+
+.sidebar h2{
+
+  margin: 16px;
+}
+.sidebar li{
+  cursor: pointer;
+  width: 20rem;
+  list-style: none;
+  padding: 0;
+}
+.sidebar ul{
+  padding: 16px;
+}
+.sidebar li:hover{
+  color: white;
+  font-weight: bolder;
+}
+
+.container {
+  max-width: 100%;
+  padding: 0;
+}
+
+.leaflet-control-container {
+  position: absolute; 
+  right: 56px;
+} 

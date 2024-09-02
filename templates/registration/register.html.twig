@@ -1,0 +1,217 @@
+{# 
+  Structure:
+  @author: Mathilde Breux
+  Design: Dylan Rohart
+
+  @author:
+ #}
+<!DOCTYPE html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	{% block stylesheets %}
+		<link rel="stylesheet" href="{{asset('assets/css/auth.css')}}">
+
+	{% endblock %}
+	{% block javascripts %}
+		<script src="https://kit.fontawesome.com/bfb56a61fd.js" crossorigin="anonymous"></script>
+	{% endblock %}
+
+</head>
+
+{% block body %}
+{% include "_partials/_flashMessages.html.twig" %}
+
+<section class="forms-template">
+	<div class="form-description register-description">
+		<img src="{{asset('assets/black_logo.svg')}}" alt="logo cleanTHIS">
+		<div class="form-description-text">
+			<h1 class="h3 mb-3 font-weight-normal">CLEAN THIS</h1>
+			<h2>{{ 'Subtitle'|trans({}, 'login')|raw }}</h2>
+			<p class="form-legend">
+				{{ 'Legend'|trans({}, 'login')|raw }}
+			</p>
+		</div>
+	</div>
+	<div class="form-form register-form">
+		<div class="form-auth-title">
+			<h1 class="used-auth-form">
+				{{ 'Register'|trans({}, 'login')|raw }}
+			</h1>
+			<a class="switch-auth-form" href="{{ path('app_login') }}">
+				<span>{{ 'Login'|trans({}, 'login')|raw }}</span>
+			</a>
+		</div>
+
+		<div class="auth-forms register-page">
+			{{ form_start(registrationForm) }}
+			{{ form_row(registrationForm.lastname) }}
+			{{ form_row(registrationForm.firstname) }}
+			{{ form_row(registrationForm.email, {'type':'email'}) }}
+
+			{{ form_row(registrationForm.phone) }}
+
+			<div class="autoComplete_wrapper">
+				<div class="autoComplete_wrapper" role="combobox" aria-owns="autoComplete_list_1" aria-haspopup="true" aria-expanded="false">
+					{{ form_row(registrationForm.street, {'id':'street','type':'search','dir':'ltr','spellcheck':'false','autocorrect':'off','autocomplete':'off','autocapitalize':'off','aria-controls':'autoComplete_list_1','aria-autocomplete':'both','placeholder': 'AdressSearch'|trans({}, 'login')|raw,'aria-activedescendant':''}) }}
+					<ul id="autoComplete_list_1" role="listbox" hidden="" class="">
+						<li id="autoComplete_result_0" role="option">
+							<mark></mark>
+						</li>
+						<li id="autoComplete_result_1" role="option">
+							<mark></mark>
+						</li>
+						<li id="autoComplete_result_2" role="option">
+							<mark></mark>
+						</li>
+						<li id="autoComplete_result_3" role="option">
+							<mark></mark>
+						</li>
+						<li id="autoComplete_result_4" role="option">
+							<mark></mark>
+						</li>
+					</ul>
+				</div>
+				{{ form_row(registrationForm.city, {'id':'city'}) }}
+				{{ form_row(registrationForm.zipcode, {'id':'zipcode'}) }}
+			</div>
+
+			{# LE PASSWORD #}
+			<div class="password">
+				{{ form_row(registrationForm.plainPassword.first) }}
+				<div class="toggle-password-new">
+					<i id="togglePasswordNew" class="fas fa-eye eye"></i>
+				</div>
+				{{ form_row(registrationForm.plainPassword.second) }}
+				<div class="toggle-password-repeat">
+					<i id="togglePasswordRepeat" class="fas fa-eye eye"></i>
+				</div>
+			</div>
+
+			<div>
+				{{ form_widget(registrationForm.agreeTerms) }}
+				{{ form_label(registrationForm.agreeTerms, 'Accepter les conditions d\'utilisations') }}
+				</div>
+					{{ form_errors(registrationForm) }}
+
+				<input type="submit" class="auth-button" value={{ 'Register'|trans({}, 'login')|raw }}></input>
+				
+				<a  class="auth-button google" href="{{ path('app_connect', {service: 'google'}) }}">
+					<img src="{{asset('assets/images/google-logo.png')}}" alt="google-logo">
+					<span> {{ 'Google'|trans({}, 'login')|raw }}</span>
+				</a>
+				{{ form_end(registrationForm) }}
+				</div>
+			</div>
+		</div>
+	</section>
+
+
+
+
+	<script src="https://cdn.jsdelivr.net/npm/@tarekraafat/autocomplete.js@10.2.6/dist/autoComplete.min.js"></script>
+	<script>
+		var myobject = []
+		const adress = document.querySelector('#street')
+		const postcode = document.querySelector('#zipcode')
+		const city = document.querySelector('#city')
+		const autoCompleteJS = new autoComplete({
+		selector: "#street",
+		data: {
+		src: async () => {
+		const term = document.querySelector('#street').value;
+		if (term) {
+		const response = await fetch (`https://api-adresse.data.gouv.fr/search/?q=${term}`)
+		const json = await response.json()
+		myobject = json.features.map(function (el) {
+		return {
+		label: el.properties.label,
+		value: el.properties.label,
+		lat: el.geometry.coordinates[1],
+		lon: el.geometry.coordinates[0],
+		housenumber: el.properties.housenumber,
+		name: el.properties.name,
+		postcode: el.properties.postcode,
+		city: el.properties.city,
+		context: el.properties.context,
+		type: el.properties.type,
+		street: el.properties.street,
+		boundingbox: null
+		}
+		})
+		adresses = myobject.map(el => el.value)
+		console.log(adresses);
+		} else {
+		adresses = []
+		}
+		// ... other code
+		return adresses
+		},
+		// src: ["Sauce - Thousand Island", "Wild Boar - Tenderloin", "Goat - Whole Cut"],
+		cache: false
+		},
+		resultsList: {
+		element: (list, data) => {
+		if (!data.results.length) { // Create "No Results" message element
+		const message = document.createElement("div");
+		// Add class to the created element
+		message.setAttribute("class", "no_result");
+		// Add message text content
+		message.innerHTML = `<span>Found No Results for "${
+		data.query
+		}"</span>`;
+		// Append message element to the results list
+		list.prepend(message);
+		}
+		},
+		noResults: true
+		},
+		resultItem: {
+		highlight: true
+		},
+		events: {
+		input: {
+		selection: (event) => {
+		const selection = event.detail.selection.value;
+		autoCompleteJS.input.value = selection;
+		var result = myobject.find(el => el.value == event.detail.selection.value)
+		if (result) {
+		adress.value = result.name
+		postcode.value = result.postcode
+		city.value = result.city
+		} else {
+		adress.value = ''
+		postcode.value = ''
+		city.value = ''
+
+		}
+		}
+		}
+		}
+		});
+	</script>
+
+<script>
+		function togglePassword(inputId, iconId) {
+let input = document.getElementById(inputId);
+let icon = document.getElementById(iconId);
+if (input.type === "password") {
+input.type = "text";
+icon.classList.remove('fa-eye');
+icon.classList.add('fa-eye-slash');
+} else {
+input.type = "password";
+icon.classList.remove('fa-eye-slash');
+icon.classList.add('fa-eye');
+}
+}
+
+document.getElementById("togglePasswordNew").addEventListener('click', function () {
+togglePassword('registration_form_plainPassword_first', 'togglePasswordNew');
+});
+
+document.getElementById("togglePasswordRepeat").addEventListener('click', function () {
+togglePassword('registration_form_plainPassword_second', 'togglePasswordRepeat');
+});
+	</script>
+{% endblock %}

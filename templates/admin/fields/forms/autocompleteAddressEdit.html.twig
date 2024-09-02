@@ -1,0 +1,18 @@
+{#
+*
+* @author: Dylan Rohart
+*
+#}
+{% extends '@EasyAdmin/crud/edit.html.twig' %}
+
+{% block page_content %}
+    
+{% endblock %}
+
+{% block body_javascript %}
+    {{ parent() }}
+    
+   
+    <script src="{{ asset('assets/js/autocompleteAdresse.js') }}"></script>
+{% endblock %}
+

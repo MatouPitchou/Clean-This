@@ -1,0 +1,67 @@
+:root {
+    --caribbean: #086972;
+    --moonstone: #01A9B4;
+    --tiffanyblue: #87DFD6;
+    --gamboge: #F39C11;
+    --maize: #FFE853;
+}
+
+.messageWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 40px 0 10px 20px;
+  position: fixed;
+  top: 150px;
+  left: 2%;
+}
+
+.flash {
+  display: flex;
+  justify-content: center;
+  padding: 15px;
+  width: 500px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  transition: opacity 0.8s ease;
+}
+
+.fade-out {
+  opacity: 0;
+}
+
+
+.alert-success {
+  color: #3c763d;
+  background-color: #dff0d8;
+  border-color: #d6e9c6;
+}
+
+.alert-danger {
+  color: #a94442;
+  background-color: #f7cfcf;
+  border-color: #ebccd1;
+}
+
+.alert-warning {
+    color: #301f03;
+    background-color: #f9cd88;
+    border-color: #f6b958;
+}
+
+/* Flash Messages on Easy Admin */
+
+.alert {
+  display: flex;
+  justify-content: center;
+  padding: 15px;
+  width: 500px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  transition: opacity 1s ease;
+  z-index: 1;
+  position: fixed;
+  top: 20%;
+  left: 40%;
+}
+

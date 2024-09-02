@@ -1,0 +1,70 @@
+title: 
+  Historique
+pageTitle:
+  Historique client
+operationsTable:
+  Mes opérations
+orderTable:
+  Mes commandes
+number:
+  Numéro
+status:
+  Statut
+type:
+  Type
+price:
+  Prix
+creationDate:
+  Date création
+zipcode:
+  Code postal
+address:
+  Adresse
+details:
+  Détails
+actions:
+  Actions
+show:
+  Voir
+cancel:
+  Annuler
+accept:
+  Accepter
+refuse:
+  Refuser
+statusPending:
+  En cours
+statusFinished:
+  Terminée
+statusValidation:
+  Devis à traiter
+statusEstimation:
+  Estimation
+statusRefused:
+  Devis refusé
+operationDetails:
+  Opération 
+description:
+  Description
+employe:
+  Employé
+modificationDate:
+  Modifiée le
+finishedDate:
+  Terminée le
+historyLink:
+  Retour à l'historique
+small:
+  Petite 
+medium:
+  Moyenne
+big:
+  Grande
+custom:
+  Custom
+unknown:
+  Non renseigné
+showInvoice:
+  Voir la facture
+
+

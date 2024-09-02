@@ -1,0 +1,51 @@
+title: 
+  Profile
+edittitle: >
+  Edit my informations
+userProfile:
+  <h1> {{ firstname }}'s Profile</h1>
+nullProfile:
+    <h1> Your Profile</h1>
+edit: >
+  Edit my profile
+password: >
+  Modify password
+informations : >
+  My personal informations
+name : >
+  Last Name
+fname : >
+  First Name
+date : >
+  Registered on 
+contact: >
+  My contact details
+mail: >
+  E-Mail
+phone: >
+  Phone
+address: >
+  Address
+street: >
+  Street
+city: >
+  City
+zipCode: >
+  ZipCode
+confirmDelete : >
+  Are your sure you want to delete your profile?
+deleteButton: >
+  Delete my account
+save: >
+  Save
+editPassword: >
+  Edit your password
+oldPassword: >
+  Old password
+newPassword : >
+  New password
+confirmNewPassword: >
+  Enter a second time your new password
+NoOperationMessage: >
+  You don't have operations yet. Click on "Order now" to start your journey with <span>Clean This</span> !
+

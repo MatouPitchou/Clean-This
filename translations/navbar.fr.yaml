@@ -1,0 +1,29 @@
+navbar:
+  services: >
+    Services
+  advices:
+    Conseils
+  jobs:
+    Jobs
+  orders:
+    Commander
+  hello: >
+    Bonjour
+  adminMenu: >
+    Espace Admin
+  collabMenu: >
+    Espace Employé
+  profile: >
+    Profil
+  history: >
+    Mon Historique
+  order: >
+    Commander
+  logout : >
+    Déconnexion
+  login: >
+    Connexion
+  isVerified: >
+    Merci de vérifier votre mail
+  reSend: > 
+    Renvoyer le lien d'activation

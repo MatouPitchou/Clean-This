@@ -1,0 +1,20 @@
+Title: >
+  New intervention request
+BillingAddress: >
+  Billing address
+ShippingAddressButton : >
+  Shipping address is different?
+Return: >
+  Return to history
+ShippingAddress: >
+  Shipping address
+OperationDescription: >
+  Operation description
+Surface : >
+  Area in m²
+Description: >
+  Description...
+sendButton: >
+  Send request
+addInfos:
+  Add my informations

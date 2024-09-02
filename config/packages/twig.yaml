@@ -1,0 +1,12 @@
+twig:
+    file_name_pattern: '*.twig'
+    paths:
+        '%kernel.project_dir%/assets/images': images
+    globals:
+        locales: '%app.locales%'
+
+when@test:
+    twig:
+        strict_variables: true
+        
+    

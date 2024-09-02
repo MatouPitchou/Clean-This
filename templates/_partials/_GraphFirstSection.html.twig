@@ -1,0 +1,78 @@
+<section class="cards-stats">
+	{% if is_granted('ROLE_ADMIN') %}
+		<div class="card-stat revenues-lines" style="height: 400px; max-width: 100%">
+			<div class="card-header">
+				<div class="card-top-top">
+					<div>
+						<span>
+							<i class="fa-solid fa-chart-line"></i>
+						</span>
+						<h2 class="card-title">{{'revenues_label'|trans}}</h2>
+					</div>
+					<div class="selecteurs">
+						<select id="employeeSelect"></select>
+					</div>
+				</div>
+
+				<div class="card-bottom-top">
+					<h3 class="card-subtitle">{{ totalCA }}€</h3>
+
+					<div class="card-subtitle-more">
+						<div class="badge" data-percentage="{{ compareAnnualRevenues.PourcentageAugmentation }}">
+							<i class="fa-solid fa-arrow-trend-up"></i>
+							<span class="rate">
+								{{ compareAnnualRevenues.PourcentageAugmentation }}%
+							</span>
+						</div>
+						<p class="score">
+							{{ compareAnnualRevenues.Difference }}€
+						</p>
+					</div>
+				</div>
+
+			</div>
+
+			<div class="chart" style="height: 300px !important;">
+				<canvas id="employeeRevenues" height="100"></canvas>
+			</div>
+		</div>
+	{% endif %}
+
+	<div class="card-stat performances-doughnut" style="height: 400px; max-width: 100%">
+		<div class="card-header">
+			<div class="card-top-top">
+				<div>
+					<span>
+						<i class="fa-solid fa-chart-pie"></i>
+					</span>
+					<h2 class="card-title">{{'performance_label'|trans}}</h2>
+				</div>
+
+				<select id="timeframeSelect">
+					<option value="alltime" selected>{{'since_always_label'|trans}}</option>
+					<option value="mensuel">{{'monthly_label'|trans}}</option>
+				</select>
+			</div>
+
+			<div class="card-bottom-top">
+				<h3 class="card-subtitle">{{ numberOfOperations }}</h3>
+
+				<div class="card-subtitle-more">
+					<div class="badge" data-percentage="{{ monthlyOperationsPercent }}">
+						<i class="fa-solid fa-arrow-trend-up"></i>
+						<span class="rate">{{ monthlyOperationsPercent }}</span>
+					</div>
+					<p class="score">
+						{{ monthlyOperationsDifference }}
+						{{'ordered_operations_monthly_label'|trans}}</p>
+				</div>
+			</div>
+		</div>
+
+		<div class="chart" style="height: 350px !important; max-width: 90%;">
+			<canvas id="operationsChart"></canvas>
+		</div>
+	</div>
+
+
+</section>

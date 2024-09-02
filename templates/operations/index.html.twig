@@ -1,0 +1,46 @@
+{# /*
+*   Display, sorting with DataTables & design
+*   @author: Amélie Gattepaille
+*  
+*/ #}
+{% extends 'base.html.twig' %}
+
+{% block title %}Historique
+{% endblock %}
+{% block stylesheets %}
+	<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/2.0.3/css/dataTables.dataTables.min.css">
+	<link rel="stylesheet" type="text/css" href="{{asset('assets/css/operations_client.css')}}">
+		{# <link rel="stylesheet" type="text/css" href="{{asset('assets/css/admin_page_dashboard.css')}}"> #}
+
+{% endblock %}
+
+{% block body %}
+
+	<div class="pageWrapper">
+		<h2 class="pageTitle">{{ 'pageTitle'|trans({}, 'operationsClient') }}</h2>
+
+		{# Displays the client operations #}
+		{% if operations %}
+			{% include '_partials/_statsClients.html.twig' %}
+			{% include 'operations/operations_user.html.twig' %}
+		{% else %}
+			<div class="noOperationMessage">
+				<p>{{ 'NoOperationMessage'|trans({}, 'profil')|raw }}</p>
+				<img src="{{asset('assets/images/spongy_OK.svg')}}" alt="mascotte clean">
+				<div class="spongyShadow"></div>
+			</div>
+		{% endif %}
+	</div>
+{% endblock %}
+{% block javascripts %}
+	{# Include jQuery #}
+	<script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+	{# Include DataTables JavaScript file #}
+	<script src="https://cdn.datatables.net/2.0.3/js/dataTables.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+	<script src="{{ asset('assets/js/tables.js') }}"></script>
+	<script src="{{ asset('assets/js/actionsQuote.js') }}"></script>
+	<script src="{{ asset('assets/js/deleteQuote.js') }}"></script>
+
+
+{% endblock %}

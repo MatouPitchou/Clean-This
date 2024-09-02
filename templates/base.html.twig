@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+{# 
+  Structure:
+  @author: Mathilde Breux
+  Design:
+  @author:
+ #}
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>
+			{% block title %}Welcome!    
+			{% endblock %}
+		</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+		<link rel="icon" href="{{asset('assets/black_logo.ico')}}">
+		<link rel="stylesheet" href="{{asset('assets/css/style.css')}}">
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+		<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+		<script src="https://kit.fontawesome.com/bfb56a61fd.js" crossorigin="anonymous"></script>
+		<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+		{% block stylesheets %}{% endblock %}
+		{% block javascripts %}
+
+			{% block importmap %}
+				{{ importmap('app') }}
+			{% endblock %}
+		{% endblock %}
+	</head>
+
+	{% include "_partials/_nav.html.twig" %}
+
+
+	{% if app.user and app.user.is_verified == false %}
+		{% include "_partials/_isVerifiedAlert.html.twig" %}
+	{% endif %}
+
+	{# {% include "_partials/_flashMessages.html.twig" %} #}
+
+
+	{% block body %}{% endblock %}
+
+	{% include "_partials/_footer.html.twig" %}
+	<script src="{{ asset('assets/js/flashMessages.js') }}"></script>
+	<script>
+	AOS.init();
+	</script>
+</html>

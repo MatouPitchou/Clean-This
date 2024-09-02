@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+  <file source-language="fr" target-language="fr" datatype="plaintext" original="file.ext">
+    <header>
+      <tool tool-id="symfony" tool-name="Symfony"/>
+    </header>
+    <body>
+      <trans-unit id="fxwYVrl" resname="footer.desc">
+        <source>footer.desc</source>
+        <target>Votre partenaire de confiance pour un nettoyage impeccable, à chaque instant.
+</target>
+      </trans-unit>
+      <trans-unit id="qAUgwyw" resname="footer.link">
+        <source>footer.link</source>
+        <target><![CDATA[<h4>
+ Liens Utiles
+</h4> <p>
+  <a href="/#services">Nos Services</a>
+</p> <p>
+  <a href="/#values">Nos Values</a>
+</p> <p>
+  <a href="#!">Mentions Légales</a>
+</p> <p>
+  <a href="#!">Protection des données</a>
+</p>
+]]></target>
+      </trans-unit>
+      <trans-unit id="JpClVk3" resname="footer.findUs">
+        <source>footer.findUs</source>
+        <target>Retrouvez-nous</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

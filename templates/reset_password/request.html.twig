@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+	{{ 'resetPassTitle'|trans({}, 'resetPassword') }}
+{% endblock %}
+
+{% block stylesheets %}
+	<link rel="stylesheet" href="{{asset('assets/css/resetPassword.css')}}">
+{% endblock %}
+
+
+{% block body %}
+	<div class="resetPasswordWrapper background">
+		<div class="resetPasswordCard">
+			{% for flash_error in app.flashes('reset_password_error') %}
+				<div class="alert alert-danger" role="alert">{{ flash_error }}</div>
+			{% endfor %}
+
+			<h2 class="resetPasswordTitle">{{ 'resetPassTitle'|trans({}, 'resetPassword') }}</h2>
+			<div class="lign">
+				{{ form_start(requestForm) }}
+				<p>{{ form_row(requestForm.email) }}</p>
+			</div>
+			<div>
+				<small>
+					{{ 'instructions'|trans({}, 'resetPassword') }}
+				</small>
+			</div>
+
+			<button class="button">{{ 'sendResetEmail'|trans({}, 'resetPassword') }}</button>
+		</div>
+	</div>
+
+	{{ form_end(requestForm) }}
+{% endblock %}

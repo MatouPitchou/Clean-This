@@ -1,0 +1,81 @@
+{#
+ * Structure:
+ * @author: Mathilde Breux
+ * CSS:
+ * @author: Amélie
+#}
+{% extends 'base.html.twig' %}
+
+{% block title %}
+	{{ 'title'|trans({}, 'profil') }}
+{% endblock %}
+{% block stylesheets %}
+	<link rel="stylesheet" type="text/css" href="{{asset('assets/css/profil_client.css')}}">
+{% endblock %}
+
+{% block body %}
+	{% include "_partials/_flashMessages.html.twig" %}
+
+	<div class="pageWrapper">
+		{% if user.firstname is null %}
+		{{ 'nullProfile'|trans({}, 'profil')|raw }}
+	{% else %}
+		{{ 'userProfile'|trans({ '{{ firstname }}': user.firstname}, 'profil' )|raw }}
+	{% endif %}
+		<h3 class="happyMessage">{{ message }}</h3>
+
+		<div class="actionsContainer">
+			<div class="actions">
+				<a class="button" href="{{ path('app_profil_edit', {'id': user.id}) }}" id="editProfileLink" data-user-id="{{ user.id }}">{{ 'edit'|trans({}, 'profil') }}</a>
+			</div>
+
+			{% if app.user.getGoogleId() is null %}
+				<div class="actions">
+					<a class="button" href="{{ path('app_profil_editPassword', {'id': user.id}) }}">{{ 'password'|trans({}, 'profil') }}</a>
+				</div>
+			{% endif %}
+		</div>
+
+		<div class="container">
+			<div class="containerLeft">
+				<h2>{{ 'informations'|trans({}, 'profil') }}</h2>
+				<div class="lign">
+					<p class="label">{{ 'name'|trans({}, 'profil') }}</p>
+					<p>{{ user.lastname }}</p>
+				</div>
+				<div class="lign">
+					<p class="label">{{ 'fname'|trans({}, 'profil') }}</p>
+					<p>{{ user.firstname }}</p>
+				</div>
+				<div class="lign">
+					<p class="label">{{ 'date'|trans({}, 'profil') }}</p>
+					{% set dateFormat = app.request.locale == 'fr' ? 'd-m-Y H:i:s' : 'd-m-Y g:i:s A' %}
+					<p>{{ user.createdAt|date(dateFormat) }}</p>
+				</div>
+			</div>
+			<div class="containerRight">
+				<h2>{{ 'contact'|trans({}, 'profil') }}</h2>
+				<div class="lign">
+					<p class="label">{{ 'mail'|trans({}, 'profil') }}</p>
+					<p>{{ user.email }}</p>
+				</div>
+				<div class="lign">
+					<p class="label">{{ 'phone'|trans({}, 'profil') }}</p>
+					<p>{{ user.phone }}</p>
+				</div>
+				<div class="lign">
+					<p class="label">{{ 'address'|trans({}, 'profil') }}</p>
+					<p>{{ user.street }}<br/>
+						{{ user.zipcode }}
+						{{ user.city }}</p>
+				</div>
+			</div>
+		</div>
+
+	</div>
+
+{% endblock %}
+{% block javascripts %}
+	{# Include jQuery #}
+	<script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+{% endblock %}

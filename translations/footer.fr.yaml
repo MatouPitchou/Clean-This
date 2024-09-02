@@ -1,0 +1,21 @@
+footer:
+  desc: >
+    Votre partenaire de confiance pour un nettoyage impeccable, à chaque instant.
+  link: >
+    <h4>
+     Liens Utiles
+    </h4>
+    <p>
+      <a href="/#services">Nos Services</a>
+    </p>
+    <p>
+      <a href="/#values">Nos Values</a>
+    </p>
+    <p>
+      <a href="#!">Mentions Légales</a>
+    </p>
+    <p>
+      <a href="#!">Protection des données</a>
+    </p>
+  findUs: >
+    Retrouvez-nous

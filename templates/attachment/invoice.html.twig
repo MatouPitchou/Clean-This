@@ -1,0 +1,239 @@
+<style>
+	.invoice-box {
+		max-width: 800px;
+		margin: auto;
+		padding: 30px;
+		border: 1px solid #eee;
+		box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+		font-size: 16px;
+		line-height: 24px;
+		font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif;
+		color: #555;
+		position: relative;
+	}
+
+	.invoice-box table {
+		width: 100%;
+		line-height: inherit;
+		text-align: left;
+	}
+
+	.invoice-box table td {
+		padding: 5px;
+		vertical-align: top;
+	}
+
+	.invoice-box table tr td:nth-child(2) {
+		text-align: right;
+	}
+
+	.invoice-box table tr.top table td {
+		padding-bottom: 20px;
+	}
+
+	.invoice-box table tr.top table td.title {
+		font-size: 45px;
+		line-height: 45px;
+		color: #333;
+	}
+
+	.invoice-box table tr.information table td {
+		padding-bottom: 40px;
+	}
+
+	.invoice-box table tr.heading td {
+		background: #eee;
+		border-bottom: 1px solid #ddd;
+		font-weight: bold;
+	}
+
+	.invoice-box table tr.details td {
+		padding-bottom: 20px;
+	}
+
+	.invoice-box table tr.item td {
+		border-bottom: 1px solid #eee;
+	}
+
+	.invoice-box table tr.item.last td {
+		border-bottom: none;
+	}
+
+	.invoice-box table tr.total td:nth-child(2) {
+		border-top: 2px solid #eee;
+		font-weight: bold;
+	}
+
+	@media only screen and(max-width: 600px) {
+		.invoice-box table tr.top table td {
+			width: 100%;
+			display: block;
+			text-align: center;
+		}
+
+		.invoice-box table tr.information table td {
+			width: 100%;
+			display: block;
+			text-align: center;
+		}
+	}
+
+	/** RTL **/
+	.invoice-box.rtl {
+		direction: rtl;
+		font-family: Tahoma, 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif;
+	}
+
+	.invoice-box.rtl table {
+		text-align: right;
+	}
+
+	.invoice-box.rtl table tr td:nth-child(2) {
+		text-align: left;
+	}
+
+	/** Thank you text **/
+	.section {
+		position: relative;
+		display: flex;
+		justify-content: start;
+		align-items: center;
+		margin-top: 20px;
+		position: absolute;
+		bottom: 15px;
+		left: 20px;
+	}
+
+	.speech-bubble {
+		background-color: #ffffff;
+		border-radius: 90px;
+		border: 1px solid #ccc;
+		padding: 10px;
+		box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+		width: auto;
+		max-width: 200px;
+		text-align: center;
+	}
+
+	.speech-bubble p {
+		font-size: 12px;
+	}
+
+	.speech-bubble::before {
+		content: '';
+		position: absolute;
+		bottom: -20px;
+		right: 20px; /* Ajustez la position horizontale du point */
+		border-style: solid;
+		border-width: 10px 10px 0;
+		border-color: #fff transparent transparent;
+	}
+</style></head><body>
+<div class="invoice-box">
+	<table cellpadding="0" cellspacing="0">
+		<tr class="top">
+			<td colspan="2">
+				<table>
+					<tr>
+						<td class="title">
+							<img src="{{ logo }}" alt="Logo" style="width: 40%; max-width: 300px"/>
+						</td>
+
+						<td>
+							Opération #
+							{{ operationID }}<br/>
+							Facture créée le :
+							{{ invoiceCreatedAt }}<br/>
+							Facture à payer avant le :
+							{{ dueAt }}
+						</td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+
+		<tr class="information">
+			<td colspan="2">
+				<table>
+					<tr>
+						<td>
+							Clean This<br/>
+							20 rue du Luxembourg<br/>
+							59000 Roubaix
+						</td>
+
+						<td>
+							{{ firstname }}
+							{{ lastname }}<br/>
+							{{ street }}<br/>
+							{{ zipcode }}
+							{{ city }}
+						</td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+
+		<tr class="heading">
+			<td>Informations concernant l'opération</td>
+			<td></td>
+		</tr>
+		<tr class="item">
+			<td>Type :
+				{{ type }}</td>
+			<td></td>
+		</tr>
+		<tr class="item">
+			<td>Description :
+				{{ description }}</td>
+			<td></td>
+		</tr>
+
+		<tr class="heading">
+			<td>Dates</td>
+			<td></td>
+		</tr>
+		<tr class="item">
+			<td>Création :
+				{{ operationCreatedAt }}</td>
+			<td></td>
+		</tr>
+		<tr class="item">
+			<td>Clôture :
+				{{ operationFinishedAt }}</td>
+			<td></td>
+		</tr>
+		{# 	<tr class="item">
+									 <td>Durée : {{ operationDuration }}€</td>
+								</tr> #}
+
+		<tr class="heading">
+			<td>Prix</td>
+			<td></td>
+		</tr>
+		<tr class="item">
+			<td></td>
+			<td>Prix HT :
+				{{ HT }}
+				€</td>
+		</tr>
+		<tr class="item last">
+			<td></td>
+			<td>Montant de la TVA :
+				{{ TVA }}
+				%</td>
+		</tr>
+		<tr class="total">
+			<td></td>
+			<td>Montant total :
+				{{ TTC }}
+				€</td>
+		</tr>
+	</table>
+	<section class="section">
+		<div class="speech-bubble">
+			<p>L'équipe de Clean This vous remercie d'avoir fait appel à nos services !</p>
+		</div>
+		<img class="image" src="{{ spongy }}" alt="Mascotte de Clean This" style="width: 40%; max-width: 300px"/>
+	</section>
+</div></body></html>

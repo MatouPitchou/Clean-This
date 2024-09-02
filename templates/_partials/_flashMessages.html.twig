@@ -1,0 +1,33 @@
+{#
+@author: Amélie 
+#}
+<head>
+	<link rel="stylesheet" href="{{asset('assets/css/flashMessages.css')}}">
+</head>
+
+<div class="messageWrapper">
+
+{% for message in app.flashes('success') %}
+	<div class="flash alert-success">
+		{{ message }}
+	</div>
+{% endfor %}
+
+{% for message in app.flashes('error') %}
+	<div class="flash alert-danger">
+		{{ message }}
+	</div>
+{% endfor %}
+
+{% for message in app.flashes('warning') %}
+	<div class="flash alert-warning">
+		{{ message }}
+	</div>
+{% endfor %}
+
+</div>
+
+{% block javascripts %}
+	{# Include jQuery #}
+	<script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+{% endblock %}

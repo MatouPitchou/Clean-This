@@ -1,0 +1,47 @@
+/* Dans votre fichier styles/pageTransition.css */
+
+.slide-enter {
+    transform: translateX(150%);
+  }
+  .slide-enter-active {
+    transform: translateX(0);
+    transition: transform 600ms ease-in-out;
+  }
+  .slide-exit {
+    transform: translateX(0);
+  }
+  .slide-exit-active {
+    transform: translateX(-150%);
+    transition: transform 600ms ease-in-out;
+  }
+  
+
+body {
+    overflow-x:  hidden;
+    overflow-y: scroll;
+} 
+
+.bg-body-tertiary {
+    width: 100%;
+    background-color: #282828 !important;
+    color: white !important;
+    display: flex;
+}
+
+.navbar-brand {
+    font-weight: bolder;
+}
+
+.navbar-brand,
+.nav-link {
+    color: rgb(160, 160, 170);
+}
+.navbar-brand:hover,
+.nav-link:hover,
+.navbar-brand:active,
+.nav-link:active,
+.navbar-brand:focus,
+.nav-link:focus,
+.nav-link.active {
+    color: white !important;
+}

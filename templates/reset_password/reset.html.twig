@@ -1,0 +1,60 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+	{{ 'resetPassTitle'|trans({}, 'resetPassword') }}
+{% endblock %}
+{% block stylesheets %}
+	<link rel="stylesheet" href="{{asset('assets/css/resetPassword.css')}}">
+{% endblock %}
+
+
+{% block body %}
+	<div class="resetPasswordWrapper background">
+		<div class="resetPasswordCard">
+			<h2 class="resetPasswordTitle">{{ 'resetPassTitle'|trans({}, 'resetPassword') }}</h2>
+			{{ form_start(resetForm) }}
+			<div class="lign">
+				<p class="label pass">{{ 'newPassword'|trans({}, 'profil') }}</p>
+				{{ form_row(resetForm.plainPassword.first)}}
+				<div class="toggle-password">
+					<i id="togglePasswordNew" class="fas fa-eye eye" aria-hidden="true"></i>
+				</div>
+			</div>
+
+			<div class="lign">
+				<p class="label pass repeat">{{ 'confirmNewPassword'|trans({}, 'profil') }}</p>
+				{{ form_row(resetForm.plainPassword.second)}}
+				<div class="toggle-password" >
+					<i id="togglePasswordRepeat" class="fas fa-eye eye" aria-hidden="true"></i>
+				</div>
+			</div>
+			<button class="button">{{ 'changePassword'|trans({}, 'resetPassword') }}</button>
+
+		</div>
+	</div>
+		{{ form_end(resetForm) }}
+
+	<script>
+		function togglePassword(inputId, iconId) {
+let input = document.getElementById(inputId);
+let icon = document.getElementById(iconId);
+if (input.type === "password") {
+input.type = "text";
+icon.classList.remove('fa-eye');
+icon.classList.add('fa-eye-slash');
+} else {
+input.type = "password";
+icon.classList.remove('fa-eye-slash');
+icon.classList.add('fa-eye');
+}
+}
+
+document.getElementById("togglePasswordNew").addEventListener('click', function () {
+togglePassword('change_password_form_plainPassword_first', 'togglePasswordNew');
+});
+
+document.getElementById("togglePasswordRepeat").addEventListener('click', function () {
+togglePassword('change_password_form_plainPassword_second', 'togglePasswordRepeat');
+});
+	</script>
+{% endblock %}

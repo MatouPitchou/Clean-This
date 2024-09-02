@@ -1,0 +1,111 @@
+<section class="cards-stats cards-stats-2">
+
+	<script src="{{ asset('assets/js/field_status_quote.js') }}"></script>
+	{% if is_granted('ROLE_ADMIN') %}
+
+		<div class="card-stat average-bar" style="height: 320px; max-width: 100%">
+			<div class="card-header">
+				<div class="card-top-top">
+					<div>
+						<span>
+							<i class="fa-solid fa-chart-pie"></i>
+						</span>
+						<h2 class="card-title">{{'average_opened_time'|trans}}</h2>
+					</div>
+				</div>
+			</div>
+
+			<div class="chart chart-average" style="height: 90% !important; max-width: 90%;">
+				<canvas id="averageTimeTillClosed"></canvas>
+			</div>
+		</div>
+	{% endif %}
+
+
+	<div class="card-stat general-history" style="height: 320px; max-width: 100%">
+		<div class="card-header">
+			<div class="card-top-top">
+				<div>
+					<span>
+						<i class="fa-solid fa-chart-line"></i>
+					</span>
+					<h2 class="card-title">{{'general_hystory_label'|trans}}</h2>
+				</div>
+				<div class="selecteurs">
+					{% if is_granted('ROLE_ADMIN') %}
+						<a href="{{ ea_url() .setController('App\\Controller\\Admin\\OperationsCrudController') .setAction('index') }}">
+							<i class="fa-solid fa-expand"></i>
+							{{'general_hystory_label'|trans}}
+						</a>
+					{% else %}
+						<a href="{{ ea_url() .setController('App\\Controller\\Admin\\MyOperationsCrudController') .setAction('index') }}">
+							<i class="fa-solid fa-expand"></i>
+							{{'personal_history_label'|trans}}
+						</a>
+					{% endif %}
+
+				</div>
+			</div>
+
+
+		</div>
+
+		{# HISTORIQUE OPERATIONS #}
+		<table class="table">
+			<thead>
+				<tr>
+					<th>ID</th>
+					<th>{{'employe_label'|trans}}</th>
+					<th>{{'devis_status_label'|trans}}</th>
+					<th>{{'quote_status_shortened_label'|trans}}</th>
+					<th>Type</th>
+					<th>{{'price_label'|trans}}</th>
+				</tr>
+			</thead>
+			<tbody>
+				{% for operation in latestOperations %}
+					<tr>
+						<td>{{ operation.id }}</td>
+						<td>
+							<div class="employee_badge_container info-badge">
+								<i class="fa-solid fa-user employee_icon status-icon"></i>
+								<span class="employee_name ">{{ operation.getEmployeName() }}</span>
+							</div>
+						</td>
+						<td>
+							<div class="info-badge">
+								<i class="fa-solid fa-question-mark status-icon"></i>
+								<span class="status">{{ ('badge_' ~ operation.quote ~ '_label')|lower|replace({' ': '', 'é': 'e', 'è': 'e', 'à': 'a', 'ù': 'u', 'â': 'a', 'ê': 'e', 'î': 'i', 'ô': 'o', 'û': 'u', 'ç': 'c'})|trans }}</span>
+							</div>
+						</td>
+						<td>
+							<div class="info-badge">
+								<i class="fa-solid fa-question-mark status-icon"></i>
+								{% if operation.status != null %}
+									<span class="status">{{ ('badge_' ~ operation.status ~ '_label')|lower|replace({' ': '', 'é': 'e', 'è': 'e', 'à': 'a', 'ù': 'u', 'â': 'a', 'ê': 'e', 'î': 'i', 'ô': 'o', 'û': 'u', 'ç': 'c'})|trans }}</span>
+								{% endif %}
+							</div>
+						</td>
+						<td>
+							{% if operation.services is not null and  operation.services.type == "Custom" %}
+								{{operation.services.type}}
+							{% elseif operation.services is not null and operation.services.type is not null %}
+								{{ ('badge_' ~ operation.services.type ~ '_label')|lower|replace({' ': '', 'é': 'e', 'è': 'e', 'à': 'a', 'ù': 'u', 'â': 'a', 'ê': 'e', 'î': 'i', 'ô': 'o', 'û': 'u', 'ç': 'c'})|trans }}
+							{% else %}
+								N/A
+							{% endif %}
+
+						</td>
+						<td>{{ operation.price }}
+							€</td>
+					</tr>
+				{% else %}
+					<tr>
+						<td colspan="8">Aucune opération récente.</td>
+					</tr>
+				{% endfor %}
+			</tbody>
+		</table>
+
+
+	</section>
